@@ -1,4 +1,4 @@
-#Portifólio
+#Portfólio
 #
 1 - Crie seu projeto Laravel
 #
