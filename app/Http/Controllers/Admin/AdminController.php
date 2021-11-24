@@ -198,6 +198,7 @@ class AdminController extends Controller
             $awards->name = $request->input('name');
             $awards->institution = $request->input('institution');
             $awards->link = $request->input('link');
+            $awards->certification = $request->file('certification')->store('certification');
             $awards->save();
             return redirect()->route('admin');
         }
@@ -208,6 +209,8 @@ class AdminController extends Controller
     {
         $award = Award::find($id);
         if (isset($award)){
+            $certification = $award->certification;
+            Storage::delete($certification);
             $award->delete();
             return redirect()->route('admin');
         }

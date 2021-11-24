@@ -31,7 +31,7 @@
             </form>
         </div>
         <div class="col-md-6 col-sm-12 text-center m-auto">
-            <h3>Entre para atualizar seu Portifólio</h3>
+            <h3>Entre para atualizar seu Portfólio</h3>
             <p>Matenha-se sempre atualizado.</p>
         </div>
     </div>

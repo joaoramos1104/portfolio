@@ -425,30 +425,31 @@
 
                 <!-- tab Awards -->
                 <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="awards-tab">
-                    <div class="container mt-3 m-auto">
+                    <div class="container mt-3">
                         <h3 class="mb-1 text-center text-white">Conquistas e Certificações</h3>
                         <hr class="border-bottom border-dark">
-                        <div class="row col text-white">
-                            <div class="col col-sm-12 text-center">
-                                <span class="me-1"><i class="fas fa-trophy text-warning"></i></span>
-                                <ul class="nav mb-0 justify-content-center">
-                                    @foreach($awards as $award)
-                                        <li class="nav-item">
-                                            <a class="nav-link awards" target="_blank" href="{{ $award->link }}">{{ $award->name }} - {{ $award->institution }}</a>
-                                            <form>
-                                                @csrf
-                                                <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_award', $award->id) }}" formmethod="post" value="Remover">
-                                                @method("DELETE")
-                                            </form>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                        <div class="row justify-content-center">
+                            @foreach($awards as $award)
+                            <div class=" col-md-3 col-sm-12 mr-1 mb-1">
+                                <div class="card border-0 shadow text-center">
+                                    <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top" alt="...">
+                                    <div class="card-body bg-custom">
+                                        <h5>{{ $award->name }}</h5>
+                                        <a class="nav-link awards" target="_blank" href="{{ $award->link }}">{{ $award->institution }}</a>
+                                        <form>
+                                            @csrf
+                                            <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_award', $award->id) }}" formmethod="post" value="Remover">
+                                            @method("DELETE")
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
+                            @endforeach
                         </div>
                         <div class="row col text-white">
                             <div class="col col-sm-12">
                                 <h3 class="text-center m-2">Adicionar Conquistas</h3>
-                                <form action="{{ route('create_award') }}" method="post">
+                                <form action="{{ route('create_award') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                     <div class="row col p-3">
                                         <div class="col-md-6 col-sm-12">
@@ -461,9 +462,14 @@
                                         </div>
                                     </div>
                                     <div class="row p-3">
-                                        <div class="mb-3 col">
+                                        <div class="mb-3 col-md-6 col-sm-12">
                                             <label class="form-label">Link da Certificação</label>
                                             <input type="text" class="form-control" name="link"  value="" placeholder="https://www...">
+                                        </div>
+                                        <div class="mb-3 col-md-6 col-sm-12">
+                                            <label class="form-label">Certificado</label>
+                                            <input type="file" class="form-control" name="certification"  value="" placeholder="img.jpg">
+                                            <p>OBS: Adicione apenas arquivos de imagem</p>
                                         </div>
                                     </div>
                                     <div class="mb-3 col-1 m-auto">

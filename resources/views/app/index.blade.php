@@ -35,7 +35,7 @@
                      </ul>
                     <ul class="nav navbar text-white float-end social-icons">
                         <li class="nav-item me-2">
-                           <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
+                            <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>
                         </li>
                     </ul>
                  </div>
@@ -91,8 +91,8 @@
 
              <!-- Skills and Certification -->
              <div id="skills">
-                <div class="container mt-3 p-3">
-                     <h3 class="text-white text-center p-2 mb-2">Habilidades</h3>
+                <div class="container mt-3">
+                     <h3 class="text-white text-center mb-2">Habilidades</h3>
                      <hr class="border-bottom border-white">
                      <div class="text-center d-flex text-white p-1">
                          <div class="row col justify-content-center">
@@ -104,27 +104,31 @@
                              @endforeach
                          </div>
                      </div>
-                 </div>
-                <div class="container mt-3 p-3">
-                 <div class="row p-3 text-center text-white m-auto">
-                     <h3 class="mb-5">Conquistas e Certificações</h3>
+                </div>
+                 <div class="container mt-3">
+                     <h3 class="text-white text-center mb-2">Certificados</h3>
                      <hr class="border-bottom border-white">
-                     <ul class="nav flex-column mb-0">
-                         <span class="me-1"><i class="fas fa-trophy text-warning"></i></span>
-                         @foreach($awards as $award)
-                             <li class="nav-item">
-                                 <a class="nav-link awards" target="_blank" href="{{ $award->link }}">{{ $award->name }} - {{ $award->institution }}</a>
-                             </li>
-                         @endforeach
-                         <br>
-                         <li>
-                             <span class="me-1"><i class="fas fa-sync text-success"></i></span>
-                             Em breve novas conquistas...!
-                         </li>
-                     </ul>
+                     <div class="row justify-content-center">
+                        @foreach($awards as $key => $award)
+                            <div class="col-md-3 col-sm-12 mr-1 mb-1">
+                                    <div class="card border-0 shadow text-center rounded-custom bg-custom">
+                                        <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..." data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}">
+{{--                                        <h5 class="m-auto">{{ $award->institution }}</h5>--}}
+                                        <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
+                                    </div>
+                                </div>
+                             <!-- Modal -->
+                             <div class="modal fade" id="modalCertification{{ $key }}" tabindex="-1" aria-labelledby="modalCertificationLabel{{ $key }}" aria-hidden="true">
+                                 <div class="modal-dialog modal-xl">
+                                     <button class="btn float-end text-white" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times fa-2x"></i></button>
+                                     <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" alt="..." class="modal-content">
+                                 </div>
+                             </div>
+                        @endforeach
+                     </div>
                  </div>
              </div>
-             </div>
+
 
              <!-- Projects -->
              <div id="projects">
@@ -132,6 +136,11 @@
                  <div class="container">
                      <hr class="border-bottom border-white">
                      <div class="row p-3">
+                         <div class="justify-content-center">
+                             <div class="col-3 p-1 text-center m-auto">
+                                 <a class="btn btn-sm btn-light" href="https://github.com/joaoramos1104" target="_blank">Confira mais <i class="fab fa-github"></i></a>
+                             </div>
+                         </div>
                          @foreach($projects as $chave => $project)
                              @if($chave %2 == 0)
                                  <section class="container rounded-custom art-cont">
@@ -240,9 +249,9 @@
                                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                  </div>
                              @endif
-                             @if($messge = Session::get('success'))
+                             @if($message = Session::get('success'))
                                  <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                     <strong>E-mail enviado com sussesso! </strong> {{ $messge }}
+                                     <strong>E-mail enviado com sussesso! </strong> {{ $message }}
                                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                  </div>
                              @endif

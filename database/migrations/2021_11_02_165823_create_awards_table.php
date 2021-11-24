@@ -18,6 +18,7 @@ class CreateAwardsTable extends Migration
             $table->string('name');
             $table->string('link');
             $table->string('institution');
+            $table->string('certification');
             $table->timestamps();
         });
     }
