@@ -76,27 +76,27 @@
                 <!-- tab Profile -->
                 <div class="tab-pane fade show active" id="Profile" role="tabpanel" aria-labelledby="Profile-tab">
                     <div class="container">
-                        <h3 class=" text-center text-white mt-3">Perfil</h3>
+                        <h3 class=" text-center text-color mt-3">Perfil</h3>
                         @foreach($profiles as $profile)
-                        <div class="row">
-                            <div class="col-md-5 col-sm-12 m-auto text-center text-white">
+                        <div class="row text-color">
+                            <div class="col-md-5 col-sm-12 m-auto text-center">
                                 <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 200px; height: 200px;" /></span>
                                 <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
-                                <p>{{ $profile->description }}</p>
+                                <strong><p>{{ $profile->description }}</p></strong>
                             </div>
                             <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
                                 <img src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
                             </div>
                             <div class="justify-content-center">
                                 <div class="col-md-2 col-sm-12 p-1 m-auto text-center">
-                                    <button class="btn btn-sm btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditProfile{{ $profile->id }}" aria-expanded="false" aria-controls="collapseEditProfile{{$profile->id}}">
+                                    <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditProfile{{ $profile->id }}" aria-expanded="false" aria-controls="collapseEditProfile{{$profile->id}}">
                                         Editar
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-sm-12 p-1 m-auto text-center">
                                     <form>
                                         @csrf
-                                        <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_profile', $profile->id) }}" formmethod="post" value="Remover">
+                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_profile', $profile->id) }}" formmethod="post" value="Remover">
                                         @method("DELETE")
                                     </form>
                                 </div>
@@ -129,8 +129,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer m-auto justify-content-center">
-                                            <button type="button" class="btn btn-warning">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                            <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -140,7 +139,7 @@
                         @endforeach
                         <div class="justify-content-center">
                             <div class="col-3 p-1 text-center m-auto">
-                                <button class="btn btn-sm btn-primary m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddProfile" aria-expanded="false" aria-controls="collapseAddProfile">
+                                <button class="btn btn-sm btn-primary shadow m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddProfile" aria-expanded="false" aria-controls="collapseAddProfile">
                                         Adicionar
                                 </button>
                             </div>
@@ -174,8 +173,8 @@
                                             </div>
                                         </div>
                                         <div class="m-auto justify-content-center">
-                                            <button type="button" id="cleanFormAddProfile" class="btn btn-sm btn-warning">Cancelar</button>
-                                            <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                            <button type="button" id="cleanFormAddProfile" class="btn btn-sm btn-warning shadow">Cancelar</button>
+                                            <button type="submit" class="btn btn-sm btn-primary shadow">Salvar</button>
                                         </div>
                                     </div>
                                 </form>
@@ -198,14 +197,14 @@
                                 <p>{{ $educ->time_course }}</p>
                                 <div class="row justify-content-center">
                                     <div class="col-md-2 col-sm-12 p-1 text-center">
-                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditEducation{{ $educ->id }}" aria-expanded="false" aria-controls="collapseEditEducation{{$educ->id}}">
+                                        <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditEducation{{ $educ->id }}" aria-expanded="false" aria-controls="collapseEditEducation{{$educ->id}}">
                                             Editar
                                         </button>
                                     </div>
                                     <div class="col-md-2 col-sm-12 p-1 text-center">
                                         <form>
                                             @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_education', $educ->id) }}" formmethod="post" value="Remover">
+                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_education', $educ->id) }}" formmethod="post" value="Remover">
                                             @method("DELETE")
                                         </form>
                                     </div>
@@ -239,7 +238,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="m-auto justify-content-center">
-                                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                                    <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                                 </div>
                                             </form>
                                     </div>
@@ -249,7 +248,7 @@
                             @endforeach
                             <div class="justify-content-center">
                                 <div class="p-1 text-center">
-                                    <button class="btn btn-sm btn-primary m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddEducation" aria-expanded="false" aria-controls="collapseAddEducation">
+                                    <button class="btn btn-sm btn-primary shadow m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddEducation" aria-expanded="false" aria-controls="collapseAddEducation">
                                         Adicionar
                                     </button>
                                 </div>
@@ -285,8 +284,8 @@
                                             </div>
                                         </div>
                                         <div class="m-auto justify-content-center">
-                                            <button type="button" id="cleanFormEducation" class="btn btn-warning">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                            <button type="button" id="cleanFormEducation" class="btn btn-warning shadow">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -304,14 +303,14 @@
                                     <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
                                     <div class="row justify-content-center mt-1">
                                         <div class="col-md-2 col-sm-12 p-1 text-center">
-                                            <button class="btn btn-sm btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditExperience{{ $experience->id }}" aria-expanded="false" aria-controls="collapseEditExperience{{$experience->id}}">
+                                            <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditExperience{{ $experience->id }}" aria-expanded="false" aria-controls="collapseEditExperience{{$experience->id}}">
                                                 Editar
                                             </button>
                                         </div>
                                         <div class="col-md-2 col-sm-12 p-1 text-center">
                                             <form>
                                                 @csrf
-                                                <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_experience', $experience->id) }}" formmethod="post" value="Remover">
+                                                <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_experience', $experience->id) }}" formmethod="post" value="Remover">
                                                 @method("DELETE")
                                             </form>
                                         </div>
@@ -337,17 +336,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="m-auto justify-content-center">
-                                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                                    <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-                                    <hr class="border-bottom border-white">
+                                    <hr class="border-bottom border-dark">
                                 </div>
                             @endforeach
                             <div class="justify-content-center">
                                 <div class="p-1 text-center">
-                                    <button class="btn btn-sm btn-primary m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddExperience" aria-expanded="false" aria-controls="collapseAddExperience">
+                                    <button class="btn btn-sm btn-primary shadow m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddExperience" aria-expanded="false" aria-controls="collapseAddExperience">
                                         Adicionar
                                     </button>
                                 </div>
@@ -372,8 +371,8 @@
                                             </div>
                                         </div>
                                         <div class="m-auto justify-content-center">
-                                            <button type="button" id="cleanFormExperience" class="btn btn-warning">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                            <button type="button" id="cleanFormExperience" class="btn btn-warning shadow">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -384,25 +383,25 @@
 
                 <!-- tab Skills -->
                 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
-                    <div class="container mt-3 m-auto">
-                        <h3 class="text-white text-center p-2 mb-2">Habilidades</h3>
-                        <hr class="border-bottom border-info">
-                        <div class="text-center d-flex text-white p-1">
+                    <div class="container text-color mt-3 m-auto">
+                        <h3 class="text-center p-2 mb-2">Habilidades</h3>
+                        <hr class="border-bottom border-dark">
+                        <div class="text-center d-flex p-1">
                             <div class="row col justify-content-center">
                                 @foreach($skills as $skill)
                                     <div class=" col-3 col-md-2 mt-2">
                                         {!! $skill->icon_skill !!}
-                                        <p>{{ $skill->name }}</p>
+                                        <strong><p>{{ $skill->name }}</p></strong>
                                         <form>
                                             @csrf
-                                        <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
+                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
                                             @method("DELETE")
                                         </form>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
-                        <div class="row m-auto text-white">
+                        <div class="row m-auto">
                             <h3 class="text-center p-3">Novas Habilidades</h3>
                             <form action="{{ route('create_skill') }}" method="post">
                                 @csrf
@@ -416,7 +415,7 @@
                                     <p class="p-3">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
                                 </div>
                                 <div class="mb-3 col-1 m-auto">
-                                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary shadow">Salvar</button>
                                 </div>
                             </form>
                         </div>
@@ -425,28 +424,32 @@
 
                 <!-- tab Awards -->
                 <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="awards-tab">
-                    <div class="container mt-3">
-                        <h3 class="mb-1 text-center text-white">Conquistas e Certificações</h3>
+                    <div class="container text-color mt-3">
+                        <h3 class="mb-1 text-center">Conquistas e Certificações</h3>
                         <hr class="border-bottom border-dark">
                         <div class="row justify-content-center">
-                            @foreach($awards as $award)
-                            <div class=" col-md-3 col-sm-12 mr-1 mb-1">
-                                <div class="card border-0 shadow text-center">
-                                    <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top" alt="...">
-                                    <div class="card-body bg-custom">
-                                        <h5>{{ $award->name }}</h5>
-                                        <a class="nav-link awards" target="_blank" href="{{ $award->link }}">{{ $award->institution }}</a>
+                            @foreach($awards as $key => $award)
+                                <div class="col-md-3 col-sm-12 mr-1 mb-1">
+                                    <div class="card border-0 shadow text-center rounded-custom bg-custom">
+                                        <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..." data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}">
+                                        <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                                         <form>
                                             @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_award', $award->id) }}" formmethod="post" value="Remover">
+                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_award', $award->id) }}" formmethod="post" value="Remover">
                                             @method("DELETE")
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="modalCertification{{ $key }}" tabindex="-1" aria-labelledby="modalCertificationLabel{{ $key }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <button class="btn float-end text-white" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times fa-2x"></i></button>
+                                        <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" alt="..." class="modal-content">
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
-                        <div class="row col text-white">
+                        <div class="row col">
                             <div class="col col-sm-12">
                                 <h3 class="text-center m-2">Adicionar Conquistas</h3>
                                 <form action="{{ route('create_award') }}" method="post" enctype="multipart/form-data">
@@ -473,7 +476,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 col-1 m-auto">
-                                        <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary shadow">Salvar</button>
                                     </div>
                                 </form>
                             </div>
@@ -483,21 +486,21 @@
 
                 <!-- tab Projects -->
                 <div class="tab-pane fade" id="Projects" role="tabpanel" aria-labelledby="Projects-tab">
-                    <div class="container-fluid">
-                        <div class="row text-center text-white">
+                    <div class="container-fluid text-color">
+                        <div class="row text-center">
                             <h3 class="mt-3">Projetos</h3>
                             <div class="col-3 p-1 m-auto">
-                                <button class="btn btn-sm btn-primary m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddProject" aria-expanded="false" aria-controls="collapseAddProject">
+                                <button class="btn btn-sm btn-primary shadow m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddProject" aria-expanded="false" aria-controls="collapseAddProject">
                                     Adicionar
                                 </button>
                             </div>
                         </div>
                         <div class="collapse text-center" id="collapseAddProject">
-                            <div class="container">
+                            <div class="container text-color">
                                 <form action="{{ route('create_project') }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="row p-1 text-white">
-                                        <h3 class="text-center">Perfil</h3>
+                                    <div class="row p-1">
+                                        <h3 class="text-center">Novo Projeto</h3>
                                         <div class="row p-1">
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label  class="form-label">Nome Projeto</label>
@@ -517,8 +520,8 @@
                                             </div>
                                         </div>
                                         <div class="m-auto justify-content-center">
-                                            <button type="button" id="cleanFormAddProject" class="btn btn-sm btn-warning">Cancelar</button>
-                                            <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                            <button type="button" id="cleanFormAddProject" class="btn btn-sm btn-warning shadow">Cancelar</button>
+                                            <button type="submit" class="btn btn-sm btn-primary shadow">Salvar</button>
                                         </div>
                                     </div>
                                 </form>
@@ -528,19 +531,19 @@
                         <div class="row p-3">
                             @foreach($projects as $chave => $project)
                             @if($chave %2 == 0)
-                            <section class="container rounded-custom art-cont">
+                            <section class="container text-color rounded-custom art-cont">
                                 <div class="row p-3">
                                     <div class="col-md-6 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} shadow" aria-current="true" aria-label="Slide 1"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
                                                 <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid" alt="..." style="width: 100%; height: 300px;">
+                                                    <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal">
                                                 </div>
                                                 @endforeach
                                             </div>
@@ -554,39 +557,39 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-12 float-end text-white m-auto text-center">
+                                    <div class="col-md-6 col-sm-12 float-end m-auto text-center">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
-                                        <p style="white-space: pre-wrap;">{{ $project->description }}</p>
+                                        <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
                                     </div>
                                     <div class="col-md-1 col-sm-2 m-auto">
                                         <form>
                                             @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
+                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
                                             @method("DELETE")
                                         </form>
                                     </div>
                                 </div>
                             </section>
                             @else
-                            <section class="container rounded-custom art-cont2">
+                            <section class="container text-color rounded-custom art-cont2">
                                     <div class="row p-3">
-                                        <div class="col-md-6 col-sm-12 float-end text-white m-auto text-center">
+                                        <div class="col-md-6 col-sm-12 float-end m-auto text-center">
                                             <h5 class="fw-bold">{{ $project->title }}</h5>
-                                            <p style="white-space: pre-wrap;">{{ $project->description }}</p>
+                                            <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
                                             <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
                                         </div>
                                         <div class="col-md-6 col-sm-12 float-start m-auto">
                                             <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
                                                 <div class="carousel-indicators">
                                                     @foreach($project->imgProject as $key => $images)
-                                                        <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} shadow" aria-current="true" aria-label="Slide 1"></button>
                                                     @endforeach
                                                 </div>
                                                 <div class="carousel-inner rounded shadow">
                                                     @foreach($project->imgProject as $key => $images)
                                                         <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                            <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid" alt="..." style="width: 100%; height: 300px;">
+                                                            <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -604,7 +607,7 @@
                                             <div class="col-md-1 col-sm-2 m-auto">
                                                 <form>
                                                     @csrf
-                                                    <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
+                                                    <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
                                                     @method("DELETE")
                                                 </form>
                                             </div>
@@ -619,27 +622,27 @@
 
                 <!-- tab Interests -->
                 <div class="tab-pane fade" id="interests" role="tabpanel" aria-labelledby="interests-tab">
-                    <div class="container">
-                        <div class="row text-white m-auto p-3">
+                    <div class="container text-color">
+                        <div class="row m-auto p-3">
                             <h3 class="mb-5 text-center">Interesses</h3>
                             <div class="text-center">
                                 @foreach($interests as $interest)
-                                <p style="white-space: pre-wrap;">{{ $interest->description }}</p>
+                                <strong><p style="white-space: pre-wrap;">{{ $interest->description }}</p></strong>
                                         <div class="row justify-content-center mt-1">
                                             <div class="col-md-1 col-sm-2 text-center">
-                                                <button class="btn btn-sm btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditInterests{{ $interest->id }}" aria-expanded="false" aria-controls="collapseEditInterests{{$interest->id}}">
+                                                <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditInterests{{ $interest->id }}" aria-expanded="false" aria-controls="collapseEditInterests{{$interest->id}}">
                                                     Editar
                                                 </button>
                                             </div>
                                             <div class="col-md-1 col-sm-2 text-center">
                                                 <form>
                                                     @csrf
-                                                    <input type="submit" class="btn btn-sm btn-danger" formaction="{{ route('delete_interest', $interest->id) }}" formmethod="post" value="Remover">
+                                                    <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_interest', $interest->id) }}" formmethod="post" value="Remover">
                                                     @method("DELETE")
                                                 </form>
                                             </div>
                                         </div>
-                                    <hr class="border-bottom border-white">
+                                    <hr class="border-bottom border-dark">
                                     <div class="collapse text-center" id="collapseEditInterests{{$interest->id}}">
                                         <form action="{{ route('update_interest', $interest->id) }}" method="post">
                                             @csrf
@@ -651,10 +654,10 @@
                                                 </div>
                                             </div>
                                             <div class="m-auto justify-content-center">
-                                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                                <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                             </div>
                                         </form>
-                                        <hr class="border-bottom border-white">
+                                        <hr class="border-bottom border-dark">
                                     </div>
                                 @endforeach
                             </div>
@@ -665,18 +668,18 @@
                     <form action="{{ route('create_interest') }}" method="post">
                         @csrf
                         <div class="col-2 m-auto text-center">
-                            <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInterests" aria-expanded="false" aria-controls="collapseInterests">
+                            <button class="btn btn-sm btn-primary shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInterests" aria-expanded="false" aria-controls="collapseInterests">
                                 Adicionar
                             </button>
                         </div>
-                        <div class="collapse text-center" id="collapseInterests">
+                        <div class="collapse text-color" id="collapseInterests">
                             <div class="mb-3 p-3">
-                                <label class="form-label text-white">Interesses</label>
+                                <label class="form-label">Interesses</label>
                                 <textarea class="form-control" name="description" id="textareaInteresses" rows="5"></textarea>
                             </div>
                             <div class="col-4 m-auto">
-                                <button type="button" id="limparTextarea" class="btn btn-warning">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="button" id="limparTextarea" class="btn btn-warning shadow">Cancelar</button>
+                                <button type="submit" class="btn btn-primary shadow">Salvar</button>
                             </div>
                         </div>
                     </form>
@@ -684,10 +687,10 @@
 
                 <!-- tab Contact -->
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <div class="container contact">
-                        <div class="row col text-white p-3">
+                    <div class="container text-color">
+                        <div class="row col p-3">
                             <h3 class="mb-5 text-center">Contato</h3>
-                            <hr class="border-bottom border-white">
+                            <hr class="border-bottom border-dark">
                             <div class="col-md-6 p-3">
                                 @if(count($errors) > 0 )
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -726,16 +729,16 @@
                                         <textarea name="message" rows="5" class="form-control rounded" placeholder="Coloque aqui sua mensagem..." required></textarea>
                                     </div>
                                     <div class="col-12 p-1 text-center">
-                                        <button type="submit" class="btn btn-sm btn-light">Enviar</button>
+                                        <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-6 d-sm-none d-md-block p-3">
-                                <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <div class="col-md-6 d-sm-none d-md-block p-3 text-color m-auto">
+{{--                                <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
                                 <div class="mb-2 text-center">
-                                    <i class="fas fa-map-marker-alt"></i> Av. Antônio Borges 323 · Jacutinga · Mesquita - RJ <br>
-                                    <i class="fas fa-phone-square-alt"></i> +55 (21) 98298-2487<a href="https://api.whatsapp.com/send?phone=5521982982487" target="_blank"><img class="img-fluid" style="width: 30px; text-decoration: none;" src="assets/img/mens.png" alt="..." />WhatsApp</a><br>
-                                    <i class="fas fa-envelope"></i> <a href="mailto:joao.ramos1988@outlook .com">joao.ramos1988@outlook.com</a>
+                                    <i class="fas fa-map-marker-alt"></i><strong> Mesquita - RJ</strong><br>
+                                    <i class="fas fa-phone-square-alt"></i><strong> +55 (21) 98298-2487</strong><a class="nav-link" href="https://api.whatsapp.com/send?phone=5521982982487" target="_blank"><img class="img-fluid" style="width: 30px; text-decoration: none;" src="assets/img/mens.png" alt="..." />WhatsApp</a><br>
+                                    <a class="nav-link" href="mailto:joao.ramos1988@outlook .com"> <i class="fas fa-envelope"></i><strong> joao.ramos1988@outlook.com</strong></a>
                                 </div>
                             </div>
                         </div>

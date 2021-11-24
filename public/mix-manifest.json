@@ -1,9 +1,9 @@
 {
-    "/assets/fontawesome/fontawesome.css": "/assets/fontawesome/fontawesome.css",
-    "/assets/bootstrap/bootstrap.css": "/assets/bootstrap/bootstrap.css",
-    "/assets/bootstrap/bootstrap.bundle.js": "/assets/bootstrap/bootstrap.bundle.js",
-    "/assets/fontawesome/fontawesome.js": "/assets/fontawesome/fontawesome.js",
-    "/assets/scrollreveal/scrollreveal.es.js": "/assets/scrollreveal/scrollreveal.es.js",
-    "/assets/scrollreveal/scrollreveal.js": "/assets/scrollreveal/scrollreveal.js",
-    "/assets/jquery/jquery.min.js": "/assets/jquery/jquery.min.js"
+    "/assets/fontawesome/fontawesome.css": "/assets/fontawesome/fontawesome.css?id=f7fbe1e653076a567185",
+    "/assets/bootstrap/bootstrap.css": "/assets/bootstrap/bootstrap.css?id=a6cbad80d306eb3c0bb4",
+    "/assets/bootstrap/bootstrap.bundle.js": "/assets/bootstrap/bootstrap.bundle.js?id=bb2ab2f5bb58154ca9cc",
+    "/assets/fontawesome/fontawesome.js": "/assets/fontawesome/fontawesome.js?id=5e29440867fdb02a48df",
+    "/assets/scrollreveal/scrollreveal.es.js": "/assets/scrollreveal/scrollreveal.es.js?id=afaa40b2b5cae867eec3",
+    "/assets/scrollreveal/scrollreveal.js": "/assets/scrollreveal/scrollreveal.js?id=31b453cfacb5dc45d2b9",
+    "/assets/jquery/jquery.min.js": "/assets/jquery/jquery.min.js?id=8fb8fee4fcc3cc86ff6c"
 }
