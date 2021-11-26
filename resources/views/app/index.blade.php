@@ -49,7 +49,7 @@
                  @foreach($profiles as $profile)
                      <div class="row">
                          <div class="col-md-5 col-sm-12 m-auto text-center text-color">
-                             <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 200px; height: 200px;" /></span>
+                             <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2 shadow" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 200px; height: 200px;" /></span>
                              <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
                              <strong><p>{{ $profile->description }}</p></strong>
                              <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
@@ -63,6 +63,9 @@
                  <div class="row col-1 m-auto text-center pt-3">
                      <a class="button-down" href="#experience"><i class="fas fa-3x fa-angle-down"></i></a>
                  </div>
+             </div>
+             <div class="col-1 float-end">
+                 <a class="button-top p-3 rounded" href="#"><i class="fas fa-3x fa-angle-up"></i></a>
              </div>
 
              <!-- Experience -->
@@ -290,24 +293,6 @@
                      </div>
                  </div>
              </div>
-
-            <!-- Footer -->
-             <footer class="p-3 mt-3">
-                 <div class="d-flex justify-content-center">
-                     <ul class="nav float-end social-icons ms-3">
-                         <li class="nav-item me-2 text-white">
-                             <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos-04692070" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                         </li>
-                         <li class="nav-item me-2">
-                             <a class="social-icon" href="https://github.com/joaoramos1104" target="_blank"><i class="fab fa-github"></i></a>
-                         </li>
-                         <li class="nav-item me-2">
-                             <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
-                         </li>
-                     </ul>
-                 </div>
-             </footer>
-
          </main>
 
     <script>

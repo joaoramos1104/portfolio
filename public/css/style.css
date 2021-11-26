@@ -241,3 +241,28 @@ body::after{
         height: 300px;
     }
 }
+
+.button-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: rgb(103, 105, 121);
+    display: none;
+    z-index: 100;
+    animation: go-top 1s infinite alternate;
+
+}
+.button-top:hover {
+    background:linear-gradient(to bottom,
+    rgba(157, 241, 241, 0.65) 0%, rgb(79, 157, 143) 100%);
+    color: white;
+}
+@keyframes go-top {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}

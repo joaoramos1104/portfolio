@@ -28,6 +28,26 @@
 <body>
     @hasSection('body')
         @yield('body')
+        <!-- Footer -->
+        <footer class="container p-3 mt-3">
+            <div class="d-flex justify-content-center">
+                <ul class="nav float-end social-icons ms-3">
+                    <li class="nav-item me-2 text-white">
+                        <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos-04692070" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="social-icon" href="https://github.com/joaoramos1104" target="_blank"><i class="fab fa-github"></i></a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item m-auto text-color">
+                        <i class="far fa-copyright"></i> 2021 João F. Ramos
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
     @endif
     <script src="{{ url(mix('/assets/jquery/jquery.min.js')) }}"></script>
 
@@ -61,6 +81,24 @@
                 });
                 $("#cleanFormUpdatePasswordAdmin").click(function(){
                     $("[data-name='updatePasswordAdmin']").val('');
+                });
+
+                //button-top
+                jQuery(document).ready(function() {
+                    // Exibe ou oculta o botão
+                    jQuery(window).scroll(function() {
+                        if (jQuery(this).scrollTop() > 200) {
+                            jQuery('.button-top').fadeIn(200);
+                        } else {
+                            jQuery('.button-top').fadeOut(200);
+                        }
+                    });
+
+                    // Faz animação para subir
+                    jQuery('.button-top').click(function(event) {
+                        event.preventDefault();
+                        jQuery('html, body').animate({scrollTop: 0}, 300);
+                    })
                 });
                 </script>
 
