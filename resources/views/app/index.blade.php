@@ -254,7 +254,7 @@
                         @endif
                         @if($message = Session::get('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>E-mail enviado com sussesso! </strong> {{ $message }}
+                                <strong>E-mail enviado com sucesso! </strong> {{ $message }}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
