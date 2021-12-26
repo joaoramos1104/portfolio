@@ -130,8 +130,8 @@
                         </div>
                     @endforeach
                 </div>
+                <hr class="border-bottom border-dark">
             </div>
-            <hr class="border-bottom border-dark">
         </div>
 
         <!-- Projects -->
@@ -141,7 +141,7 @@
                 <div class="row">
                     <div class="justify-content-center">
                         <div class="col-3 p-1 text-center m-auto">
-                            <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Confira mais <i class="fab fa-github"></i></a>
+                            <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Veja mais <i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     @foreach($projects as $chave => $project)
@@ -175,7 +175,7 @@
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
-                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
+                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                             </section>
@@ -185,7 +185,7 @@
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
-                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
+                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
@@ -263,7 +263,7 @@
                             @csrf
                             <div class="col-md-6 p-1">
                                 <label class="form-label">Nome</label>
-                                <input type="text" class="form-control rounded-pill" name="name" placeholder="None" required>
+                                <input type="text" class="form-control rounded-pill" name="name" placeholder="Nome" required>
                             </div>
                             <div class="col-md-6 p-1">
                                 <label class="form-label">Telefone</label>
