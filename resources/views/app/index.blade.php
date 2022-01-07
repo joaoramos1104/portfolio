@@ -72,15 +72,15 @@
         <div class="container rounded-custom shadow banner" id="experience">
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
-                @foreach($education as $educ)
                     <div class="col-md-6 col-sm-12 text-center border-end border--white">
+                        @foreach($education as $educ)
                         <p class="fw-bold">Educação</p>
                         <h5>{{ $educ->institution }}</h5>
                         <h5>{{ $educ->type_course }}</h5>
                         <h5>{{ $educ->course }}</h5>
                         <p>{{ $educ->time_course }}</p>
+                        @endforeach
                     </div>
-                @endforeach
                 @foreach($experiences as $experience)
                     <div class="col-md-6 col-sm-12 text-center">
                         <p class="fw-bold">Experiência</p>
