@@ -81,14 +81,15 @@
                         <p>{{ $educ->time_course }}</p>
                         @endforeach
                     </div>
-                @foreach($experiences as $experience)
+
                     <div class="col-md-6 col-sm-12 text-center">
+                        @foreach($experiences as $experience)
                         <p class="fw-bold">Experiência</p>
                         <h5>{{ $experience->job_title }}</h5>
                         <p style="white-space: pre-wrap;">{{ $experience->description_experience }}</p>
                         <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
+                        @endforeach
                     </div>
-                @endforeach
             </div>
         </div>
         <div class="container mt-3">
