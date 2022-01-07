@@ -2,7 +2,7 @@
 body{
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.91) 0%, rgb(249 239 242 / 76%) 100%), url(../assets/img/body8.jpg);
+    rgba(90, 57, 175, 0.76) 0%, rgba(90, 57, 175, 0.76) 100%), url(../assets/img/body8.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment:fixed;
@@ -14,7 +14,14 @@ body {
 }
 
 .text-color{
-    color: rgb(103, 105, 121);
+    color: rgba(255, 255, 255, 0.91);
+}
+
+.skills{
+    color: rgb(72, 72, 79);
+    background: linear-gradient(to bottom,
+    rgb(207 198 215 / 76%) 0%, rgb(189 209 215 / 76%) 100%);
+    border-radius: 15px;
 }
 
 
@@ -24,7 +31,7 @@ body::after{
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/svg/6.svg);
+    background-image: url(../assets/img/svg/25.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -50,7 +57,7 @@ body::after{
 }
 
 .nav-link {
-    color: rgba(42, 42, 45, 0.95);
+    color: rgb(255, 255, 255);
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -63,7 +70,8 @@ body::after{
     justify-content: center;
     height: 3.5rem;
     width: 3.5rem;
-    color: rgb(103, 105, 121);
+    /*color: rgba(184, 199, 199, 0.62);*/
+    color: #676979;
     border-radius: 100%;
     font-size: 1.5rem;
     margin-right: 1.5rem;
@@ -73,7 +81,8 @@ body::after{
   }
   .social-icons .social-icon:hover {
     background-color: rgba(139, 210, 210, 0.88);
-      color: white !important;
+      /*color: #676979 !important;*/
+      color: rgba(255, 255, 255, 0.91) !important;
   }
 
 .cont-main{
@@ -115,7 +124,7 @@ body::after{
                translateX(-50%);
     width: 75%;
     height: 100%;
-    background-image: linear-gradient(120deg, rgba(34, 178, 222, 0.64), rgba(73, 141, 141, 0.9));
+    background-image: linear-gradient(120deg,  rgb(145 117 231 / 73%), rgb(104 54 203 / 90%));
     background-color: #333;
     opacity: .7;
 }
@@ -148,7 +157,7 @@ body::after{
                translateX(-50%);
     width: 80%;
     height: 90%;
-    background-image: linear-gradient(120deg,  rgba(34, 178, 222, 0.73), rgb(245 245 245 / 90%));;
+    background-image: linear-gradient(120deg,  rgb(206 194 241 / 73%), rgb(104 54 203 / 90%));
     background-color: #333;
     opacity: .7;
 }
@@ -166,7 +175,7 @@ body::after{
                translateX(-50%);
     width: 80%;
     height: 90%;
-    background-image:  linear-gradient(120deg, rgb(245 245 245 / 90%), rgba(34, 178, 222, 0.73));
+    background-image:  linear-gradient(120deg, rgb(104 54 203 / 90%), rgb(206 194 241 / 73%));
     background-color: #333;
     opacity: .7;
 }

@@ -35,7 +35,7 @@
                 </ul>
                 <ul class="nav navbar float-end social-icons">
                     <li class="nav-item me-2">
-                        <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>
+                        <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
                     </li>
                 </ul>
             </div>
@@ -97,9 +97,9 @@
 
         <!-- Skills and Certification -->
         <div id="skills">
-            <div class="container mt-3 text-color">
+            <div class="container p-3 mt-3 text-color">
                 <h3 class="text-center mb-2">Habilidades</h3>
-                <div class="text-center d-flex p-1">
+                <div class="text-center d-flex p-1 skills p-3 shadow">
                     <div class="row col justify-content-center">
                         @foreach($skills as $skill)
                             <div class="col-3 col-md-2 mt-2">
@@ -112,12 +112,13 @@
                 <hr class="border-bottom border-dark">
             </div>
             <div class="container text-color mt-3 mb-3">
-                <h3 class="text-center mb-2">Certificados</h3>
+                <h3 class="text-center mb-2">Conquistas</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
                         <div class="col-md-3 col-sm-12 mr-1 mb-1">
                             <div class="card border-0 shadow text-center rounded-custom bg-custom">
-                                <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..." data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}"><img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..."></a>
+
                                 <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                             </div>
                         </div>

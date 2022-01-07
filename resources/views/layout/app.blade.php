@@ -41,7 +41,7 @@
                     <li class="nav-item me-2">
                         <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
-                    <li class="nav-item m-auto text-color">
+                    <li class="nav-item m-auto text-secondary">
                         <i class="far fa-copyright"></i> 2021 João F. Ramos
                     </li>
                 </ul>
