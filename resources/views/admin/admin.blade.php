@@ -80,7 +80,7 @@
                         @foreach($profiles as $profile)
                         <div class="row text-color">
                             <div class="col-md-5 col-sm-12 m-auto text-center">
-                                <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 200px; height: 200px;" /></span>
+                                <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
                                 <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
                                 <strong><p>{{ $profile->description }}</p></strong>
                             </div>
