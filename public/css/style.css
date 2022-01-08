@@ -264,7 +264,6 @@ body::after{
     display: none;
     z-index: 100;
     animation: go-top 1s infinite alternate;
-
 }
 .button-top:hover {
     background:linear-gradient(to bottom,
