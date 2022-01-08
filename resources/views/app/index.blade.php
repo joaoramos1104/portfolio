@@ -86,7 +86,7 @@
                         @foreach($experiences as $experience)
                         <p class="fw-bold">Experiência</p>
                         <h5>{{ $experience->job_title }}</h5>
-                        <p style="white-space: pre-wrap;">{{ $experience->description_experience }}</p>
+                        <p>{{ $experience->description_experience }}</p>
                         <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
                         @endforeach
                     </div>
@@ -176,7 +176,7 @@
                                     </div>
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
-                                        <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
+                                        <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@
                                 <div class="row p-1">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
-                                        <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
+                                        <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
@@ -229,7 +229,7 @@
                     <h3 class="mb-5 text-center">Interesses</h3>
                     <div class="text-center">
                         @foreach($interests as $interest)
-                            <strong><p style="white-space: pre-wrap;">{{ $interest->description }}</p></strong>
+                            <strong><p>{{ $interest->description }}</p></strong>
                         @endforeach
                     </div>
                 </div>

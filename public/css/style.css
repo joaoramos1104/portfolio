@@ -13,6 +13,10 @@ body {
     align-items: center;
 }
 
+p {
+    white-space: pre-wrap;
+}
+
 .text-color{
     color: rgba(255, 255, 255, 0.91);
 }
