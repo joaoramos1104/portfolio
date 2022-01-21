@@ -3,8 +3,8 @@
 
 
     <header>
-        <nav class="navbar" id="navbarResponsive">
-            <div class="container">
+        <div class="container">
+            <nav class="navbar" id="navbarResponsive">
                 <ul class="nav navbar nav-custom float-start">
                     <li class="nav-item">
                         <a class="nav-link" href="#experience">Experiência e Educação</a>
@@ -38,38 +38,36 @@
                         <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
                     </li>
                 </ul>
+            </nav>
+        </div>
+        <div class="container">
+                @foreach($profiles as $profile)
+                    <div class="row mt-5">
+                        <div class="col-md-6 col-sm-12 m-auto text-center text-color">
+                            <span class=""><img class="img-fluid img-profile rounded-circle shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
+                            <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
+                            <p>{{ $profile->description }}</p>
+                            <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
+                            <a class="btn btn-light shadow" href="#experience">Start Now</a>
+                        </div>
+                        <div class="col-md-6 d-sm-none d-md-block m-auto p-3 img-header js-tilt" data-tilt>
+                            <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
+                        </div>
+                    </div>
+                @endforeach
+                <div class="row col-1 m-auto text-center pt-3">
+                    <a class="button-down" href="#experience"><i class="fas fa-3x fa-angle-down"></i></a>
+                </div>
             </div>
-        </nav>
+        <div class="col-1 float-end">
+            <a class="button-top p-3" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
+        </div>
     </header>
 
     <!-- Main -->
     <main>
-        <!-- Header -->
-        <div class="container cont-main">
-            @foreach($profiles as $profile)
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 m-auto text-center text-color">
-                        <span class=""><img class="img-fluid img-profile rounded-circle shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
-                        <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
-                        <p>{{ $profile->description }}</p>
-                        <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
-                        <a class="btn btn-light shadow" href="#experience">Start Now</a>
-                    </div>
-                    <div class="col-md-7 d-sm-none d-md-block m-auto p-3 img-header">
-                        <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
-                    </div>
-                </div>
-            @endforeach
-            <div class="row col-1 m-auto text-center pt-3">
-                <a class="button-down" href="#experience"><i class="fas fa-3x fa-angle-down"></i></a>
-            </div>
-        </div>
-        <div class="col-1 float-end">
-            <a class="button-top p-3 rounded" href="#"><i class="fas fa-3x fa-angle-up"></i></a>
-        </div>
-
-        <!-- Experience -->
-        <div class="container rounded-custom shadow banner" id="experience">
+    <!-- Experience -->
+        <div class="container rounded-custom shadow banner mt-3" id="experience">
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
                     <div class="col-md-6 col-sm-12 text-center border-end border--white">
@@ -264,16 +262,16 @@
                         <form class="row g-3" action="{{ route('message') }}" method="post">
                             @csrf
                             <div class="col-md-6 p-1">
-                                <label class="form-label">Nome</label>
-                                <input type="text" class="form-control rounded-pill" name="name" placeholder="Nome" required>
+                                <label class="form-label">Seu Nome</label>
+                                <input type="text" class="form-control rounded-pill" name="name" placeholder="Seu Nome" required>
                             </div>
                             <div class="col-md-6 p-1">
-                                <label class="form-label">Telefone</label>
+                                <label class="form-label">Seu Telefone</label>
                                 <input type="text" class="form-control rounded-pill" name="tel" placeholder="(21) 99999-9999" required>
                             </div>
                             <div class="col-12 p-1">
                                 <label class="form-label">E-mail</label>
-                                <input type="email" class="form-control rounded-pill" name="email" placeholder="email@email.com" required>
+                                <input type="email" class="form-control rounded-pill" name="email" placeholder="Seu e-mail" required>
                             </div>
                             <div class="form-check mb-3 p-1 text-center">
                                 <label class="form-label">Mensagem</label>
@@ -290,7 +288,7 @@
                             <i class="fas fa-map-marker-alt"></i> <strong>Mesquita - RJ</strong><br>
                             <i class="fas fa-phone-square-alt text-color"></i><strong> +55 (21) 98298-2487</strong><br>
                             <a class="nav-link" href="https://api.whatsapp.com/send?phone=5521982982487" target="_blank"><i class="fab fa-whatsapp text-color"> </i><strong>WhatsApp</strong></a>
-                            <a class="nav-link" href="skype:joao.f.ramos"> <i class="fab fa-skype text-color"></i><strong> Skype</strong></a>
+                            <a class="nav-link" href="skype:joao.f.ramos"> <i class="fab fa-skype text-color"></i><strong> Skype -</strong> joao.f.ramos</a>
                             <a class="nav-link" href="mailto:joao.ramos1988@outlook.com"> <i class="fas fa-envelope text-color"></i><strong> joao.ramos1988@outlook.com</strong></a>
                         </div>
                     </div>
