@@ -65,9 +65,9 @@
     </header>
 
     <!-- Main -->
-    <main>
+    <main class="">
     <!-- Experience -->
-        <div class="container rounded-custom shadow banner mt-3" id="experience">
+        <div class="container rounded-custom shadow banner mt-5" id="experience">
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
                     <div class="col-md-6 col-sm-12 text-center border-end border--white">
@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="container mt-3">
-            <hr class="border-bottom border-dark">
+            <hr class="border-bottom border-white">
         </div>
 
         <!-- Skills and Certification -->
@@ -108,7 +108,9 @@
                         @endforeach
                     </div>
                 </div>
-                <hr class="border-bottom border-dark">
+                <div class="container mt-3">
+                    <hr class="border-bottom border-white">
+                </div>
             </div>
             <div class="container text-color mt-3 mb-3">
                 <h3 class="text-center mb-2">Conquistas</h3>
@@ -130,15 +132,18 @@
                         </div>
                     @endforeach
                 </div>
-                <hr class="border-bottom border-dark">
+                <div class="container mt-3">
+                    <hr class="border-bottom border-white">
+                </div>
             </div>
+
         </div>
 
         <!-- Projects -->
-        <div id="projects">
+        <div id="projects" class="">
             <h3 class="text-center m-auto text-color">Projetos</h3>
-            <div class="container">
-                <div class="row">
+            <div class="container-fluid">
+                <div class="">
                     <div class="justify-content-center">
                         <div class="col-3 p-1 text-center m-auto">
                             <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Veja mais <i class="fab fa-github"></i></a>
@@ -146,8 +151,8 @@
                     </div>
                     @foreach($projects as $chave => $project)
                         @if($chave %2 == 0)
-                            <section class="container text-color rounded-custom art-cont">
-                                <div class="row p-1">
+                            <section class="container text-color rounded-custom">
+                                <div class="row mt-5">
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
                                             <div class="carousel-indicators">
@@ -180,8 +185,8 @@
                                 </div>
                             </section>
                         @else
-                            <section class="container text-color rounded-custom art-cont2">
-                                <div class="row p-1">
+                            <section class="container text-color rounded-custom">
+                                <div class="row mt-5">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p>{{ $project->description }}</p></strong>
@@ -216,7 +221,9 @@
                         @endif
                     @endforeach
                 </div>
-                <hr class="border-bottom border-dark">
+            </div>
+            <div class="container mt-3">
+                <hr class="border-bottom border-white">
             </div>
         </div>
 
@@ -231,7 +238,9 @@
                         @endforeach
                     </div>
                 </div>
-                <hr class="border-bottom border-dark">
+            </div>
+            <div class="container mt-3">
+                <hr class="border-bottom border-white">
             </div>
         </div>
 
