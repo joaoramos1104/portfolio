@@ -122,10 +122,10 @@
 
                                 success: function(response){
                                     $('#success_message').modal('show');
+                                    $("[data-name='input-messager']").val('');
                                 },
 
                                 error: function(xhr){
-                                    console.error(xhr['status']);
                                     $('#error_message').modal('show');
 
                                 },
