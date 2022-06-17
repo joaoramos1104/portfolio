@@ -325,9 +325,9 @@
     <script>
         ScrollReveal().reveal('.headline')
         ScrollReveal().reveal('.tagline', { delay: 600, rete: true })
-        ScrollReveal().reveal('.container', { delay: 100, reset: true })
-        ScrollReveal().reveal('h1, h3, h5, h6', { delay: 150, reset: true })
-        ScrollReveal().reveal('p', { delay: 200, reset: true })
+        ScrollReveal().reveal('.container', { delay: 100, reset: false })
+        ScrollReveal().reveal('h1, h3, h5, h6', { delay: 150, reset: false })
+        ScrollReveal().reveal('p', { delay: 200, reset: false })
         ScrollReveal().reveal('#img_header', { delay: 350, reset: true })
     </script>
 
