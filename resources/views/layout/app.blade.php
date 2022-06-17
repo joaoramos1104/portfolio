@@ -42,7 +42,7 @@
                         <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
                     </li>
                     <li class="nav-item m-auto text-secondary">
-                        <i class="far fa-copyright"></i> {{ date('Y') }} João F. Ramos
+                        <i class="far fa-copyright"></i> {{ date('Y') }} João F. Ramos Junior
                     </li>
                 </ul>
             </div>
@@ -102,6 +102,43 @@
                 });
                 </script>
 
+
+                <script>
+                    //Enviando mensagem via ajax
+                    $(function(){
+                        $('form[name="send_message"]').submit(function (event){
+                            event.preventDefault();
+
+                            $.ajax({
+                                url: "{{ route('message') }}",
+                                type: "post",
+                                data: $(this).serialize(),
+                                dataType: 'json',
+
+                                beforeSend: function () {
+                                    $("#loading").html('<img src="../assets/img/loading.gif" alt="" class="mt-5">');
+
+                                },
+
+                                success: function(response){
+                                    $('#success_message').modal('show');
+                                },
+
+                                error: function(xhr){
+                                    console.error(xhr['status']);
+                                    $('#error_message').modal('show');
+
+                                },
+
+                                complete: function(){
+                                    //retirando o loading
+                                    $("#loading").empty();
+                                }
+
+                            })
+                        })
+                    })
+                </script>
 
             @hasSection('javascript')
                 @yield('javascript')

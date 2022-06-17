@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('body')
 
-
+    <!-- header -->
     <header>
         <div class="container">
             <nav class="navbar" id="navbarResponsive">
@@ -151,9 +151,9 @@
                     </div>
                     @foreach($projects as $chave => $project)
                         @if($chave %2 == 0)
-                            <section class="container text-color rounded-custom">
+                            <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
-                                    <div class="col-md-7 col-sm-12 float-start m-auto">
+                                    <div class="col-md-6 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
@@ -177,7 +177,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
+                                    <div class="col-md-6 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
@@ -185,14 +185,14 @@
                                 </div>
                             </section>
                         @else
-                            <section class="container text-color rounded-custom">
+                            <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
-                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
+                                    <div class="col-md-6 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
-                                    <div class="col-md-7 col-sm-12 float-start m-auto">
+                                    <div class="col-md-6 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
@@ -250,46 +250,29 @@
                 <div class="row col p-3">
                     <h3 class="mb-5 text-center">Contato</h3>
                     <div class="col-md-6 p-3">
-                        @if(count($errors) > 0 )
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Preencha os dados corretaente!</strong>
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
-                        @if($message = Session::get('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>E-mail enviado com sucesso! </strong> {{ $message }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
                         <h4 class="text-center mb-2">Deixe sua mensagem</h4>
-                        <form class="row g-3" action="{{ route('message') }}" method="post">
-                            @csrf
-                            <div class="col-md-6 p-1">
-                                <label class="form-label">Seu Nome</label>
-                                <input type="text" class="form-control rounded-pill" name="name" placeholder="Seu Nome" required>
-                            </div>
-                            <div class="col-md-6 p-1">
-                                <label class="form-label">Seu Telefone</label>
-                                <input type="text" class="form-control rounded-pill" name="tel" placeholder="(21) 99999-9999" required>
-                            </div>
-                            <div class="col-12 p-1">
-                                <label class="form-label">E-mail</label>
-                                <input type="email" class="form-control rounded-pill" name="email" placeholder="Seu e-mail" required>
-                            </div>
-                            <div class="form-check mb-3 p-1 text-center">
-                                <label class="form-label">Mensagem</label>
-                                <textarea name="message" rows="5" class="form-control rounded" placeholder="Coloque aqui sua mensagem..." required></textarea>
-                            </div>
-                            <div class="col-12 p-1 text-center">
-                                <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
-                            </div>
-                        </form>
+                            <form name="send_message" class="row g-3">
+                                @csrf
+                                <div class="col-md-6 p-1">
+                                    <label class="form-label">Seu Nome</label>
+                                    <input type="text" class="form-control rounded-pill" id="name" name="name" placeholder="Seu Nome" required>
+                                </div>
+                                <div class="col-md-6 p-1">
+                                    <label class="form-label">Seu Telefone</label>
+                                    <input type="text" class="form-control rounded-pill" id="tel" name="tel" placeholder="(21) 99999-9999" required>
+                                </div>
+                                <div class="col-12 p-1">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="email" class="form-control rounded-pill" id="email" name="email" placeholder="Seu e-mail" required>
+                                </div>
+                                <div class="form-check mb-3 p-1 text-center">
+                                    <label class="form-label">Mensagem</label>
+                                    <textarea name="message" rows="5" class="form-control rounded" id="message" placeholder="Coloque aqui sua mensagem..." required></textarea>
+                                </div>
+                                <div class="col-12 p-1 text-center">
+                                    <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
+                                </div>
+                            </form>
                     </div>
                     <div class="col-md-6 d-sm-none d-md-block p-3 m-auto">
                         {{--                             <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
@@ -303,8 +286,41 @@
                     </div>
                 </div>
             </div>
+                <div id="loading" class="row col-3 m-auto fixed-top"></div>
         </div>
     </main>
+
+
+    <!-- Modal error_message -->
+    <div class="modal fade" id="error_message" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-white text-center bg-warning">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel"><i class="fas fa-exclamation-triangle"></i></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Ocorreu um erro, tente novamente mais tarde!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal success_message -->
+    <div class="modal fade" id="success_message" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="success_messageBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-success text-center">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Mensagem enviada com sucesso!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         ScrollReveal().reveal('.headline')
@@ -314,5 +330,6 @@
         ScrollReveal().reveal('p', { delay: 200, reset: true })
         ScrollReveal().reveal('#img_header', { delay: 350, reset: true })
     </script>
+
 
 @endsection

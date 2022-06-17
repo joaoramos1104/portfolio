@@ -29,6 +29,7 @@ class IndexController extends Controller
 
     public function email(Request $request)
     {
+
         $request->validate([
             'name' => 'required',
             'tel' => 'required',
@@ -37,12 +38,18 @@ class IndexController extends Controller
         ]);
 
         $contact = new ContactForm($request);
+
         try {
             $contact->sendEmail();
-            return redirect(route('index'))->with('success','Obrigado pelo Contato.');
+            $status['success'] = true;
+            $status['message'] = "success, Obrigado pelo Contato.";
+            echo json_encode($status);
 
-        }catch (Exception $error){
-            return redirect(route('index'))->with("error","Ocorreu um erro inexperado: {$error->getMessage()}");
+        }catch (Exception $status){
+            //$status['success'] = false;
+            $status['message'] = "Algo deu errado, tente novamente mais tarde!";
+            echo json_encode($status);
+            //return redirect(route('index'))->with("error","Ocorreu um erro inexperado: {$error->getMessage()}");
         }
 
     }
