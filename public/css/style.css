@@ -1,4 +1,3 @@
-
 body{
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background: linear-gradient(to bottom,
@@ -35,7 +34,7 @@ body::after{
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/svg/6.svg);
+    background-image: url(../assets/img/svg/22.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -89,15 +88,15 @@ header{
     border-radius: 100%;
     font-size: 1.5rem;
     margin-right: 1.5rem;
-  }
-  .social-icons .social-icon:last-child {
+}
+.social-icons .social-icon:last-child {
     margin-right: 0;
-  }
-  .social-icons .social-icon:hover {
+}
+.social-icons .social-icon:hover {
     background-color: rgba(97, 75, 138, 0.93);;
-      /*color: #676979 !important;*/
-      color: rgba(255, 255, 255, 0.91) !important;
-  }
+    /*color: #676979 !important;*/
+    color: rgba(255, 255, 255, 0.91) !important;
+}
 
 .img-profile{
     width: 30%;
@@ -122,7 +121,7 @@ header{
     left: 50%;
 
     transform: skew(15deg)
-               translateX(-50%);
+    translateX(-50%);
     width: 75%;
     height: 100%;
     background-image: linear-gradient(120deg, rgba(50, 49, 50, 0.73), rgba(14, 5, 23, 0.96));
@@ -131,7 +130,7 @@ header{
 }
 .banner::before {
     transform: skew(-15deg)
-               translateX(-50%);
+    translateX(-50%);
 }
 .banner {
     position: relative;
@@ -153,14 +152,15 @@ header{
     content: "";
     position: absolute;
     top: 5%;
-    left: 50%;
-    transform: skew(-15deg)
-               translateX(-50%);
-    width: 80%;
+    left: 70%;
+    transform: skew(-40deg)
+    translateX(-50%);
+    width: 100%;
     height: 90%;
     background-image: linear-gradient(120deg, rgba(50, 49, 50, 0.73), rgba(14, 5, 23, 0.96));
     background-color: #333;
-    opacity: .7;
+    opacity: 0.8;
+    border-radius: 80px 0px 0px 0px;
 }
 
 .art-cont > * {
@@ -171,14 +171,15 @@ header{
     content: "";
     position: absolute;
     top: 5%;
-    left: 50%;
-    transform: skew(15deg)
-               translateX(-50%);
-    width: 80%;
+    left: 30%;
+    transform: skew(40deg)
+    translateX(-50%);
+    width: 100%;
     height: 90%;
     background-image:  linear-gradient(120deg, rgba(14, 5, 23, 0.96), rgba(50, 49, 50, 0.73));
     background-color: #333;
-    opacity: .7;
+    opacity: 0.8;
+    border-radius: 0px 80px 0px 0px;
 }
 
 .art-cont, .art-cont2 > * {
@@ -194,7 +195,7 @@ header{
 
 .img-modal{
     width: auto;
-    height: 400px;
+    height: 510px;
 }
 
 /*-------------------------------------------------------------------*/
@@ -202,25 +203,25 @@ header{
 .button-down {
     color: rgb(145, 156, 170);
     animation: go-back 1s infinite alternate;
-  }
+}
 
-  @keyframes go-back {
+@keyframes go-back {
     from {
-      transform: translateY(20px);
+        transform: translateY(20px);
     }
     to {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  }
+}
 
 /*-------------------------------------------------------------------*/
 
-  .awards{
-      color: #fff;
-  }
-  .awards:hover{
+.awards{
+    color: #fff;
+}
+.awards:hover{
     color: rgb(204, 205, 206);
-  }
+}
 
 /*-------------------------------------------------------------------*/
 
@@ -239,7 +240,7 @@ header{
     }
 
     .art-cont, .art-cont2 {
-        background-image:  linear-gradient(120deg, rgb(245 245 245 / 90%), rgba(34, 178, 222, 0.73));
+        background-image:  linear-gradient(120deg, rgba(14, 5, 23, 0.96), rgba(76, 75, 77, 0.76));
         margin-bottom: 20px;
     }
 

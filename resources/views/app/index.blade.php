@@ -151,7 +151,7 @@
                     </div>
                     @foreach($projects as $chave => $project)
                         @if($chave %2 == 0)
-                            <section class="container-fluid text-color rounded-custom">
+                            <section class="container-fluid text-color rounded-custom art-cont">
                                 <div class="row mt-5">
                                     <div class="col-md-6 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
@@ -185,7 +185,7 @@
                                 </div>
                             </section>
                         @else
-                            <section class="container-fluid text-color rounded-custom">
+                            <section class="container-fluid text-color rounded-custom art-cont2">
                                 <div class="row mt-5">
                                     <div class="col-md-6 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
