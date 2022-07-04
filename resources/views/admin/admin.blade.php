@@ -78,69 +78,69 @@
                     <div class="container">
                         <h3 class=" text-center text-color mt-3">Perfil</h3>
                         @foreach($profiles as $profile)
-                        <div class="row text-color">
-                            <div class="col-md-5 col-sm-12 m-auto text-center">
-                                <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
-                                <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
-                                <strong><p>{{ $profile->description }}</p></strong>
-                            </div>
-                            <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
-                                <img src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
-                            </div>
-                            <div class="justify-content-center">
-                                <div class="col-md-2 col-sm-12 p-1 m-auto text-center">
-                                    <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditProfile{{ $profile->id }}" aria-expanded="false" aria-controls="collapseEditProfile{{$profile->id}}">
-                                        Editar
-                                    </button>
+                            <div class="row text-color">
+                                <div class="col-md-5 col-sm-12 m-auto text-center">
+                                    <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
+                                    <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
+                                    <strong><p>{{ $profile->description }}</p></strong>
                                 </div>
-                                <div class="col-md-2 col-sm-12 p-1 m-auto text-center">
-                                    <form>
-                                        @csrf
-                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_profile', $profile->id) }}" formmethod="post" value="Remover">
-                                        @method("DELETE")
-                                    </form>
+                                <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
+                                    <img src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
                                 </div>
-                            </div>
-                            <div class="collapse text-center" id="collapseEditProfile{{ $profile->id }}">
-                                <div class="container">
-                                    <form action="{{ route('update_profile', $profile->id) }}" method="post" enctype="multipart/form-data">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="row p-1 text-white">
-                                            <div class="mb-3 col-md-6 col-sm-12">
-                                                <label class="form-label">Nome</label>
-                                                <input type="text" class="form-control" name="name" value="{{ $profile->name }}">
-                                            </div>
-                                            <div class="mb-3 col-md-6 col-sm-12">
-                                                <label class="form-label">Tag Perfil</label>
-                                                <input type="text" class="form-control" name="tag_name" value="{{ $profile->tag_name }}">
-                                            </div>
-                                            <div class="mb-3 col-md-6 col-sm-12">
-                                                <label class="form-label">Imagem Perfil</label>
-                                                <input class="form-control" type="file" name="img_profile">
-                                            </div>
-                                            <div class="mb-3 col-md-6 col-sm-12">
-                                                <label class="form-label">Imagem Header</label>
-                                                <input class="form-control" type="file" name="img_header">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Sobre</label>
-                                                <textarea class="form-control" name="description" rows="5">{{ $profile->description }}</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer m-auto justify-content-center">
-                                            <button type="submit" class="btn btn-primary shadow">Salvar</button>
-                                        </div>
-                                    </form>
+                                <div class="justify-content-center">
+                                    <div class="col-md-2 col-sm-12 p-1 m-auto text-center">
+                                        <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditProfile{{ $profile->id }}" aria-expanded="false" aria-controls="collapseEditProfile{{$profile->id}}">
+                                            Editar
+                                        </button>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12 p-1 m-auto text-center">
+                                        <form>
+                                            @csrf
+                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_profile', $profile->id) }}" formmethod="post" value="Remover">
+                                            @method("DELETE")
+                                        </form>
+                                    </div>
                                 </div>
+                                <div class="collapse text-center" id="collapseEditProfile{{ $profile->id }}">
+                                    <div class="container">
+                                        <form action="{{ route('update_profile', $profile->id) }}" method="post" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="row p-1 text-white">
+                                                <div class="mb-3 col-md-6 col-sm-12">
+                                                    <label class="form-label">Nome</label>
+                                                    <input type="text" class="form-control" name="name" value="{{ $profile->name }}">
+                                                </div>
+                                                <div class="mb-3 col-md-6 col-sm-12">
+                                                    <label class="form-label">Tag Perfil</label>
+                                                    <input type="text" class="form-control" name="tag_name" value="{{ $profile->tag_name }}">
+                                                </div>
+                                                <div class="mb-3 col-md-6 col-sm-12">
+                                                    <label class="form-label">Imagem Perfil</label>
+                                                    <input class="form-control" type="file" name="img_profile">
+                                                </div>
+                                                <div class="mb-3 col-md-6 col-sm-12">
+                                                    <label class="form-label">Imagem Header</label>
+                                                    <input class="form-control" type="file" name="img_header">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Sobre</label>
+                                                    <textarea class="form-control" name="description" rows="5">{{ $profile->description }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer m-auto justify-content-center">
+                                                <button type="submit" class="btn btn-primary shadow">Salvar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <hr class="border-bottom border-white">
                             </div>
-                            <hr class="border-bottom border-white">
-                        </div>
                         @endforeach
                         <div class="justify-content-center">
                             <div class="col-3 p-1 text-center m-auto">
                                 <button class="btn btn-sm btn-primary shadow m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddProfile" aria-expanded="false" aria-controls="collapseAddProfile">
-                                        Adicionar
+                                    Adicionar
                                 </button>
                             </div>
                         </div>
@@ -189,29 +189,29 @@
                         <div class="row text-white col p-4">
                             <h3 class=" text-center m-auto">Educação</h3>
                             @foreach($education as $educ)
-                            <div class="col-12 text-center">
-                                <p class="fw-bold">Educação</p>
-                                <h5>{{ $educ->institution }}</h5>
-                                <h5>{{ $educ->type_course }}</h5>
-                                <h6>{{ $educ->course }}</h6>
-                                <p>{{ $educ->time_course }}</p>
-                                <div class="row justify-content-center">
-                                    <div class="col-md-2 col-sm-12 p-1 text-center">
-                                        <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditEducation{{ $educ->id }}" aria-expanded="false" aria-controls="collapseEditEducation{{$educ->id}}">
-                                            Editar
-                                        </button>
+                                <div class="col-12 text-center">
+                                    <p class="fw-bold">Educação</p>
+                                    <h5>{{ $educ->institution }}</h5>
+                                    <h5>{{ $educ->type_course }}</h5>
+                                    <h6>{{ $educ->course }}</h6>
+                                    <p>{{ $educ->time_course }}</p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-2 col-sm-12 p-1 text-center">
+                                            <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditEducation{{ $educ->id }}" aria-expanded="false" aria-controls="collapseEditEducation{{$educ->id}}">
+                                                Editar
+                                            </button>
+                                        </div>
+                                        <div class="col-md-2 col-sm-12 p-1 text-center">
+                                            <form>
+                                                @csrf
+                                                <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_education', $educ->id) }}" formmethod="post" value="Remover">
+                                                @method("DELETE")
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="col-md-2 col-sm-12 p-1 text-center">
-                                        <form>
-                                            @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_education', $educ->id) }}" formmethod="post" value="Remover">
-                                            @method("DELETE")
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="collapse text-center" id="collapseEditEducation{{ $educ->id }}">
-                                    <div class="container">
-                                        <form action="{{ route('update_education', $educ->id) }}" method="post">
+                                    <div class="collapse text-center" id="collapseEditEducation{{ $educ->id }}">
+                                        <div class="container">
+                                            <form action="{{ route('update_education', $educ->id) }}" method="post">
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="row p-3">
@@ -241,10 +241,10 @@
                                                     <button type="submit" class="btn btn-primary shadow">Salvar</button>
                                                 </div>
                                             </form>
+                                        </div>
                                     </div>
+                                    <hr class="border-bottom border-white">
                                 </div>
-                                <hr class="border-bottom border-white">
-                            </div>
                             @endforeach
                             <div class="justify-content-center">
                                 <div class="p-1 text-center">
@@ -261,19 +261,19 @@
                                             <h3 class="text-center">Educação</h3>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Instituição</label>
-                                                <input type="text" class="form-control" data-name='cleanAddEducation' name="institution" value="" placeholder="Example: Estácio de Sá">
+                                                <input type="text" class="form-control shadow" data-name='cleanAddEducation' name="institution" value="" placeholder="Example: Estácio de Sá">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Curso</label>
-                                                <input type="text" class="form-control" data-name='cleanAddEducation' name="course" value="" placeholder="Example: Sistema da Informação">
+                                                <input type="text" class="form-control shadow" data-name='cleanAddEducation' name="course" value="" placeholder="Example: Sistema da Informação">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Nível do Curso</label>
-                                                <input type="text" class="form-control" data-name='cleanAddEducation' name="type_course" value="" placeholder="Example: Bacharelado ou Tecnologo">
+                                                <input type="text" class="form-control shadow" data-name='cleanAddEducation' name="type_course" value="" placeholder="Example: Bacharelado ou Tecnologo">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Período</label>
-                                                <input type="text" class="form-control" data-name='cleanAddEducation' name="time_course" value="" placeholder="Example: 2020 - 2025">
+                                                <input type="text" class="form-control shadow" data-name='cleanAddEducation' name="time_course" value="" placeholder="Example: 2020 - 2025">
                                             </div>
                                             <div class="mb-3 col-6">
                                                 <select class="form-select"  name="status">
@@ -324,15 +324,15 @@
                                                     <h3 class="text-center">Nova Experiência</h3>
                                                     <div class="mb-3 col-md-6 col-sm-12">
                                                         <label class="form-label">Cargo | Função</label>
-                                                        <input type="text" class="form-control" name="job_title" value="{{ $experience->job_title }}">
+                                                        <input type="text" class="form-control shadow" name="job_title" value="{{ $experience->job_title }}">
                                                     </div>
                                                     <div class="mb-3 col-md-6 col-sm-12">
                                                         <label class="form-label">Link Referência</label>
-                                                        <input type="text" class="form-control" name="link_reference" value="{{ $experience->link_reference }}" placeholder="Example: Linkedin">
+                                                        <input type="text" class="form-control shadow" name="link_reference" value="{{ $experience->link_reference }}" placeholder="Example: Linkedin">
                                                     </div>
                                                     <div class="mb-3 p-1">
                                                         <label class="form-label text-white">Descrição</label>
-                                                        <textarea class="form-control" name="description_experience" id="textareaExperience" rows="5" placeholder="Fale um pouco de sua experiência.">{{ $experience->description_experience }}</textarea>
+                                                        <textarea class="form-control shadow" name="description_experience" id="textareaExperience" rows="5" placeholder="Fale um pouco de sua experiência.">{{ $experience->description_experience }}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="m-auto justify-content-center">
@@ -359,15 +359,15 @@
                                             <h3 class="text-center">Nova Experiência</h3>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Cargo | Função</label>
-                                                <input type="text" class="form-control" data-name='cleanAddExperience' name="job_title" value="" placeholder="Example: Web Developer">
+                                                <input type="text" class="form-control shadow" data-name='cleanAddExperience' name="job_title" value="" placeholder="Example: Web Developer">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Link Referência</label>
-                                                <input type="text" class="form-control" data-name='cleanAddExperience' name="link_reference" value="" placeholder="Example: Linkedin">
+                                                <input type="text" class="form-control shadow" data-name='cleanAddExperience' name="link_reference" value="" placeholder="Example: Linkedin">
                                             </div>
                                             <div class="mb-3 p-1">
                                                 <label class="form-label text-white">Descrição</label>
-                                                <textarea class="form-control" data-name='cleanAddExperience' name="description_experience" rows="5" placeholder="Fale um pouco de sua experiência."></textarea>
+                                                <textarea class="form-control shadow" data-name='cleanAddExperience' name="description_experience" rows="5" placeholder="Fale um pouco de sua experiência."></textarea>
                                             </div>
                                         </div>
                                         <div class="m-auto justify-content-center">
@@ -390,29 +390,35 @@
                             <div class="row col justify-content-center">
                                 @foreach($skills as $skill)
                                     <div class=" col-3 col-md-2 mt-2">
-                                        {!! $skill->icon_skill !!}
+                                        <p style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
                                         <strong><p>{{ $skill->name }}</p></strong>
                                         <form>
                                             @csrf
-                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
+                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
                                             @method("DELETE")
                                         </form>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
-                        <div class="row m-auto">
+                        <div class="container-fluid m-auto">
                             <h3 class="text-center p-3">Novas Habilidades</h3>
                             <form action="{{ route('create_skill') }}" method="post">
                                 @csrf
-                                <div class="mb-3 col-10 m-auto">
+                                <div class="mb-3 col-12">
                                     <label class="form-label">Nome</label>
-                                    <input type="text" class="form-control" name="name" value="" placeholder="Example: HTML5">
+                                    <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: HTML5">
                                 </div>
-                                <div class="mb-3 col-10 m-auto">
+                                <div class="col-12">
                                     <label class="form-label">Icone</label>
-                                    <input type="text" class="form-control" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
-                                    <p class="p-3">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
+                                    <input type="text" class="form-control shadow" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
+                                </div>
+                                <div class="col-2 bg-light rounded mt-2 shadow p-3 text-center">
+                                    <label class="form-label text-info">Color</label>
+                                    <input type="color" class="form-control shadow" name="color_skill" value="">
+                                </div>
+                                <div class="col-10 m-auto">
+                                    <p class="p-3 bg-dark rounded-pill mt-2">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
                                 </div>
                                 <div class="mb-3 col-1 m-auto">
                                     <button type="submit" class="btn btn-sm btn-primary shadow">Salvar</button>
@@ -453,26 +459,26 @@
                             <div class="col col-sm-12">
                                 <h3 class="text-center m-2">Adicionar Conquistas</h3>
                                 <form action="{{ route('create_award') }}" method="post" enctype="multipart/form-data">
-                                @csrf
+                                    @csrf
                                     <div class="row col p-3">
                                         <div class="col-md-6 col-sm-12">
                                             <label class="form-label">Curso ou Certificação</label>
-                                            <input type="text" class="form-control" placeholder="Example: NodeJS" name="name">
+                                            <input type="text" class="form-control shadow" placeholder="Example: NodeJS" name="name">
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                             <label class="form-label">Instituição</label>
-                                            <input type="text" class="form-control" name="institution" value="" placeholder="Example: Alura">
+                                            <input type="text" class="form-control shadow" name="institution" value="" placeholder="Example: Alura">
                                         </div>
                                     </div>
                                     <div class="row p-3">
                                         <div class="mb-3 col-md-6 col-sm-12">
                                             <label class="form-label">Link da Certificação</label>
-                                            <input type="text" class="form-control" name="link"  value="" placeholder="https://www...">
+                                            <input type="text" class="form-control shadow" name="link"  value="" placeholder="https://www...">
                                         </div>
                                         <div class="mb-3 col-md-6 col-sm-12">
                                             <label class="form-label">Certificado</label>
-                                            <input type="file" class="form-control" name="certification"  value="" placeholder="img.jpg">
-                                            <p>OBS: Adicione apenas arquivos de imagem</p>
+                                            <input type="file" class="form-control shadow" name="certification"  value="" placeholder="img.jpg">
+                                            <p class="p-3 bg-dark rounded-pill mt-2">OBS: Adicione apenas arquivos de imagem</p>
                                         </div>
                                     </div>
                                     <div class="mb-3 col-1 m-auto">
@@ -504,19 +510,19 @@
                                         <div class="row p-1">
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label  class="form-label">Nome Projeto</label>
-                                                <input type="text" data-name="cleanAddProject" class="form-control" name="title" value="" placeholder="Nome Projeto">
+                                                <input type="text" data-name="cleanAddProject" class="form-control shadow" name="title" value="" placeholder="Nome Projeto">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Link Projeto</label>
-                                                <input type="text" data-name="cleanAddProject" class="form-control" name="url_project" value="" placeholder="Example: GitHub">
+                                                <input type="text" data-name="cleanAddProject" class="form-control shadow" name="url_project" value="" placeholder="Example: GitHub">
                                             </div>
                                             <div class="mb-3 col-md-12 col-sm-12">
                                                 <label class="form-label">Imagens Projeto</label>
-                                                <input class="form-control" data-name="cleanAddProject" type="file" name="img_project[]" multiple>
+                                                <input class="form-control shadow" data-name="cleanAddProject" type="file" name="img_project[]" multiple>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Sobre o Pojeto</label>
-                                                <textarea class="form-control" data-name="cleanAddProject" name="description" rows="5" placeholder="Texto..."></textarea>
+                                                <textarea class="form-control shadow" data-name="cleanAddProject" name="description" rows="5" placeholder="Texto..."></textarea>
                                             </div>
                                         </div>
                                         <div class="m-auto justify-content-center">
@@ -530,80 +536,38 @@
 
                         <div class="row p-3">
                             @foreach($projects as $chave => $project)
-                            @if($chave %2 == 0)
-                            <section class="container text-color rounded-custom art-cont">
-                                <div class="row p-3">
-                                    <div class="col-md-6 col-sm-12 float-start m-auto">
-                                        <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
-                                            <div class="carousel-indicators">
-                                                @foreach($project->imgProject as $key => $images)
-                                                <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} shadow" aria-current="true" aria-label="Slide 1"></button>
-                                                @endforeach
-                                            </div>
-                                            <div class="carousel-inner rounded shadow">
-                                                @foreach($project->imgProject as $key => $images)
-                                                <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal">
+                                @if($chave %2 == 0)
+                                    <section class="container text-color rounded-custom art-cont">
+                                        <div class="row p-3">
+                                            <div class="col-md-6 col-sm-12 float-start m-auto">
+                                                <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
+                                                    <div class="carousel-indicators">
+                                                        @foreach($project->imgProject as $key => $images)
+                                                            <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} shadow" aria-current="true" aria-label="Slide 1"></button>
+                                                        @endforeach
+                                                    </div>
+                                                    <div class="carousel-inner rounded shadow">
+                                                        @foreach($project->imgProject as $key => $images)
+                                                            <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                                <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal">
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
                                                 </div>
-                                                @endforeach
                                             </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Previous</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Next</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 float-end m-auto text-center">
-                                        <h5 class="fw-bold">{{ $project->title }}</h5>
-                                        <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
-                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
-                                    </div>
-                                    <div class="col-md-1 col-sm-2 m-auto">
-                                        <form>
-                                            @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
-                                            @method("DELETE")
-                                        </form>
-                                    </div>
-                                </div>
-                            </section>
-                            @else
-                            <section class="container text-color rounded-custom art-cont2">
-                                    <div class="row p-3">
-                                        <div class="col-md-6 col-sm-12 float-end m-auto text-center">
-                                            <h5 class="fw-bold">{{ $project->title }}</h5>
-                                            <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
-                                            <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 float-start m-auto">
-                                            <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
-                                                <div class="carousel-indicators">
-                                                    @foreach($project->imgProject as $key => $images)
-                                                        <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} shadow" aria-current="true" aria-label="Slide 1"></button>
-                                                    @endforeach
-                                                </div>
-                                                <div class="carousel-inner rounded shadow">
-                                                    @foreach($project->imgProject as $key => $images)
-                                                        <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                            <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Previous</span>
-                                                </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Next</span>
-                                                </button>
+                                            <div class="col-md-6 col-sm-12 float-end m-auto text-center">
+                                                <h5 class="fw-bold">{{ $project->title }}</h5>
+                                                <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
+                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
                                             </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col-md-1 col-sm-2 m-auto">
                                                 <form>
                                                     @csrf
@@ -612,9 +576,51 @@
                                                 </form>
                                             </div>
                                         </div>
-                                    </div>
-                                </section>
-                            @endif
+                                    </section>
+                                @else
+                                    <section class="container text-color rounded-custom art-cont2">
+                                        <div class="row p-3">
+                                            <div class="col-md-6 col-sm-12 float-end m-auto text-center">
+                                                <h5 class="fw-bold">{{ $project->title }}</h5>
+                                                <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
+                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 float-start m-auto">
+                                                <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
+                                                    <div class="carousel-indicators">
+                                                        @foreach($project->imgProject as $key => $images)
+                                                            <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} shadow" aria-current="true" aria-label="Slide 1"></button>
+                                                        @endforeach
+                                                    </div>
+                                                    <div class="carousel-inner rounded shadow">
+                                                        @foreach($project->imgProject as $key => $images)
+                                                            <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                                <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-1 col-sm-2 m-auto">
+                                                    <form>
+                                                        @csrf
+                                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
+                                                        @method("DELETE")
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -627,21 +633,21 @@
                             <h3 class="mb-5 text-center">Interesses</h3>
                             <div class="text-center">
                                 @foreach($interests as $interest)
-                                <strong><p style="white-space: pre-wrap;">{{ $interest->description }}</p></strong>
-                                        <div class="row justify-content-center mt-1">
-                                            <div class="col-md-1 col-sm-2 text-center">
-                                                <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditInterests{{ $interest->id }}" aria-expanded="false" aria-controls="collapseEditInterests{{$interest->id}}">
-                                                    Editar
-                                                </button>
-                                            </div>
-                                            <div class="col-md-1 col-sm-2 text-center">
-                                                <form>
-                                                    @csrf
-                                                    <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_interest', $interest->id) }}" formmethod="post" value="Remover">
-                                                    @method("DELETE")
-                                                </form>
-                                            </div>
+                                    <strong><p style="white-space: pre-wrap;">{{ $interest->description }}</p></strong>
+                                    <div class="row justify-content-center mt-1">
+                                        <div class="col-md-1 col-sm-2 text-center">
+                                            <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditInterests{{ $interest->id }}" aria-expanded="false" aria-controls="collapseEditInterests{{$interest->id}}">
+                                                Editar
+                                            </button>
                                         </div>
+                                        <div class="col-md-1 col-sm-2 text-center">
+                                            <form>
+                                                @csrf
+                                                <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_interest', $interest->id) }}" formmethod="post" value="Remover">
+                                                @method("DELETE")
+                                            </form>
+                                        </div>
+                                    </div>
                                     <hr class="border-bottom border-dark">
                                     <div class="collapse text-center" id="collapseEditInterests{{$interest->id}}">
                                         <form action="{{ route('update_interest', $interest->id) }}" method="post">
@@ -734,7 +740,7 @@
                                 </form>
                             </div>
                             <div class="col-md-6 d-sm-none d-md-block p-3 text-color m-auto">
-{{--                                <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
+                                {{--                                <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
                                 <div class="mb-2 text-center">
                                     <i class="fas fa-map-marker-alt"></i> <strong>Mesquita - RJ</strong><br>
                                     <i class="fas fa-phone-square-alt text-color"></i><strong> +55 (21) 98298-2487</strong><br>

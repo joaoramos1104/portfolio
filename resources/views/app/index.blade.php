@@ -58,7 +58,7 @@
                         <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-light shadow" href="#experience">Start Now</a>
                     </div>
-                    <div class="col-md-6 d-sm-none d-md-block m-auto p-3 img-header js-tilt" data-tilt>
+                    <div class="col-md-6 m-auto p-3 img-header js-tilt" data-tilt>
                         <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
                     </div>
                 </div>
