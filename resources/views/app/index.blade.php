@@ -79,18 +79,19 @@
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
                 <div class="col-md-6 col-sm-12 text-center border-end border--white">
+                    <h5 class="fw-bold">Educação</h5>
                     @foreach($education as $educ)
-                        <p class="fw-bold">Educação</p>
                         <h5>{{ $educ->institution }}</h5>
                         <h5>{{ $educ->type_course }}</h5>
                         <h5>{{ $educ->course }}</h5>
                         <p>{{ $educ->time_course }}</p>
+                        <hr class="border-bottom border-white">
                     @endforeach
                 </div>
 
                 <div class="col-md-6 col-sm-12 text-center">
+                    <h5 class="fw-bold">Experiência</h5>
                     @foreach($experiences as $experience)
-                        <p class="fw-bold">Experiência</p>
                         <h5>{{ $experience->job_title }}</h5>
                         <p>{{ $experience->description_experience }}</p>
                         <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
@@ -318,12 +319,10 @@
     <div class="modal fade" id="success_message" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="success_messageBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-success text-center">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
                 <div class="modal-body">
+                    <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
                     <h4>Mensagem enviada com sucesso!</h4>
+                    <button type="button" class="btn btn-outline-secondary shadow" data-bs-dismiss="modal" aria-label="Close">Sair</button>
                 </div>
             </div>
         </div>
