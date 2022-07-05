@@ -405,19 +405,22 @@
                             <h3 class="text-center p-3">Novas Habilidades</h3>
                             <form action="{{ route('create_skill') }}" method="post">
                                 @csrf
-                                <div class="mb-3 col-12">
-                                    <label class="form-label">Nome</label>
-                                    <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: HTML5">
+                                <div class="row p-3 bg-light rounded shadow text-black">
+                                    <div class="mb-3 col-12">
+                                        <label class="form-label">Skill</label>
+                                        <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: HTML5">
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-10">
+                                        <label class="form-label text-dark">Icone</label>
+                                        <input type="text" class="form-control shadow" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2 rounded mt-3">
+                                        <label class="form-label text-info">Color</label>
+                                        <input type="color" class="form-control-xl shadow" name="color_skill" value="">
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label">Icone</label>
-                                    <input type="text" class="form-control shadow" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
-                                </div>
-                                <div class="col-2 bg-light rounded mt-2 shadow p-3 text-center">
-                                    <label class="form-label text-info">Color</label>
-                                    <input type="color" class="form-control shadow" name="color_skill" value="">
-                                </div>
-                                <div class="col-10 m-auto">
+                                <div class="col-10 m-auto text-center">
                                     <p class="p-3 bg-dark rounded-pill mt-2">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
                                 </div>
                                 <div class="mb-3 col-1 m-auto">
