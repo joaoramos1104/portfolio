@@ -350,3 +350,7 @@ header{
         transform: translateY(-10px);
     }
 }
+
+.modal-content {
+    border-radius: 0px 50px;
+}
