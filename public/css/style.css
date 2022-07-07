@@ -99,7 +99,7 @@ header{
     margin-right: 0;
 }
 .social-icons .social-icon:hover {
-    background-color: rgba(97, 75, 138, 0.93);;
+    background-color: rgba(97, 75, 138, 0.93);
     /*color: #676979 !important;*/
     color: rgba(255, 255, 255, 0.91) !important;
 }
@@ -308,7 +308,7 @@ header{
 }
 .button-top:hover {
     background:linear-gradient(to bottom,
-    rgba(157, 241, 241, 0.65) 0%, rgb(79, 157, 143) 100%);
+    rgba(102, 95, 145, 0.65) 0%, rgb(78, 41, 140) 100%);
     border-radius: 20% !important;
     color: white;
 }
@@ -318,5 +318,35 @@ header{
     }
     to {
         transform: translateY(20px);
+    }
+}
+
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(97, 75, 138, 0.93) !important;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(255, 255, 255) !important;
+}
+
+.award:hover {
+    animation: moveInAward 3s;
+}
+
+@keyframes moveInAward {
+    0% {
+        transform: translateY(-10px);
     }
 }

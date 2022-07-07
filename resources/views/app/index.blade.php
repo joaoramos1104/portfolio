@@ -94,7 +94,7 @@
                     @foreach($experiences as $experience)
                         <h5>{{ $experience->job_title }}</h5>
                         <p>{{ $experience->description_experience }}</p>
-                        <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
+                        <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light shadow">Veja mais</a>
                     @endforeach
                 </div>
             </div>
@@ -110,7 +110,7 @@
                 <div class="text-center d-flex skills p-3 shadow">
                     <div class="row col justify-content-center">
                         @foreach($skills as $skill)
-                            <div class="col-3 col-md-2 mt-2">
+                            <div class="col-3 col-md-2 mt-2 skill">
                                 <p style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
                                 <strong><p>{{ $skill->name }}</p></strong>
                             </div>
@@ -125,7 +125,7 @@
                 <h3 class="text-center mb-2">Conquistas</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
-                        <div class="col-md-3 col-sm-12 mr-1 mb-1">
+                        <div class="col-md-3 col-sm-12 mr-1 mb-1 award">
                             <div class="card border-0 shadow text-center rounded-custom bg-custom">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}"><img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..."></a>
 
@@ -279,7 +279,7 @@
                                 <textarea name="message" rows="5" class="form-control rounded" id="message" data-name='input-messager' placeholder="Coloque aqui sua mensagem..." required></textarea>
                             </div>
                             <div class="col-12 p-1 text-center">
-                                <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
+                                <button type="submit" class="btn btn-light">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -330,13 +330,13 @@
 
 
     <script>
-        ScrollReveal().reveal('.headline')
-        ScrollReveal().reveal('.tagline', { delay: 600, rete: true })
         ScrollReveal().reveal('.container', { delay: 100, reset: false })
         ScrollReveal().reveal('h1, h3, h5, h6', { delay: 150, reset: false })
         ScrollReveal().reveal('section', { delay: 150, reset: false })
         ScrollReveal().reveal('p', { delay: 200, reset: false })
         ScrollReveal().reveal('#img_header', { delay: 350, reset: true })
+        ScrollReveal().reveal('.skill', { interval: 100 });
+        ScrollReveal().reveal('.award', { interval: 100 });
     </script>
 
 
