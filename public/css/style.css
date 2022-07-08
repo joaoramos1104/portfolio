@@ -51,6 +51,9 @@ header{
     padding-bottom: 0;
 }
 
+.rounded {
+    border-radius: 5px 50px !important;
+}
 
 .rounded-custom{
     border-radius: 5px;
@@ -204,6 +207,11 @@ header{
     height: 510px;
 }
 
+.card{
+    height: 100%;!important;
+    border-radius: 0px 50px;!important;
+}
+
 /*-------------------------------------------------------------------*/
 
 .button-down {
@@ -223,11 +231,14 @@ header{
 
 /*-------------------------------------------------------------------*/
 
-.awards{
-    color: #fff;
+.awards, a{
+    display: block;
+    padding: 0.5rem 1rem;
+    color: rgba(22, 5, 40, 0.96);
+    text-decoration: none;
 }
 .awards:hover{
-    color: rgb(204, 205, 206);
+    color: rgb(78, 41, 140);
 }
 
 /*-------------------------------------------------------------------*/

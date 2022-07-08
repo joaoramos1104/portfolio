@@ -300,7 +300,7 @@
                                     <p class="fw-bold">Experinêcia</p>
                                     <h5>{{ $experience->job_title }}</h5>
                                     <p style="white-space: pre-wrap;">{{ $experience->description_experience }}</p>
-                                    <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
+                                    <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light shadow">Veja mais</a>
                                     <div class="row justify-content-center mt-1">
                                         <div class="col-md-2 col-sm-12 p-1 text-center">
                                             <button class="btn btn-sm btn-light shadow" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEditExperience{{ $experience->id }}" aria-expanded="false" aria-controls="collapseEditExperience{{$experience->id}}">
@@ -439,7 +439,7 @@
                         <div class="row justify-content-center">
                             @foreach($awards as $key => $award)
                                 <div class="col-md-3 col-sm-12 mr-1 mb-1">
-                                    <div class="card border-0 shadow text-center rounded-custom bg-custom">
+                                    <div class="card border-0 shadow text-center bg-custom p-3">
                                         <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..." data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}">
                                         <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                                         <form>

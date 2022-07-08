@@ -121,15 +121,14 @@
                     <hr class="border-bottom border-white">
                 </div>
             </div>
-            <div class="container-lg text-color mt-3 mb-3">
+            <div class="container-lg mt-3 mb-3">
                 <h3 class="text-center mb-2">Conquistas</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
-                        <div class="col-md-3 col-sm-12 mr-1 mb-1 award">
-                            <div class="card border-0 shadow text-center rounded-custom bg-custom">
+                        <div class="col-md-3 col-sm-12 mr-1 mb-2 award">
+                            <div class="card border-0 shadow text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}"><img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..."></a>
-
-                                <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
+                                <a class="awards m-auto p-1" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                             </div>
                         </div>
                         <!-- Modal -->
@@ -154,7 +153,7 @@
             <div class="container-fluid">
                 <div class="">
                     <div class="justify-content-center">
-                        <div class="col-3 p-1 text-center m-auto">
+                        <div class="col-6 p-1 text-center m-auto">
                             <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Veja mais <i class="fab fa-github"></i></a>
                         </div>
                     </div>
