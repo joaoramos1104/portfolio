@@ -162,16 +162,16 @@
                             <section class="container-fluid text-color rounded-custom art-cont">
                                 <div class="row mt-5">
                                     <div class="col-md-6 col-sm-12 float-start m-auto">
-                                        <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
+                                        <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} bg-secondary" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class="bg-secondary {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
+                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block w-100 img-modal" alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -201,16 +201,16 @@
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                     <div class="col-md-6 col-sm-12 float-start m-auto">
-                                        <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
+                                        <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel{{ $chave }}">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} bg-secondary" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class="bg-secondary {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
+                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-modal" alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
