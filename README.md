@@ -1,12 +1,14 @@
 #Portfólio
 #
-1 - Crie seu projeto Laravel
+1 - Mude o nomed o arquivo .env_exemple para .env e adicione as infirmação de bando, e-mail e etc.
 #
-2 - Crie um banco, configure seu .env e depois rode os comandos php artisan migrate --seed para criar as tabelas 
-  e php artisan storage:link para criar link simbolico das imagens carregadas.
+2 - Crie um Banco de Dados Mysql, mude o nome do arquivo .env_exemple para .env e adicione as infirmação do bando, e-mail e etc. 
 #
-3 - Acesse seu projeto e faça login com usuário: admin@admin.com  senha: admin
+3 - Rode no terminal os comandos php artisan migrate --seed para criar as tabelas 
+  e php artisan storage:link para criar link simbolico das imagens do projeto.
 #
-4 - Troque a senha do Admin e crie um novo usuário.
+4 - Acesse seu projeto e faça login com usuário: admin@admin.com  senha: admin
 #
-5 - personalize seu perfil.
+5 - Troque a senha do Admin e crie um novo usuário.
+#
+6 - personalize seu perfil.
