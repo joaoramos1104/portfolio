@@ -1,6 +1,6 @@
 #Portfólio
 #
-1 - Mude o nomed o arquivo .env_exemple para .env e adicione as infirmação de bando, e-mail e etc.
+1 - Baixar o projeto.
 #
 2 - Crie um Banco de Dados Mysql, mude o nome do arquivo .env_exemple para .env e adicione as infirmação do bando, e-mail e etc. 
 #
