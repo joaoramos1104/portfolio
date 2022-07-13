@@ -17,6 +17,9 @@
                         <li class="nav-item me-2">
                             <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
+                        <li class="nav-item me-2">
+                            <a class="social-icon" href="https://twitter.com/joaoramos1988" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </li>
                     </ul>
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
@@ -165,7 +168,7 @@
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class=" {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
+                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class="bg-secondary {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">
@@ -204,7 +207,7 @@
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class=" {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
+                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class="bg-secondary {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">

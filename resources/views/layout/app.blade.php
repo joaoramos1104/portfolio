@@ -26,123 +26,127 @@
 
 </head>
 <body>
-    @hasSection('body')
-        @yield('body')
-        <!-- Footer -->
-        <footer class="container p-3 mt-3">
-            <div class="d-flex justify-content-center">
-                <ul class="nav float-end social-icons ms-3">
-                    <li class="nav-item me-2 text-white">
-                        <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos-04692070" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="social-icon" href="https://github.com/joaoramos1104" target="_blank"><i class="fab fa-github"></i></a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li class="nav-item m-auto text-secondary">
-                        <i class="far fa-copyright"></i> {{ date('Y') }} João F. Ramos Junior
-                    </li>
-                </ul>
-            </div>
-        </footer>
+@hasSection('body')
+    @yield('body')
+    <!-- Footer -->
+    <footer class="container p-3 mt-3">
+        <div class="d-flex justify-content-center">
+            <ul class="nav float-end social-icons ms-3">
+                <li class="nav-item me-2 text-white">
+                    <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos-04692070" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="social-icon" href="https://github.com/joaoramos1104" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="social-icon" href="https://twitter.com/joaoramos1988" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item m-auto text-secondary">
+                    <i class="far fa-copyright"></i> {{ date('Y') }} João F. Ramos Junior
+                </li>
+            </ul>
+        </div>
+    </footer>
 
-    @endif
-    <script src="{{ url(mix('/assets/jquery/jquery.min.js')) }}"></script>
+@endif
+<script src="{{ url(mix('/assets/jquery/jquery.min.js')) }}"></script>
 
-            <script>
-                $("#limparTextarea").click(function(){
-                    $("#textareaInteresses").val('');
-                    $("#collapseInterests").removeClass( "show" );
-                });
+<script>
+    $("#limparTextarea").click(function(){
+        $("#textareaInteresses").val('');
+        $("#collapseInterests").removeClass( "show" );
+    });
 
-                $("#cleanFormEducation").click(function(){
-                    $("[data-name='cleanAddEducation']").val('');
-                    $("#collapseAddEducation").removeClass( "show" );
-                });
+    $("#cleanFormEducation").click(function(){
+        $("[data-name='cleanAddEducation']").val('');
+        $("#collapseAddEducation").removeClass( "show" );
+    });
 
-                $("#cleanFormExperience").click(function(){
-                    $("[data-name='cleanAddExperience']").val('');
-                    $("#collapseAddExperience").removeClass( "show" );
-                });
+    $("#cleanFormExperience").click(function(){
+        $("[data-name='cleanAddExperience']").val('');
+        $("#collapseAddExperience").removeClass( "show" );
+    });
 
-                $("#cleanFormAddProfile").click(function(){
-                    $("[data-name='cleanAddProfile']").val('');
-                    $("#collapseAddProfile").removeClass( "show" );
-                });
+    $("#cleanFormAddProfile").click(function(){
+        $("[data-name='cleanAddProfile']").val('');
+        $("#collapseAddProfile").removeClass( "show" );
+    });
 
-                $("#cleanFormAddUser").click(function(){
-                    $("[data-name='cleanAddProject']").val('');
-                    $("#collapseAddProject").removeClass( "show" );
-                });
-                $("#cleanFormCresteUserAdmin").click(function(){
-                    $("[data-name='cresteUserAdmin']").val('');
-                });
-                $("#cleanFormUpdatePasswordAdmin").click(function(){
-                    $("[data-name='updatePasswordAdmin']").val('');
-                });
+    $("#cleanFormAddUser").click(function(){
+        $("[data-name='cleanAddProject']").val('');
+        $("#collapseAddProject").removeClass( "show" );
+    });
+    $("#cleanFormCresteUserAdmin").click(function(){
+        $("[data-name='cresteUserAdmin']").val('');
+    });
+    $("#cleanFormUpdatePasswordAdmin").click(function(){
+        $("[data-name='updatePasswordAdmin']").val('');
+    });
 
-                //button-top
-                jQuery(document).ready(function() {
-                    // Exibe ou oculta o botão
-                    jQuery(window).scroll(function() {
-                        if (jQuery(this).scrollTop() > 200) {
-                            jQuery('.button-top').fadeIn(200);
-                        } else {
-                            jQuery('.button-top').fadeOut(200);
-                        }
-                    });
+    //button-top
+    jQuery(document).ready(function() {
+        // Exibe ou oculta o botão
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > 200) {
+                jQuery('.button-top').fadeIn(200);
+            } else {
+                jQuery('.button-top').fadeOut(200);
+            }
+        });
 
-                    // Faz animação para subir
-                    jQuery('.button-top').click(function(event) {
-                        event.preventDefault();
-                        jQuery('html, body').animate({scrollTop: 0}, 300);
-                    })
-                });
-                </script>
+        // Faz animação para subir
+        jQuery('.button-top').click(function(event) {
+            event.preventDefault();
+            jQuery('html, body').animate({scrollTop: 0}, 300);
+        })
+    });
+</script>
 
 
-                <script>
-                    //Enviando mensagem via ajax
-                    $(function(){
-                        $('form[name="send_message"]').submit(function (event){
-                            event.preventDefault();
+<script>
+    //Enviando mensagem via ajax
+    $(function(){
+        $('form[name="send_message"]').submit(function (event){
+            event.preventDefault();
 
-                            $.ajax({
-                                url: "{{ route('message') }}",
-                                type: "post",
-                                data: $(this).serialize(),
-                                dataType: 'json',
+            $.ajax({
+                url: "{{ route('message') }}",
+                type: "post",
+                data: $(this).serialize(),
+                dataType: 'json',
 
-                                beforeSend: function () {
-                                    $("#loading").html('<img src="../assets/img/loading.gif" alt="" class="mt-5">');
+                beforeSend: function () {
+                    $("#loading").html('<img src="../assets/img/loading.gif" alt="" class="mt-5">');
 
-                                },
+                },
 
-                                success: function(response){
-                                    $('#success_message').modal('show');
-                                    $("[data-name='input-messager']").val('');
-                                },
+                success: function(response){
+                    $('#success_message').modal('show');
+                    $("[data-name='input-messager']").val('');
+                },
 
-                                error: function(xhr){
-                                    $('#error_message').modal('show');
+                error: function(xhr){
+                    $('#error_message').modal('show');
 
-                                },
+                },
 
-                                complete: function(){
-                                    //retirando o loading
-                                    $("#loading").empty();
-                                }
+                complete: function(){
+                    //retirando o loading
+                    $("#loading").empty();
+                }
 
-                            })
-                        })
-                    })
-                </script>
+            })
+        })
+    })
+</script>
 
-            @hasSection('javascript')
-                @yield('javascript')
-            @endif
+
+@hasSection('javascript')
+    @yield('javascript')
+@endif
 
 
 </body>
