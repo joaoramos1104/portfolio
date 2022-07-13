@@ -18,4 +18,4 @@ mix
     //Jquery
     .scripts('node_modules/jquery/dist/jquery.min.js', 'public/assets/jquery/jquery.min.js')
 
-    .version()
+    //.version()
