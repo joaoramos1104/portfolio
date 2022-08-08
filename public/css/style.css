@@ -108,8 +108,9 @@ header{
 }
 
 .img-profile{
-    width: 30%;
-    height: auto;
+    width: 190px;
+    height: 200px;
+    border-radius: 50%;
 }
 
 /*-------------------------------------------------------------------*/
