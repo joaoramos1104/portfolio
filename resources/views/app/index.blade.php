@@ -115,7 +115,7 @@
                         @foreach($skills as $skill)
                             <div class="col-3 col-md-2 mt-2 skill">
                                 <p style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
-                                <strong><p>{{ $skill->name }}</p></strong>
+                                <p>{{ $skill->name }}</p>
                             </div>
                         @endforeach
                     </div>
