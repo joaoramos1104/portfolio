@@ -17,6 +17,9 @@
                         <li class="nav-item me-2">
                             <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
+                        <li class="nav-item me-2">
+                            <a class="social-icon" href="https://twitter.com/joaoramos1988" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </li>
                     </ul>
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
@@ -58,7 +61,7 @@
                         <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-light shadow" href="#experience">Start Now</a>
                     </div>
-                    <div class="col-md-6 d-sm-none d-md-block m-auto p-3 img-header js-tilt" data-tilt>
+                    <div class="col-md-6 m-auto p-3 img-header js-tilt" data-tilt>
                         <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
                     </div>
                 </div>
@@ -79,21 +82,22 @@
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
                 <div class="col-md-6 col-sm-12 text-center border-end border--white">
+                    <h5 class="fw-bold">Educação</h5>
                     @foreach($education as $educ)
-                        <p class="fw-bold">Educação</p>
                         <h5>{{ $educ->institution }}</h5>
                         <h5>{{ $educ->type_course }}</h5>
                         <h5>{{ $educ->course }}</h5>
                         <p>{{ $educ->time_course }}</p>
+                        <hr class="border-bottom border-white">
                     @endforeach
                 </div>
 
                 <div class="col-md-6 col-sm-12 text-center">
+                    <h5 class="fw-bold">Experiência</h5>
                     @foreach($experiences as $experience)
-                        <p class="fw-bold">Experiência</p>
                         <h5>{{ $experience->job_title }}</h5>
                         <p>{{ $experience->description_experience }}</p>
-                        <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
+                        <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light shadow">Veja mais</a>
                     @endforeach
                 </div>
             </div>
@@ -109,8 +113,8 @@
                 <div class="text-center d-flex skills p-3 shadow">
                     <div class="row col justify-content-center">
                         @foreach($skills as $skill)
-                            <div class="col-3 col-md-2 mt-2">
-                                {!! $skill->icon_skill !!}
+                            <div class="col-3 col-md-2 mt-2 skill">
+                                <p style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
                                 <strong><p>{{ $skill->name }}</p></strong>
                             </div>
                         @endforeach
@@ -120,15 +124,14 @@
                     <hr class="border-bottom border-white">
                 </div>
             </div>
-            <div class="container-lg text-color mt-3 mb-3">
-                <h3 class="text-center mb-2">Conquistas</h3>
+            <div class="container-lg mt-3 mb-3">
+                <h3 class="text-center mb-2 text-color">Conquistas</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
-                        <div class="col-md-3 col-sm-12 mr-1 mb-1">
-                            <div class="card border-0 shadow text-center rounded-custom bg-custom">
+                        <div class="col-md-3 col-sm-12 mr-1 mb-2 award">
+                            <div class="card border-0 shadow text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}"><img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..."></a>
-
-                                <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
+                                <a class="awards m-auto p-1" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                             </div>
                         </div>
                         <!-- Modal -->
@@ -153,7 +156,7 @@
             <div class="container-fluid">
                 <div class="">
                     <div class="justify-content-center">
-                        <div class="col-3 p-1 text-center m-auto">
+                        <div class="col-6 p-1 text-center m-auto">
                             <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Veja mais <i class="fab fa-github"></i></a>
                         </div>
                     </div>
@@ -162,16 +165,16 @@
                             <section class="container-fluid text-color rounded-custom art-cont">
                                 <div class="row mt-5">
                                     <div class="col-md-6 col-sm-12 float-start m-auto">
-                                        <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
+                                        <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} bg-secondary" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class="bg-secondary {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
+                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block w-100 img-modal" alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -201,16 +204,16 @@
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                     <div class="col-md-6 col-sm-12 float-start m-auto">
-                                        <div id="carousel{{ $chave }}" class="carousel slide carousel-fade" data-bs-ride="carousel{{ $chave }}">
+                                        <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" class="{{$key == 0 ? 'active' : '' }} bg-secondary" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carousel{{ $chave }}" data-bs-slide-to="{{ $key }}" aria-label="{{ $key }}" class="bg-secondary {{$key == 0 ? 'active' : '' }} " aria-current=" {{$key == 0 ? 'true' : '' }}"></button>
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
-                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-fluid img-modal" alt="...">
+                                                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-modal" alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -278,7 +281,7 @@
                                 <textarea name="message" rows="5" class="form-control rounded" id="message" data-name='input-messager' placeholder="Coloque aqui sua mensagem..." required></textarea>
                             </div>
                             <div class="col-12 p-1 text-center">
-                                <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
+                                <button type="submit" class="btn btn-light">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -318,12 +321,10 @@
     <div class="modal fade" id="success_message" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="success_messageBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-success text-center">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
                 <div class="modal-body">
+                    <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
                     <h4>Mensagem enviada com sucesso!</h4>
+                    <button type="button" class="btn btn-outline-secondary shadow" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
                 </div>
             </div>
         </div>
@@ -331,13 +332,13 @@
 
 
     <script>
-        ScrollReveal().reveal('.headline')
-        ScrollReveal().reveal('.tagline', { delay: 600, rete: true })
         ScrollReveal().reveal('.container', { delay: 100, reset: false })
         ScrollReveal().reveal('h1, h3, h5, h6', { delay: 150, reset: false })
         ScrollReveal().reveal('section', { delay: 150, reset: false })
         ScrollReveal().reveal('p', { delay: 200, reset: false })
         ScrollReveal().reveal('#img_header', { delay: 350, reset: true })
+        ScrollReveal().reveal('.skill', { interval: 100 });
+        ScrollReveal().reveal('.award', { interval: 100 });
     </script>
 
 

@@ -174,6 +174,7 @@ class AdminController extends Controller
         if ($request->name && $request->icon_skill){
             $skills->name = $request->input('name');
             $skills->icon_skill = $request->input('icon_skill');
+            $skills->color_skill = $request->input('color_skill');
             $skills->save();
             return redirect()->route('admin');
         }
