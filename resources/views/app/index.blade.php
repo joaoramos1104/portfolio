@@ -4,61 +4,69 @@
     <!-- header -->
     <header>
         <div class="container">
-            <nav class="navbar" id="navbarResponsive">
-                <ul class="nav navbar nav-custom float-start">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experiência e Educação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Habilidades e Conquistas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#interests">Interesses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar float-end social-icons">
-                    <li class="nav-item me-2">
-                        <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos1104" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="social-icon" href="https://github.com/joaoramos1104" target="_blank"><i class="fab fa-github"></i></a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-                <ul class="nav navbar float-end social-icons">
-                    <li class="nav-item me-2">
-                        <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
-                    </li>
-                </ul>
+
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <ul class="nav navbar float-end social-icons">
+                        <li class="nav-item me-2">
+                            <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos1104" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="social-icon" href="https://github.com/joaoramos1104" target="_blank"><i class="fab fa-github"></i></a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="social-icon" href="https://www.instagram.com/f.ramosjoao" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar float-end social-icons">
+                        <li class="nav-item me-2">
+                            <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#experience">Experiência e Educação</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#skills">Habilidades e Conquistas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#projects">Projetos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#interests">Interesses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </div>
         <div class="container">
-                @foreach($profiles as $profile)
-                    <div class="row mt-5">
-                        <div class="col-md-6 col-sm-12 m-auto text-center text-color">
-                            <span class=""><img class="img-fluid img-profile rounded-circle shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
-                            <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
-                            <p>{{ $profile->description }}</p>
-                            <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
-                            <a class="btn btn-light shadow" href="#experience">Start Now</a>
-                        </div>
-                        <div class="col-md-6 d-sm-none d-md-block m-auto p-3 img-header js-tilt" data-tilt>
-                            <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
-                        </div>
+            @foreach($profiles as $profile)
+                <div class="row mt-5">
+                    <div class="col-md-6 col-sm-12 m-auto text-center text-color">
+                        <span class=""><img class="img-fluid img-profile rounded-circle shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
+                        <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
+                        <p>{{ $profile->description }}</p>
+                        <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
+                        <a class="btn btn-light shadow" href="#experience">Start Now</a>
                     </div>
-                @endforeach
-                <div class="row col-1 m-auto text-center pt-3">
-                    <a class="button-down" href="#experience"><i class="fas fa-3x fa-angle-down"></i></a>
+                    <div class="col-md-6 d-sm-none d-md-block m-auto p-3 img-header js-tilt" data-tilt>
+                        <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
+                    </div>
                 </div>
+            @endforeach
+            <div class="row col-1 m-auto text-center pt-3">
+                <a class="button-down" href="#experience"><i class="fas fa-3x fa-angle-down"></i></a>
             </div>
+        </div>
         <div class="col-1 float-end">
             <a class="button-top p-3" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
         </div>
@@ -66,28 +74,28 @@
 
     <!-- Main -->
     <main class="">
-    <!-- Experience -->
-        <div class="container rounded-custom shadow banner mt-5" id="experience">
+        <!-- Experience -->
+        <div class="container-lg rounded-custom shadow banner mt-5" id="experience">
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
-                    <div class="col-md-6 col-sm-12 text-center border-end border--white">
-                        @foreach($education as $educ)
+                <div class="col-md-6 col-sm-12 text-center border-end border--white">
+                    @foreach($education as $educ)
                         <p class="fw-bold">Educação</p>
                         <h5>{{ $educ->institution }}</h5>
                         <h5>{{ $educ->type_course }}</h5>
                         <h5>{{ $educ->course }}</h5>
                         <p>{{ $educ->time_course }}</p>
-                        @endforeach
-                    </div>
+                    @endforeach
+                </div>
 
-                    <div class="col-md-6 col-sm-12 text-center">
-                        @foreach($experiences as $experience)
+                <div class="col-md-6 col-sm-12 text-center">
+                    @foreach($experiences as $experience)
                         <p class="fw-bold">Experiência</p>
                         <h5>{{ $experience->job_title }}</h5>
                         <p>{{ $experience->description_experience }}</p>
                         <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light rounded shadow">Veja mais</a>
-                        @endforeach
-                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
         <div class="container mt-3">
@@ -96,9 +104,9 @@
 
         <!-- Skills and Certification -->
         <div id="skills">
-            <div class="container p-3 mt-3 text-color">
+            <div class="container-lg mt-3 text-color">
                 <h3 class="text-center mb-2">Habilidades</h3>
-                <div class="text-center d-flex p-1 skills p-3 shadow">
+                <div class="text-center d-flex skills p-3 shadow">
                     <div class="row col justify-content-center">
                         @foreach($skills as $skill)
                             <div class="col-3 col-md-2 mt-2">
@@ -112,7 +120,7 @@
                     <hr class="border-bottom border-white">
                 </div>
             </div>
-            <div class="container text-color mt-3 mb-3">
+            <div class="container-lg text-color mt-3 mb-3">
                 <h3 class="text-center mb-2">Conquistas</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
@@ -251,28 +259,28 @@
                     <h3 class="mb-5 text-center">Contato</h3>
                     <div class="col-md-6 p-3">
                         <h4 class="text-center mb-2">Deixe sua mensagem</h4>
-                            <form name="send_message" class="row g-3">
-                                @csrf
-                                <div class="col-md-6 p-1">
-                                    <label class="form-label">Seu Nome</label>
-                                    <input type="text" class="form-control rounded-pill" id="name" name="name" placeholder="Seu Nome" required>
-                                </div>
-                                <div class="col-md-6 p-1">
-                                    <label class="form-label">Seu Telefone</label>
-                                    <input type="text" class="form-control rounded-pill" id="tel" name="tel" placeholder="(21) 99999-9999" required>
-                                </div>
-                                <div class="col-12 p-1">
-                                    <label class="form-label">E-mail</label>
-                                    <input type="email" class="form-control rounded-pill" id="email" name="email" placeholder="Seu e-mail" required>
-                                </div>
-                                <div class="form-check mb-3 p-1 text-center">
-                                    <label class="form-label">Mensagem</label>
-                                    <textarea name="message" rows="5" class="form-control rounded" id="message" placeholder="Coloque aqui sua mensagem..." required></textarea>
-                                </div>
-                                <div class="col-12 p-1 text-center">
-                                    <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
-                                </div>
-                            </form>
+                        <form name="send_message" class="row g-3">
+                            @csrf
+                            <div class="col-md-6 p-1">
+                                <label class="form-label">Seu Nome</label>
+                                <input type="text" class="form-control rounded-pill" id="name" name="name" data-name='input-messager' placeholder="Seu Nome" required>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <label class="form-label">Seu Telefone</label>
+                                <input type="text" class="form-control rounded-pill" id="tel" name="tel" data-name='input-messager' placeholder="(21) 99999-9999" required>
+                            </div>
+                            <div class="col-12 p-1">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" class="form-control rounded-pill" id="email" name="email" data-name='input-messager' placeholder="Seu e-mail" required>
+                            </div>
+                            <div class="form-check mb-3 p-1 text-center">
+                                <label class="form-label">Mensagem</label>
+                                <textarea name="message" rows="5" class="form-control rounded" id="message" data-name='input-messager' placeholder="Coloque aqui sua mensagem..." required></textarea>
+                            </div>
+                            <div class="col-12 p-1 text-center">
+                                <button type="submit" class="btn btn-sm btn-light shadow">Enviar</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-md-6 d-sm-none d-md-block p-3 m-auto">
                         {{--                             <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
@@ -286,7 +294,7 @@
                     </div>
                 </div>
             </div>
-                <div id="loading" class="row col-3 m-auto fixed-top"></div>
+            <div id="loading" class="row col-3 m-auto fixed-top"></div>
         </div>
     </main>
 
@@ -327,6 +335,7 @@
         ScrollReveal().reveal('.tagline', { delay: 600, rete: true })
         ScrollReveal().reveal('.container', { delay: 100, reset: false })
         ScrollReveal().reveal('h1, h3, h5, h6', { delay: 150, reset: false })
+        ScrollReveal().reveal('section', { delay: 150, reset: false })
         ScrollReveal().reveal('p', { delay: 200, reset: false })
         ScrollReveal().reveal('#img_header', { delay: 350, reset: true })
     </script>

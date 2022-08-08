@@ -1,3 +1,4 @@
+
 body{
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background: linear-gradient(to bottom,
@@ -46,7 +47,7 @@ header{
     background: linear-gradient(to bottom,
     rgba(50, 49, 50, 0.73) 0%, rgba(14, 5, 23, 0.96) 100%), url(../assets/img/body8.jpg);
     height: 100vh;
-    padding-top: 1.5rem;
+    /*padding-top: 1.5rem;*/
     padding-bottom: 0;
 }
 
@@ -70,11 +71,12 @@ header{
 }
 
 .nav-link {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255)!important;
+
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: rgba(97, 75, 138, 0.93);
+    color: rgba(97, 75, 138, 0.93)!important;
 }
 
 .social-icons .social-icon {
@@ -151,7 +153,7 @@ header{
 .art-cont::before {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 70%;
     transform: skew(-40deg)
     translateX(-50%);
@@ -170,7 +172,7 @@ header{
 .art-cont2::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 30%;
     transform: skew(40deg)
     translateX(-50%);
@@ -194,7 +196,7 @@ header{
 }
 
 .img-modal{
-    width: auto;
+    width: 100%;
     height: 510px;
 }
 
@@ -203,6 +205,7 @@ header{
 .button-down {
     color: rgb(145, 156, 170);
     animation: go-back 1s infinite alternate;
+    margin-top: -15px;
 }
 
 @keyframes go-back {
@@ -253,6 +256,26 @@ header{
     }
 }
 
+@media screen and (max-width: 1366.99px) {
+    .img-modal{
+        width: 100%;
+        height: 410px;
+    }
+}
+
+@media screen and (max-width: 914.99px) {
+    .img-modal{
+        width: 100%;
+        height: 260px;
+    }
+
+    header{
+        height: 200vh;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}
 .button-top {
     position: fixed;
     bottom: 2em;
