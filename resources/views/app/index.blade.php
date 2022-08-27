@@ -258,7 +258,7 @@
         <!-- Contact -->
         <div id="contact">
             <div class="container text-color">
-                <div class="row col p-3">
+                <div class="row col p-3 contato shadow">
                     <h3 class="mb-5 text-center">Contato</h3>
                     <div class="col-md-6 p-3">
                         <h4 class="text-center mb-2">Deixe sua mensagem</h4>

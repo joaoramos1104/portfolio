@@ -2,7 +2,7 @@
 body{
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background: linear-gradient(to bottom,
-    rgba(50, 49, 50, 0.73) 0%, rgba(14, 5, 23, 0.96) 100%), url(../assets/img/body2.jpg);
+    rgba(50, 49, 50, 0.73) 0%, rgba(14, 5, 23, 0.96) 100%), url(../assets/img/body3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment:fixed;
@@ -80,8 +80,7 @@ header{
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: rgba(130, 130, 136, 0.93)!important;
-    border-bottom: solid 1px rgba(97, 75, 138, 0.93);
+    color: rgba(110, 75, 138, 0.93) !important;
 }
 
 .active {
@@ -104,7 +103,7 @@ header{
     margin-right: 0;
 }
 .social-icons .social-icon:hover {
-    background-color: rgba(97, 75, 138, 0.93);
+    background-color: rgba(110, 75, 138, 0.93);
     /*color: #676979 !important;*/
     color: rgba(255, 255, 255, 0.91) !important;
 }
@@ -118,10 +117,10 @@ header{
 /*-------------------------------------------------------------------*/
 
 
-.bg-custom{
+.contato{
     background-image: linear-gradient(to bottom,
-    rgba(165, 167, 167, 65%) 0%, rgba(87, 90, 102, 100%) 100%);
-
+    rgba(71, 86, 87, 0.75) 0%, rgb(46 66 86 / 74%) 100%);
+    border-radius: 10px;
 }
 
 /*-------------------------------------------------------------------*/
@@ -164,15 +163,15 @@ header{
     content: "";
     position: absolute;
     top: 10%;
-    left: 70%;
-    transform: skew(-40deg)
+    left: 50%;
+    transform: skew(-20deg)
     translateX(-50%);
-    width: 100%;
+    width: 80%;
     height: 90%;
-    background-image: linear-gradient(120deg, rgba(50, 49, 50, 0.73), rgba(14, 5, 23, 0.96));
+    background-image: linear-gradient(120deg, rgb(46 66 86 / 74%) 100%, rgb(54 0 76 / 75%) 0%);
     background-color: #333;
     opacity: 0.8;
-    border-radius: 80px 0px 0px 0px;
+    border-radius: 80px;
 }
 
 .art-cont > * {
@@ -183,15 +182,15 @@ header{
     content: "";
     position: absolute;
     top: 10%;
-    left: 30%;
-    transform: skew(40deg)
+    left: 50%;
+    transform: skew(20deg)
     translateX(-50%);
-    width: 100%;
+    width: 80%;
     height: 90%;
-    background-image:  linear-gradient(120deg, rgba(14, 5, 23, 0.96), rgba(50, 49, 50, 0.73));
+    background-image:  linear-gradient(120deg, rgb(54 0 76 / 75%) 0%, rgb(46 66 86 / 74%) 100%);
     background-color: #333;
     opacity: 0.8;
-    border-radius: 0px 80px 0px 0px;
+    border-radius: 80px;
 }
 
 .art-cont, .art-cont2 > * {
