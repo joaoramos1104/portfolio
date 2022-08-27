@@ -340,5 +340,4 @@
         ScrollReveal().reveal('.award', { interval: 100 });
     </script>
 
-
 @endsection
