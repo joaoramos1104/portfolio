@@ -23,6 +23,9 @@
     <script src="<?php echo e(url(mix('assets/scrollreveal/scrollreveal.es.js'))); ?>"></script>
     <script src="<?php echo e(url(mix('assets/scrollreveal/scrollreveal.js'))); ?>"></script>
 
+    <script crossorigin="anonymous" src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js" defer></script>
+
+
 
 </head>
 <body>

@@ -1,16 +1,17 @@
 
 body{
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background: linear-gradient(to bottom,
+    /*background: linear-gradient(to bottom,
     rgba(50, 49, 50, 0.73) 0%, rgba(14, 5, 23, 0.96) 100%), url(../assets/img/body3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 body {
     align-items: center;
+    background: #343a40;
 }
 
 p {
@@ -35,16 +36,20 @@ body::after{
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/svg/22.svg);
+    background-image: url(../assets/img/svg/4.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
     z-index: -1;
 }
 
+a{
+    text-decoration: none;
+}
+
 header{
-    background: linear-gradient(to bottom,
-    rgba(50, 49, 50, 0.73) 0%, rgba(14, 5, 23, 0.96) 100%), url(../assets/img/body8.jpg);
+    /*background: linear-gradient(to bottom,
+    rgba(50, 49, 50, 0.73) 0%, rgba(14, 5, 23, 0.96) 100%), url(../assets/img/body8.jpg);*/
     height: 100vh;
     /*padding-top: 1.5rem;*/
     padding-bottom: 0;
@@ -79,11 +84,11 @@ header{
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: rgba(110, 75, 138, 0.93) !important;
+    color: rgb(66, 152, 19) !important;
 }
 
 .active {
-    color: rgb(78, 72, 112)!important;
+    color: rgb(61, 82, 57) !important;
 
 }
 .social-icons .social-icon {
@@ -93,7 +98,7 @@ header{
     height: 3.5rem;
     width: 3.5rem;
     /*color: rgba(184, 199, 199, 0.62);*/
-    color: #676979;
+    color: #198754;
     border-radius: 100%;
     font-size: 1.5rem;
     margin-right: 1.5rem;
@@ -102,7 +107,7 @@ header{
     margin-right: 0;
 }
 .social-icons .social-icon:hover {
-    background-color: rgba(110, 75, 138, 0.93);
+    background-color: rgb(66, 152, 19);
     /*color: #676979 !important;*/
     color: rgba(255, 255, 255, 0.91) !important;
 }
@@ -114,6 +119,7 @@ header{
 }
 
 /*-------------------------------------------------------------------*/
+
 
 .contato{
     background-image: linear-gradient(to bottom,
@@ -166,7 +172,7 @@ header{
     translateX(-50%);
     width: 80%;
     height: 90%;
-    background-image: linear-gradient(120deg, rgb(46 66 86 / 74%) 100%, rgb(54 0 76 / 75%) 0%);
+    background-image: linear-gradient(120deg, rgb(61, 82, 57) 100%, rgb(66, 152, 19) 0%);
     background-color: #333;
     opacity: 0.8;
     border-radius: 80px;
@@ -185,7 +191,7 @@ header{
     translateX(-50%);
     width: 80%;
     height: 90%;
-    background-image:  linear-gradient(120deg, rgb(54 0 76 / 75%) 0%, rgb(46 66 86 / 74%) 100%);
+    background-image:  linear-gradient(120deg, rgb(66, 152, 19) 0%, rgb(61, 82, 57) 100%);
     background-color: #333;
     opacity: 0.8;
     border-radius: 80px;
@@ -197,24 +203,20 @@ header{
 
 .art-cont, .art-cont2 {
     position: relative;
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     overflow: hidden;
+    padding: 20px;
 }
 
-.img-modal{
+.img-carousel{
     width: 100%;
-    height: 510px;
-}
-
-.img-modal-admin {
-    width: 100%;
-    height: 410px;
+    height: 450px;
 }
 
 .card{
     height: 100%;!important;
-    border-radius: 0px 50px;!important;
+    /*border-radius: 0px 50px;!important;*/
 }
 
 /*-------------------------------------------------------------------*/
@@ -236,14 +238,14 @@ header{
 
 /*-------------------------------------------------------------------*/
 
-.awards, a{
+.awards{
     display: block;
     padding: 0.5rem 1rem;
-    color: rgba(22, 5, 40, 0.96);
+    color: rgba(22, 5, 40, 0.96) !important;
     text-decoration: none;
 }
 .awards:hover{
-    color: rgb(78, 41, 140);
+    color: rgb(61, 82, 57);
 }
 
 /*-------------------------------------------------------------------*/
@@ -270,7 +272,7 @@ header{
     .art-cont::before, .art-cont2::after {
         display: none;
     }
-    .img-modal{
+    .img-carousel{
         width: 100%;
         height: 300px;
     }
@@ -289,14 +291,14 @@ header{
 }
 
 @media screen and (max-width: 1366.99px) {
-    .img-modal{
+    .img-carousel{
         width: 100%;
-        height: 410px;
+        height: 350px;
     }
 }
 
 @media screen and (max-width: 999.99px) {
-    .img-modal{
+    .img-carousel{
         width: 100%;
         height: 260px;
     }
@@ -317,14 +319,14 @@ header{
     bottom: 2em;
     right: 2em;
     text-decoration: none;
-    color: rgb(103, 105, 121);
+    color: rgb(61, 82, 57);
     display: none;
     z-index: 100;
     animation: go-top 1s infinite alternate;
 }
 .button-top:hover {
     background:linear-gradient(to bottom,
-    rgba(102, 95, 145, 0.65) 0%, rgb(78, 41, 140) 100%);
+    rgb(61, 82, 57) 0%, rgb(66, 152, 19) 100%);
     border-radius: 20% !important;
     color: white;
 }
@@ -349,7 +351,8 @@ header{
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(97, 75, 138, 0.93) !important;
+    color: #198754;
+    box-shadow: 0 5px 10px rgb(66, 152, 19) !important;
 }
 
 .btn:active {

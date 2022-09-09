@@ -7,6 +7,29 @@
 
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <strong><a class="nav-link" href="#experience">Experiência e Educação</a></strong>
+                            </li>
+                            <li class="nav-item">
+                                <strong><a class="nav-link" href="#skills">Habilidades e Conquistas</a></strong>
+                            </li>
+                            <li class="nav-item">
+                                <strong><a class="nav-link" href="#projects">Projetos</a></strong>
+                            </li>
+                            <li class="nav-item">
+                                <strong><a class="nav-link" href="#interests">Interesses</a></strong>
+                            </li>
+                            <li class="nav-item">
+                                <strong><a class="nav-link" href="#contact">Contato</a></strong>
+                            </li>
+                        </ul>
+                    </div>
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
                             <a class="social-icon" href="https://linkedin.com/in/joao-f-ramos1104" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -26,28 +49,6 @@
                             <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
                         </li>
                     </ul>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav m-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#experience">Experiência e Educação</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#skills">Habilidades e Conquistas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#projects">Projetos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#interests">Interesses</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contato</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
         </div>
@@ -56,7 +57,25 @@
                 <div class="row mt-5">
                     <div class="col-md-6 col-sm-12 m-auto text-center text-color">
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." /></span>
-                        <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
+                        <h3 class="element">{{ $profile->name }} |
+                            <strong class="animated text-success"></strong>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        new TypeIt(".animated", {
+                                            speed: 200,
+                                            loop: true,
+                                            delay: 500,
+                                        })
+                                            .type('web D', {delay:900})
+                                            .delete(5)
+                                            .type('{{ $profile->tag_name }}', {delay:900})
+                                            .pause(1000)
+                                            .go();
+                                    });
+                                </script>
+
+                        </h3>
                         <p>{{ $profile->description }}</p>
                         <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-light shadow" href="#experience">Start Now</a>
@@ -78,7 +97,7 @@
     <!-- Main -->
     <main class="">
         <!-- Experience -->
-        <div class="container-lg rounded-custom shadow banner mt-5" id="experience">
+        <div class="container rounded-custom shadow banner mt-5" id="experience">
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Educação e Experiência</h3>
                 <div class="col-md-6 col-sm-12 text-center border-end border--white">
@@ -108,7 +127,7 @@
 
         <!-- Skills and Certification -->
         <div id="skills">
-            <div class="container-lg mt-3 text-color">
+            <div class="container mt-3 text-color">
                 <h3 class="text-center mb-2">Habilidades</h3>
                 <div class="text-center d-flex skills p-3 shadow">
                     <div class="row col justify-content-center">
@@ -124,7 +143,7 @@
                     <hr class="border-bottom border-white">
                 </div>
             </div>
-            <div class="container-lg mt-3 mb-3">
+            <div class="container mt-3 mb-3">
                 <h3 class="text-center mb-2 text-color">Conquistas</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
@@ -153,7 +172,7 @@
         <!-- Projects -->
         <div id="projects" class="">
             <h3 class="text-center m-auto text-color">Projetos</h3>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="">
                     <div class="justify-content-center">
                         <div class="col-6 p-1 text-center m-auto">
@@ -162,9 +181,9 @@
                     </div>
                     @foreach($projects as $chave => $project)
                         @if($chave %2 == 0)
-                            <section class="container-fluid text-color rounded-custom art-cont">
+                            <section class="container-fluid text-color art-cont">
                                 <div class="row mt-5">
-                                    <div class="col-md-6 col-sm-12 float-start m-auto">
+                                    <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
@@ -174,7 +193,7 @@
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
                                                     <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block w-100 img-modal" alt="...">
+                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block w-100 img-carousel" alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -188,7 +207,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-12 float-end m-auto text-center p-1">
+                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
@@ -198,12 +217,12 @@
                         @else
                             <section class="container-fluid text-color rounded-custom art-cont2">
                                 <div class="row mt-5">
-                                    <div class="col-md-6 col-sm-12 float-end m-auto text-center p-1">
+                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
-                                    <div class="col-md-6 col-sm-12 float-start m-auto">
+                                    <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
                                             <div class="carousel-indicators">
                                                 @foreach($project->imgProject as $key => $images)
@@ -213,7 +232,7 @@
                                             <div class="carousel-inner rounded shadow">
                                                 @foreach($project->imgProject as $key => $images)
                                                     <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-modal" alt="...">
+                                                        <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-carousel" alt="...">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -258,7 +277,7 @@
         <!-- Contact -->
         <div id="contact">
             <div class="container text-color">
-                <div class="row col p-3 contato shadow">
+                <div class="row col p-3">
                     <h3 class="mb-5 text-center">Contato</h3>
                     <div class="col-md-6 p-3">
                         <h4 class="text-center mb-2">Deixe sua mensagem</h4>
@@ -301,6 +320,7 @@
         </div>
     </main>
 
+
     <!-- Modal error_message -->
     <div class="modal fade" id="error_message" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -339,5 +359,6 @@
         ScrollReveal().reveal('.skill', { interval: 100 });
         ScrollReveal().reveal('.award', { interval: 100 });
     </script>
+
 
 @endsection

@@ -439,7 +439,7 @@
                         <div class="row justify-content-center">
                             @foreach($awards as $key => $award)
                                 <div class="col-md-3 col-sm-12 mr-1 mb-1">
-                                    <div class="card border-0 shadow text-center bg-custom p-3">
+                                    <div class="card border-0 shadow text-center p-3">
                                         <img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..." data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}">
                                         <a class="nav-link awards m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                                         <form>
@@ -552,7 +552,7 @@
                                                     <div class="carousel-inner rounded shadow">
                                                         @foreach($project->imgProject as $key => $images)
                                                             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                                <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-modal-admin">
+                                                                <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-carousel">
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -571,7 +571,7 @@
                                                 <strong><p style="white-space: pre-wrap;">{{ $project->description }}</p></strong>
                                                 <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira</a>
                                             </div>
-                                            <div class="col-md-1 col-sm-2 m-auto">
+                                            <div class="col-md-1 col-sm-2 m-auto p-1">
                                                 <form>
                                                     @csrf
                                                     <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
@@ -598,7 +598,7 @@
                                                     <div class="carousel-inner rounded shadow">
                                                         @foreach($project->imgProject as $key => $images)
                                                             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                                                <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-modal-admin" alt="...">
+                                                                <img src="{{ env('APP_URL') }}/storage/{{ $images->img_project }}" class="d-block img-carousel" alt="...">
                                                             </div>
                                                         @endforeach
                                                     </div>
@@ -613,7 +613,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 col-sm-2 m-auto">
+                                                <div class="col-md-1 col-sm-2 m-auto p-1">
                                                     <form>
                                                         @csrf
                                                         <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_project', $project->id) }}" formmethod="post" value="Remover">
