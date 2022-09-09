@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d35cf64-79d4-41aa-9bba-5e8b16462968" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/175ef17eabb9415ff2d223c2c43510b8909c1afa.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/175ef17eabb9415ff2d223c2c43510b8909c1afa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/2446c049ea960e333c0a6286a9123e5df261daad.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/2446c049ea960e333c0a6286a9123e5df261daad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/840fb463155a35e3a78bdad514b126c0c226bc4d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/840fb463155a35e3a78bdad514b126c0c226bc4d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +257,7 @@
       <workItem from="1661635862266" duration="5930000" />
       <workItem from="1661641914375" duration="599000" />
       <workItem from="1662325393399" duration="372000" />
-      <workItem from="1662677486916" duration="6042000" />
+      <workItem from="1662677486916" duration="6895000" />
     </task>
     <servers />
   </component>
