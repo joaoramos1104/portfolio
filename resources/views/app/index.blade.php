@@ -95,7 +95,7 @@
     </header>
 
     <!-- Main -->
-    <main class="">
+    <main>
         <!-- Experience -->
         <div class="container rounded-custom shadow banner mt-5" id="experience">
             <div class="row text-white col p-2">
@@ -181,7 +181,7 @@
                     </div>
                     @foreach($projects as $chave => $project)
                         @if($chave %2 == 0)
-                            <section class="container-fluid text-color art-cont">
+                            <section class="container-fluid text-color">
                                 <div class="row mt-5">
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
@@ -213,9 +213,12 @@
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
+                                <div class="container mt-3">
+                                    <hr class="border-bottom border-white">
+                                </div>
                             </section>
                         @else
-                            <section class="container-fluid text-color rounded-custom art-cont2">
+                            <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h5 class="fw-bold">{{ $project->title }}</h5>
@@ -246,6 +249,9 @@
                                             </button>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="container mt-3">
+                                    <hr class="border-bottom border-white">
                                 </div>
                             </section>
                         @endif
