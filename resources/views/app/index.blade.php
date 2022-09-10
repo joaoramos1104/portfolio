@@ -63,7 +63,7 @@
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function () {
                                         new TypeIt(".animated", {
-                                            speed: 200,
+                                            speed: 150,
                                             loop: true,
                                             delay: 500,
                                         })
@@ -208,7 +208,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold">{{ $project->title }}</h5>
+                                        <h5 class="fw-bold text-success projectTitle{{$chave}}"></h5>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -216,12 +216,24 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        new TypeIt(".projectTitle{{$chave}}", {
+                                            speed: 150,
+                                            loop: true,
+                                            delay: 500,
+                                        })
+                                            .type('{{ $project->title }}', {delay:900})
+                                            .pause(900)
+                                            .go();
+                                    });
+                                </script>
                             </section>
                         @else
                             <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold">{{ $project->title }}</h5>
+                                        <h5 class="fw-bold text-success projectTitle{{$chave}}"></h5>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -253,11 +265,24 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        new TypeIt(".projectTitle{{$chave}}", {
+                                            speed: 90,
+                                            loop: true,
+                                            delay: 500,
+                                        })
+                                            .type('{{ $project->title }}', {delay:900})
+                                            .pause(900)
+                                            .go();
+                                    });
+                                </script>
                             </section>
                         @endif
                     @endforeach
                 </div>
             </div>
+
             <div class="container mt-3">
                 <hr class="border-bottom border-white">
             </div>

@@ -62,7 +62,7 @@
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function () {
                                         new TypeIt(".animated", {
-                                            speed: 200,
+                                            speed: 150,
                                             loop: true,
                                             delay: 500,
                                         })
@@ -207,7 +207,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold"><?php echo e($project->title); ?></h5>
+                                        <h5 class="fw-bold text-success projectTitle<?php echo e($chave); ?>"></h5>
                                         <strong><p><?php echo e($project->description); ?></p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -215,12 +215,24 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        new TypeIt(".projectTitle<?php echo e($chave); ?>", {
+                                            speed: 150,
+                                            loop: true,
+                                            delay: 500,
+                                        })
+                                            .type('<?php echo e($project->title); ?>', {delay:900})
+                                            .pause(900)
+                                            .go();
+                                    });
+                                </script>
                             </section>
                         <?php else: ?>
                             <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold"><?php echo e($project->title); ?></h5>
+                                        <h5 class="fw-bold text-success projectTitle<?php echo e($chave); ?>"></h5>
                                         <strong><p><?php echo e($project->description); ?></p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -252,11 +264,24 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        new TypeIt(".projectTitle<?php echo e($chave); ?>", {
+                                            speed: 90,
+                                            loop: true,
+                                            delay: 500,
+                                        })
+                                            .type('<?php echo e($project->title); ?>', {delay:900})
+                                            .pause(900)
+                                            .go();
+                                    });
+                                </script>
                             </section>
                         <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
+
             <div class="container mt-3">
                 <hr class="border-bottom border-white">
             </div>
