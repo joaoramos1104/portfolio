@@ -46,7 +46,7 @@
                     </ul>
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
-                            <!-- <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
+                            <a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>
                         </li>
                     </ul>
                 </div>
@@ -54,10 +54,10 @@
         </div>
         <div class="container">
             @foreach($profiles as $profile)
-                <div class="row mt-5">
+                <div class="row mt-2">
                     <div class="col-md-6 col-sm-12 m-auto text-center text-color">
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." /></span>
-                        <h3 class="element">{{ $profile->name }} |
+                        <h2 class="element">{{ $profile->name }} |
                             <strong class="animated text-success"></strong>
 
                                 <script>
@@ -75,7 +75,7 @@
                                     });
                                 </script>
 
-                        </h3>
+                        </h2>
                         <p>{{ $profile->description }}</p>
                         <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-light shadow" href="#experience">Start Now</a>
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="col-1 float-end">
-            <a class="button-top p-3" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
+            <a class="button-top" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
         </div>
     </header>
 
@@ -182,6 +182,9 @@
                     @foreach($projects as $chave => $project)
                         @if($chave %2 == 0)
                             <section class="container-fluid text-color">
+                                <div class="col-6">
+
+                                </div>
                                 <div class="row mt-5">
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
@@ -207,8 +210,8 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold text-success projectTitle{{$chave}}"></h5>
+                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-3">
+                                        <h3 class="fw-bold text-success ">{{ $project->title }}</h3>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -216,24 +219,12 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", function () {
-                                        new TypeIt(".projectTitle{{$chave}}", {
-                                            speed: 150,
-                                            loop: true,
-                                            delay: 500,
-                                        })
-                                            .type('{{ $project->title }}', {delay:900})
-                                            .pause(900)
-                                            .go();
-                                    });
-                                </script>
                             </section>
                         @else
                             <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold text-success projectTitle{{$chave}}"></h5>
+                                        <h3 class="fw-bold text-success">{{ $project->title }}</h3>
                                         <strong><p>{{ $project->description }}</p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -265,18 +256,6 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", function () {
-                                        new TypeIt(".projectTitle{{$chave}}", {
-                                            speed: 90,
-                                            loop: true,
-                                            delay: 500,
-                                        })
-                                            .type('{{ $project->title }}', {delay:900})
-                                            .pause(900)
-                                            .go();
-                                    });
-                                </script>
                             </section>
                         @endif
                     @endforeach

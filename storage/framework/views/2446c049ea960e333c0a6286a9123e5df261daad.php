@@ -45,7 +45,7 @@
                     </ul>
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
-                            <!-- <a class="nav-link" href="<?php echo e(route('admin')); ?>" target="_blank"><i class="fas fa-user"></i> Login</a>-->
+                            <a class="nav-link" href="<?php echo e(route('admin')); ?>" target="_blank"><i class="fas fa-user"></i> Login</a>
                         </li>
                     </ul>
                 </div>
@@ -53,10 +53,10 @@
         </div>
         <div class="container">
             <?php $__currentLoopData = $profiles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $profile): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="row mt-5">
+                <div class="row mt-2">
                     <div class="col-md-6 col-sm-12 m-auto text-center text-color">
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_profile); ?>" alt="..." /></span>
-                        <h3 class="element"><?php echo e($profile->name); ?> |
+                        <h2 class="element"><?php echo e($profile->name); ?> |
                             <strong class="animated text-success"></strong>
 
                                 <script>
@@ -74,7 +74,7 @@
                                     });
                                 </script>
 
-                        </h3>
+                        </h2>
                         <p><?php echo e($profile->description); ?></p>
                         <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-light shadow" href="#experience">Start Now</a>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="col-1 float-end">
-            <a class="button-top p-3" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
+            <a class="button-top" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
         </div>
     </header>
 
@@ -181,6 +181,9 @@
                     <?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chave => $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($chave %2 == 0): ?>
                             <section class="container-fluid text-color">
+                                <div class="col-6">
+
+                                </div>
                                 <div class="row mt-5">
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel<?php echo e($chave); ?>" class="carousel slide" data-bs-ride="carousel">
@@ -206,8 +209,8 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold text-success projectTitle<?php echo e($chave); ?>"></h5>
+                                    <div class="col-md-5 col-sm-12 float-end m-auto text-center p-3">
+                                        <h3 class="fw-bold text-success "><?php echo e($project->title); ?></h3>
                                         <strong><p><?php echo e($project->description); ?></p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -215,24 +218,12 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", function () {
-                                        new TypeIt(".projectTitle<?php echo e($chave); ?>", {
-                                            speed: 150,
-                                            loop: true,
-                                            delay: 500,
-                                        })
-                                            .type('<?php echo e($project->title); ?>', {delay:900})
-                                            .pause(900)
-                                            .go();
-                                    });
-                                </script>
                             </section>
                         <?php else: ?>
                             <section class="container-fluid text-color rounded-custom">
                                 <div class="row mt-5">
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
-                                        <h5 class="fw-bold text-success projectTitle<?php echo e($chave); ?>"></h5>
+                                        <h3 class="fw-bold text-success"><?php echo e($project->title); ?></h3>
                                         <strong><p><?php echo e($project->description); ?></p></strong>
                                         <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Confira <i class="fab fa-github"></i></a>
                                     </div>
@@ -264,18 +255,6 @@
                                 <div class="container mt-3">
                                     <hr class="border-bottom border-white">
                                 </div>
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", function () {
-                                        new TypeIt(".projectTitle<?php echo e($chave); ?>", {
-                                            speed: 90,
-                                            loop: true,
-                                            delay: 500,
-                                        })
-                                            .type('<?php echo e($project->title); ?>', {delay:900})
-                                            .pause(900)
-                                            .go();
-                                    });
-                                </script>
                             </section>
                         <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
