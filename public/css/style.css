@@ -239,6 +239,17 @@ header{
 }
 .awards:hover{
     color: rgb(61, 82, 57);
+    animation: moveInAward 4s;
+}
+
+.skill:hover {
+    animation: moveInAward 4s;
+}
+
+@keyframes moveInAward {
+    30% {
+        transform: translateY(-10px);
+    }
 }
 
 /*-------------------------------------------------------------------*/
@@ -329,7 +340,6 @@ header{
     }
 }
 
-
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
@@ -348,21 +358,6 @@ header{
 .btn:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgb(255, 255, 255) !important;
-}
-
-.award:hover {
-    animation: moveInAward 3s;
-}
-
-.skill:hover {
-    animation: moveInAward 3s;
-}
-
-
-@keyframes moveInAward {
-    10% {
-        transform: translateY(-15px);
-    }
 }
 
 .modal-content {
