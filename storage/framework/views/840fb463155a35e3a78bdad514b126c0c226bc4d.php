@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
         <div class="row">
             <a class="navbar-brand" href="#"></a>
@@ -49,25 +49,25 @@
         <div class="col-md-12">
             <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="Profile-tab" data-bs-toggle="tab" data-bs-target="#Profile" type="button" role="tab" aria-controls="Profile" aria-selected="true">Perfil</button>
+                    <button class="nav-link active" id="Profile-tab" data-bs-toggle="tab" data-bs-target="#Profile" type="button" role="tab" aria-controls="Profile" aria-selected="true">Profile</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience" type="button" role="tab" aria-controls="experience" aria-selected="false">Experiência | Educação</button>
+                    <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience" type="button" role="tab" aria-controls="experience" aria-selected="false">Experience | Education</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="false">Habilidades</button>
+                    <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="false">Skills</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="awards-tab" data-bs-toggle="tab" data-bs-target="#awards" type="button" role="tab" aria-controls="awards" aria-selected="false">Certificações | Conquistas</button>
+                    <button class="nav-link" id="awards-tab" data-bs-toggle="tab" data-bs-target="#awards" type="button" role="tab" aria-controls="awards" aria-selected="false">Certifications | Awards</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab" aria-controls="projects" aria-selected="false">Projetos</button>
+                    <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab" aria-controls="projects" aria-selected="false">Projects</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="interests-tab" data-bs-toggle="tab" data-bs-target="#interests" type="button" role="tab" aria-controls="interests" aria-selected="false">Interesses</button>
+                    <button class="nav-link" id="interests-tab" data-bs-toggle="tab" data-bs-target="#interests" type="button" role="tab" aria-controls="interests" aria-selected="false">Interests</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contato</button>
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
                 </li>
             </ul>
 
@@ -76,7 +76,7 @@
                 <!-- tab Profile -->
                 <div class="tab-pane fade show active" id="Profile" role="tabpanel" aria-labelledby="Profile-tab">
                     <div class="container">
-                        <h3 class=" text-center text-color mt-3">Perfil</h3>
+                        <h3 class=" text-center text-color mt-3">Profile</h3>
                         <?php $__currentLoopData = $profiles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $profile): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="row text-color">
                                 <div class="col-md-5 col-sm-12 m-auto text-center">
@@ -187,10 +187,10 @@
                 <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
                     <div class="container mt-3 rounded-custom banner m-auto">
                         <div class="row text-white col p-4">
-                            <h3 class=" text-center m-auto">Educação</h3>
+                            <h3 class=" text-center m-auto">Education</h3>
                             <?php $__currentLoopData = $education; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $educ): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-12 text-center">
-                                    <p class="fw-bold">Educação</p>
+                                    <p class="fw-bold">Education</p>
                                     <h5><?php echo e($educ->institution); ?></h5>
                                     <h5><?php echo e($educ->type_course); ?></h5>
                                     <h6><?php echo e($educ->course); ?></h6>
@@ -215,7 +215,7 @@
                                                 <?php echo csrf_field(); ?>
                                                 <?php echo method_field('PUT'); ?>
                                                 <div class="row p-3">
-                                                    <h3 class="text-center">Educação</h3>
+                                                    <h3 class="text-center">Education</h3>
                                                     <div class="mb-3 col-6">
                                                         <label class="form-label">Instituição</label>
                                                         <input type="text" class="form-control" name="institution" value="<?php echo e($educ->institution); ?>">
@@ -294,10 +294,10 @@
                     </div>
                     <div class="container mt-3 rounded-custom banner m-auto">
                         <div class="row text-white col p-4">
-                            <h3 class=" text-center m-auto">Experiência</h3>
+                            <h3 class=" text-center m-auto">Experience</h3>
                             <?php $__currentLoopData = $experiences; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $experience): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-12 text-center">
-                                    <p class="fw-bold">Experinêcia</p>
+                                    <p class="fw-bold">Experience</p>
                                     <h5><?php echo e($experience->job_title); ?></h5>
                                     <p style="white-space: pre-wrap;"><?php echo e($experience->description_experience); ?></p>
                                     <a href="<?php echo e($experience->link_reference); ?>" target="_blank" class="btn btn-sm btn-light shadow">Veja mais</a>
@@ -384,7 +384,7 @@
                 <!-- tab Skills -->
                 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                     <div class="container text-color mt-3 m-auto">
-                        <h3 class="text-center p-2 mb-2">Habilidades</h3>
+                        <h3 class="text-center p-2 mb-2">Skills</h3>
                         <hr class="border-bottom border-dark">
                         <div class="text-center d-flex p-1">
                             <div class="row col justify-content-center">
@@ -402,7 +402,7 @@
                             </div>
                         </div>
                         <div class="container-fluid m-auto">
-                            <h3 class="text-center p-3">Novas Habilidades</h3>
+                            <h3 class="text-center p-3">Nova Skill</h3>
                             <form action="<?php echo e(route('create_skill')); ?>" method="post">
                                 <?php echo csrf_field(); ?>
                                 <div class="row p-3 bg-light rounded shadow text-black">
@@ -434,14 +434,14 @@
                 <!-- tab Awards -->
                 <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="awards-tab">
                     <div class="container text-color mt-3">
-                        <h3 class="mb-1 text-center">Conquistas e Certificações</h3>
+                        <h3 class="mb-1 text-center">Awards e Certifications</h3>
                         <hr class="border-bottom border-dark">
                         <div class="row justify-content-center">
                             <?php $__currentLoopData = $awards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $award): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-md-3 col-sm-12 mr-1 mb-1">
-                                    <div class="card border-0 shadow text-center p-3">
+                                    <div class="card awards border-0 shadow text-center p-3">
                                         <img src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($award->certification); ?>" class="card-img-top rounded-custom p-1" alt="..." data-bs-toggle="modal" data-bs-target="#modalCertification<?php echo e($key); ?>">
-                                        <a class="nav-link awards m-auto p-3" target="_blank" href="<?php echo e($award->link); ?>"><?php echo e($award->name); ?></a>
+                                        <a class="m-auto p-3" target="_blank" href="<?php echo e($award->link); ?>"><?php echo e($award->name); ?></a>
                                         <form>
                                             <?php echo csrf_field(); ?>
                                             <input type="submit" class="btn btn-sm btn-danger shadow" formaction="<?php echo e(route('delete_award', $award->id)); ?>" formmethod="post" value="Remover">
@@ -511,13 +511,17 @@
                                     <div class="row p-1">
                                         <h3 class="text-center">Novo Projeto</h3>
                                         <div class="row p-1">
-                                            <div class="mb-3 col-md-6 col-sm-12">
+                                            <div class="mb-3 col-md-12 col-sm-12">
                                                 <label  class="form-label">Nome Projeto</label>
                                                 <input type="text" data-name="cleanAddProject" class="form-control shadow" name="title" value="" placeholder="Nome Projeto">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Link Projeto</label>
                                                 <input type="text" data-name="cleanAddProject" class="form-control shadow" name="url_project" value="" placeholder="Example: GitHub">
+                                            </div>
+                                            <div class="mb-3 col-md-6 col-sm-12">
+                                                <label class="form-label">Link Web</label>
+                                                <input type="text" data-name="cleanAddProject" class="form-control shadow" name="url_project_web" value="#" placeholder="Link Web">
                                             </div>
                                             <div class="mb-3 col-md-12 col-sm-12">
                                                 <label class="form-label">Imagens Projeto</label>
@@ -540,7 +544,7 @@
                         <div class="row p-3">
                             <?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chave => $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <?php if($chave %2 == 0): ?>
-                                    <section class="container text-color rounded-custom art-cont">
+                                    <section class="container text-color rounded-custom">
                                         <div class="row p-3">
                                             <div class="col-md-6 col-sm-12 float-start m-auto">
                                                 <div id="carousel<?php echo e($chave); ?>" class="carousel slide" data-bs-ride="carousel">
@@ -567,26 +571,38 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12 float-end m-auto text-center">
-                                                <h5 class="fw-bold"><?php echo e($project->title); ?></h5>
+                                                <h5 class="fw-bold text-success"><?php echo e($project->title); ?></h5>
                                                 <strong><p style="white-space: pre-wrap;"><?php echo e($project->description); ?></p></strong>
-                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Confira</a>
+                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project_web); ?>" >Confira</a>
+                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Projeto</a>
+                                                <div class="col-sm-2 m-auto p-1 mt-3">
+                                                    <form>
+                                                        <?php echo csrf_field(); ?>
+                                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="<?php echo e(route('delete_project', $project->id)); ?>" formmethod="post" value="Remover Projeto">
+                                                        <?php echo method_field("DELETE"); ?>
+                                                    </form>
+                                                </div>
                                             </div>
-                                            <div class="col-md-1 col-sm-2 m-auto p-1">
-                                                <form>
-                                                    <?php echo csrf_field(); ?>
-                                                    <input type="submit" class="btn btn-sm btn-danger shadow" formaction="<?php echo e(route('delete_project', $project->id)); ?>" formmethod="post" value="Remover">
-                                                    <?php echo method_field("DELETE"); ?>
-                                                </form>
-                                            </div>
+                                        </div>
+                                        <div class="container mt-3">
+                                            <hr class="border-bottom border-white">
                                         </div>
                                     </section>
                                 <?php else: ?>
-                                    <section class="container text-color rounded-custom art-cont2">
+                                    <section class="container text-color rounded-custom">
                                         <div class="row p-3">
                                             <div class="col-md-6 col-sm-12 float-end m-auto text-center">
-                                                <h5 class="fw-bold"><?php echo e($project->title); ?></h5>
+                                                <h5 class="fw-bold text-success"><?php echo e($project->title); ?></h5>
                                                 <strong><p style="white-space: pre-wrap;"><?php echo e($project->description); ?></p></strong>
-                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Confira</a>
+                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project_web); ?>" >Confira</a>
+                                                <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project); ?>" >Projeto</a>
+                                                <div class="col-sm-2 m-auto p-1 mt-3">
+                                                    <form>
+                                                        <?php echo csrf_field(); ?>
+                                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="<?php echo e(route('delete_project', $project->id)); ?>" formmethod="post" value="Remover Projeto">
+                                                        <?php echo method_field("DELETE"); ?>
+                                                    </form>
+                                                </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12 float-start m-auto">
                                                 <div id="carousel<?php echo e($chave); ?>" class="carousel slide" data-bs-ride="carousel">
@@ -612,15 +628,9 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-1 col-sm-2 m-auto p-1">
-                                                    <form>
-                                                        <?php echo csrf_field(); ?>
-                                                        <input type="submit" class="btn btn-sm btn-danger shadow" formaction="<?php echo e(route('delete_project', $project->id)); ?>" formmethod="post" value="Remover">
-                                                        <?php echo method_field("DELETE"); ?>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        <div class="container mt-3">
+                                            <hr class="border-bottom border-white">
                                         </div>
                                     </section>
                                 <?php endif; ?>
@@ -658,7 +668,7 @@
                                             <?php echo method_field('PUT'); ?>
                                             <div class="row p-3">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Interesses</label>
+                                                    <label class="form-label">Interests</label>
                                                     <textarea class="form-control" name="description"rows="5"><?php echo e($interest->description); ?></textarea>
                                                 </div>
                                             </div>
@@ -683,7 +693,7 @@
                         </div>
                         <div class="collapse text-color" id="collapseInterests">
                             <div class="mb-3 p-3">
-                                <label class="form-label">Interesses</label>
+                                <label class="form-label">Interests</label>
                                 <textarea class="form-control" name="description" id="textareaInteresses" rows="5"></textarea>
                             </div>
                             <div class="col-4 m-auto">
@@ -698,7 +708,7 @@
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <div class="container text-color">
                         <div class="row col p-3">
-                            <h3 class="mb-5 text-center">Contato</h3>
+                            <h3 class="mb-5 text-center">Contact</h3>
                             <hr class="border-bottom border-dark">
                             <div class="col-md-6 p-3">
                                 <?php if(count($errors) > 0 ): ?>

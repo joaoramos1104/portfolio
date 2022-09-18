@@ -11,7 +11,7 @@ p {
 }
 
 .text-color{
-    color: rgba(255, 255, 255, 0.91);
+    color: #ffffff;
 }
 
 .skills{
@@ -77,11 +77,11 @@ header{
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: rgb(66, 152, 19) !important;
+    color: #198754 !important;
 }
 
 .active {
-    color: rgb(61, 82, 57) !important;
+    color: #198754 !important;
 
 }
 .social-icons .social-icon {
@@ -90,7 +90,6 @@ header{
     justify-content: center;
     height: 3.5rem;
     width: 3.5rem;
-    /*color: rgba(184, 199, 199, 0.62);*/
     color: #198754;
     border-radius: 100%;
     font-size: 1.5rem;
@@ -100,7 +99,7 @@ header{
     margin-right: 0;
 }
 .social-icons .social-icon:hover {
-    background-color: rgb(66, 152, 19);
+    background-color: #198754;
     /*color: #676979 !important;*/
     color: rgba(255, 255, 255, 0.91) !important;
 }
@@ -155,7 +154,7 @@ header{
 
 /*-------------------------------------------------------------------*/
 
-
+/*
 .art-cont::before {
     content: "";
     position: absolute;
@@ -201,6 +200,7 @@ header{
     overflow: hidden;
     padding: 20px;
 }
+*/
 
 .img-carousel{
     width: 100%;
@@ -231,14 +231,18 @@ header{
 
 /*-------------------------------------------------------------------*/
 
-.awards{
+.awards > a{
     display: block;
     padding: 0.5rem 1rem;
-    color: rgba(22, 5, 40, 0.96) !important;
+    color: #198754; !important;
     text-decoration: none;
 }
+
+.awards > a:hover{
+    color: #000000; !important;
+}
 .awards:hover{
-    color: rgb(61, 82, 57);
+    box-shadow: 0 5px 10px rgb(66, 152, 19) !important;
     animation: moveInAward 4s;
 }
 
@@ -349,7 +353,7 @@ header{
     transition: all .2s;
 }
 
-.btn:hover {
+.btn-custom:hover {
     transform: translateY(-3px);
     color: #198754;
     box-shadow: 0 5px 10px rgb(66, 152, 19) !important;

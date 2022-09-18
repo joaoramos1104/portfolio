@@ -14,19 +14,19 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <strong><a class="nav-link" href="#experience">Experiência e Educação</a></strong>
+                                <strong><a class="nav-link" href="#experience">Experience | Education</a></strong>
                             </li>
                             <li class="nav-item">
-                                <strong><a class="nav-link" href="#skills">Habilidades e Conquistas</a></strong>
+                                <strong><a class="nav-link" href="#skills">Skills | Awards</a></strong>
                             </li>
                             <li class="nav-item">
-                                <strong><a class="nav-link" href="#projects">Projetos</a></strong>
+                                <strong><a class="nav-link" href="#projects">Projects</a></strong>
                             </li>
                             <li class="nav-item">
-                                <strong><a class="nav-link" href="#interests">Interesses</a></strong>
+                                <strong><a class="nav-link" href="#interests">Interests</a></strong>
                             </li>
                             <li class="nav-item">
-                                <strong><a class="nav-link" href="#contact">Contato</a></strong>
+                                <strong><a class="nav-link" href="#contact">Contact</a></strong>
                             </li>
                         </ul>
                     </div>
@@ -77,8 +77,8 @@
 
                         </h2>
                         <p>{{ $profile->description }}</p>
-                        <a class="btn btn-light shadow me-2" href="#">Saiba Mais</a>
-                        <a class="btn btn-light shadow" href="#experience">Start Now</a>
+                        <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
+                        <a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>
                     </div>
                     <div class="col-md-6 m-auto p-3 img-header js-tilt" data-tilt>
                         <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
@@ -99,9 +99,9 @@
         <!-- Experience -->
         <div class="container rounded-custom shadow banner mt-5" id="experience">
             <div class="row text-white col p-2">
-                <h3 class=" text-center m-auto">Educação e Experiência</h3>
+                <h3 class=" text-center m-auto">Education | Experiences</h3>
                 <div class="col-md-6 col-sm-12 text-center border-end border--white">
-                    <h5 class="fw-bold">Educação</h5>
+                    <h5 class="fw-bold">Education</h5>
                     @foreach($education as $educ)
                         <h5>{{ $educ->institution }}</h5>
                         <h5>{{ $educ->type_course }}</h5>
@@ -112,11 +112,11 @@
                 </div>
 
                 <div class="col-md-6 col-sm-12 text-center">
-                    <h5 class="fw-bold">Experiência</h5>
+                    <h5 class="fw-bold">Experiences</h5>
                     @foreach($experiences as $experience)
                         <h5>{{ $experience->job_title }}</h5>
                         <p>{{ $experience->description_experience }}</p>
-                        <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-sm btn-light shadow">Veja mais</a>
+                        <a href="{{ $experience->link_reference }}" target="_blank" class="btn btn-custom btn-sm btn-light shadow">Veja mais</a>
                     @endforeach
                 </div>
             </div>
@@ -128,7 +128,7 @@
         <!-- Skills and Certification -->
         <div id="skills">
             <div class="container mt-3 text-color">
-                <h3 class="text-center mb-2">Habilidades</h3>
+                <h3 class="text-center mb-2">Skills</h3>
                 <div class="text-center d-flex skills p-3 shadow">
                     <div class="row col justify-content-center">
                         @foreach($skills as $skill)
@@ -144,13 +144,13 @@
                 </div>
             </div>
             <div class="container mt-3 mb-3">
-                <h3 class="text-center mb-2 text-color">Conquistas</h3>
+                <h3 class="text-center mb-2 text-color">Awards</h3>
                 <div class="row justify-content-center">
                     @foreach($awards as $key => $award)
                         <div class="col-md-3 col-sm-12 mr-1 mb-2 award">
-                            <div class="card border-0 shadow text-center">
+                            <div class="card awards border-0 shadow text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#modalCertification{{ $key }}"><img src="{{ env('APP_URL') }}/storage/{{ $award->certification }}" class="card-img-top rounded-custom p-1" alt="..."></a>
-                                <a class="awards m-auto p-1" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
+                                <a class="m-auto p-1" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                             </div>
                         </div>
                         <!-- Modal -->
@@ -171,12 +171,12 @@
 
         <!-- Projects -->
         <div id="projects" class="">
-            <h3 class="text-center m-auto text-color">Projetos</h3>
+            <h3 class="text-center m-auto text-color">Projects</h3>
             <div class="container">
                 <div class="">
                     <div class="justify-content-center">
                         <div class="col-6 p-1 text-center m-auto">
-                            <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Veja mais <i class="fab fa-github"></i></a>
+                            <a class="btn btn-custom btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Visite meu Github <i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     @foreach($projects as $chave => $project)
@@ -213,7 +213,8 @@
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-3">
                                         <h3 class="fw-bold text-success ">{{ $project->title }}</h3>
                                         <strong><p>{{ $project->description }}</p></strong>
-                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
+                                        <a class="btn btn-custom btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project_web }}" >Confira <i class="fa-solid fa-browser"></i></a>
+                                        <a class="btn btn-custom btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Projeto <i class="fab fa-github"></i></a>
                                     </div>
                                 </div>
                                 <div class="container mt-3">
@@ -226,7 +227,8 @@
                                     <div class="col-md-5 col-sm-12 float-end m-auto text-center p-1">
                                         <h3 class="fw-bold text-success">{{ $project->title }}</h3>
                                         <strong><p>{{ $project->description }}</p></strong>
-                                        <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Confira <i class="fab fa-github"></i></a>
+                                        <a class="btn btn-custom btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project_web }}" >Confira <i class="fa-solid fa-browser"></i></a>
+                                        <a class="btn btn-custom btn-sm btn-light mb-1 shadow" target="_blank" href="{{ $project->url_project }}" >Projeto <i class="fab fa-github"></i></a>
                                     </div>
                                     <div class="col-md-7 col-sm-12 float-start m-auto">
                                         <div id="carousel{{ $chave }}" class="carousel slide" data-bs-ride="carousel">
@@ -271,7 +273,7 @@
         <div id="interests">
             <div class="container text-color">
                 <div class="row m-auto p-3">
-                    <h3 class="mb-5 text-center">Interesses</h3>
+                    <h3 class="mb-5 text-center">Interests</h3>
                     <div class="text-center">
                         @foreach($interests as $interest)
                             <strong><p>{{ $interest->description }}</p></strong>
@@ -288,7 +290,7 @@
         <div id="contact">
             <div class="container text-color">
                 <div class="row col p-3">
-                    <h3 class="mb-5 text-center">Contato</h3>
+                    <h3 class="mb-5 text-center">Contact</h3>
                     <div class="col-md-6 p-3">
                         <h4 class="text-center mb-2">Deixe sua mensagem</h4>
                         <form name="send_message" class="row g-3">
