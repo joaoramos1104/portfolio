@@ -74,7 +74,7 @@
                                     });
                                 </script>
                         </h2>
-                        <p>{{ $profile->description }}</p>
+                        <p>{!! $profile->description !!}</p>
                         <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>
                     </div>

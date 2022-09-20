@@ -58,7 +58,6 @@
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_profile); ?>" alt="..." /></span>
                         <h2 class="element"><?php echo e($profile->name); ?> |
                             <strong class="animated text-success"></strong>
-
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function () {
                                         new TypeIt(".animated", {
@@ -73,9 +72,8 @@
                                             .go();
                                     });
                                 </script>
-
                         </h2>
-                        <p><?php echo e($profile->description); ?></p>
+                        <p><?php echo $profile->description; ?></p>
                         <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>
                     </div>

@@ -98,7 +98,7 @@
                                             });
                                         </script>
                                     </h2>
-                                    <strong><p>{{ $profile->description }}</p></strong>
+                                    <strong><p>{!! $profile->description !!}</p></strong>
                                 </div>
                                 <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
                                     <img src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
