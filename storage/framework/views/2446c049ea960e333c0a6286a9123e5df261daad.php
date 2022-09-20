@@ -66,9 +66,9 @@
                                             loop: true,
                                             delay: 500,
                                         })
-                                            .type('web D', {delay:900})
-                                            .delete(5)
                                             .type('<?php echo e($profile->tag_name); ?>', {delay:900})
+                                            .delete('<?php echo e($profile->tag_name); ?>'.length)
+                                            .type('<?php echo e($profile->tag_name2); ?>', {delay:900})
                                             .pause(1000)
                                             .go();
                                     });
@@ -175,7 +175,7 @@
                 <div class="">
                     <div class="justify-content-center">
                         <div class="col-6 p-1 text-center m-auto">
-                            <a class="btn btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Visite meu Github <i class="fab fa-github"></i></a>
+                            <a class="btn btn-custom btn-sm btn-light shadow" href="https://github.com/joaoramos1104" target="_blank">Visite meu Github <i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chave => $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

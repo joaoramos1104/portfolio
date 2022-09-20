@@ -81,7 +81,23 @@
                             <div class="row text-color">
                                 <div class="col-md-5 col-sm-12 m-auto text-center">
                                     <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
-                                    <h3>{{ $profile->name }} | {{ $profile->tag_name }}</h3>
+                                    <h2 class="element">{{ $profile->name }} |
+                                        <strong class="animated text-success"></strong>
+                                        <script>
+                                            document.addEventListener("DOMContentLoaded", function () {
+                                                new TypeIt(".animated", {
+                                                    speed: 150,
+                                                    loop: true,
+                                                    delay: 500,
+                                                })
+                                                    .type('{{ $profile->tag_name }}', {delay:900})
+                                                    .delete('{{ $profile->tag_name }}'.length)
+                                                    .type('{{ $profile->tag_name2 }}', {delay:900})
+                                                    .pause(1000)
+                                                    .go();
+                                            });
+                                        </script>
+                                    </h2>
                                     <strong><p>{{ $profile->description }}</p></strong>
                                 </div>
                                 <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
@@ -114,6 +130,10 @@
                                                 <div class="mb-3 col-md-6 col-sm-12">
                                                     <label class="form-label">Tag Perfil</label>
                                                     <input type="text" class="form-control" name="tag_name" value="{{ $profile->tag_name }}">
+                                                </div>
+                                                <div class="mb-3 col-md-6 col-sm-12">
+                                                    <label class="form-label">Tag Perfil 2</label>
+                                                    <input type="text" class="form-control" name="tag_name2" value="{{ $profile->tag_name2 }}">
                                                 </div>
                                                 <div class="mb-3 col-md-6 col-sm-12">
                                                     <label class="form-label">Imagem Perfil</label>
@@ -158,6 +178,10 @@
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Tag Perfil</label>
                                                 <input type="text" data-name="cleanAddProfile" class="form-control" name="tag_name" value="" placeholder="Example: Web Developer">
+                                            </div>
+                                            <div class="mb-3 col-md-6 col-sm-12">
+                                                <label class="form-label">Tag Perfil 2</label>
+                                                <input type="text" data-name="cleanAddProfile" class="form-control" name="tag_name2" value="" placeholder="Example: Analista de Sistemas">
                                             </div>
                                             <div class="mb-3 col-md-6 col-sm-12">
                                                 <label class="form-label">Imagem Perfil</label>

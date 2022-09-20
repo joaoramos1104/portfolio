@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('tag_name');
+            $table->string('tag_name2');
             $table->text('description');
             $table->string('img_profile');
             $table->string('img_header');

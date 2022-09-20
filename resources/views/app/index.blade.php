@@ -59,7 +59,6 @@
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." /></span>
                         <h2 class="element">{{ $profile->name }} |
                             <strong class="animated text-success"></strong>
-
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function () {
                                         new TypeIt(".animated", {
@@ -67,14 +66,13 @@
                                             loop: true,
                                             delay: 500,
                                         })
-                                            .type('web D', {delay:900})
-                                            .delete(5)
                                             .type('{{ $profile->tag_name }}', {delay:900})
+                                            .delete('{{ $profile->tag_name }}'.length)
+                                            .type('{{ $profile->tag_name2 }}', {delay:900})
                                             .pause(1000)
                                             .go();
                                     });
                                 </script>
-
                         </h2>
                         <p>{{ $profile->description }}</p>
                         <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
