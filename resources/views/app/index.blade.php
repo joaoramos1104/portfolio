@@ -55,7 +55,7 @@
         <div class="container">
             @foreach($profiles as $profile)
                 <div class="row mt-2">
-                    <div class="col-md-6 col-sm-12 m-auto text-center text-color">
+                    <div class="col-md-7 col-sm-12 m-auto text-center text-color">
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." /></span>
                         <h2 class="element">{{ $profile->name }} |
                             <strong class="animated text-success"></strong>
@@ -78,7 +78,7 @@
                         <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
                         <a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>
                     </div>
-                    <div class="col-md-6 m-auto p-3 img-header js-tilt" data-tilt>
+                    <div class="col-md-5 m-auto p-3 img-header js-tilt" data-tilt>
                         <img id="img_header" src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
                     </div>
                 </div>
