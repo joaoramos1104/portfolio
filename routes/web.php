@@ -36,6 +36,8 @@ Route::group(['middleware'=>['auth:admin']], function (){
     Route::delete('/admin/experiences/{id}', [App\Http\Controllers\Admin\AdminController::class, 'destroyExperience'])->name('delete_experience');
     Route::post('/admin/skills/', [App\Http\Controllers\Admin\AdminController::class, 'storeSkill'])->name('create_skill');
     Route::delete('/admin/skills/{id}', [App\Http\Controllers\Admin\AdminController::class, 'destroySkill'])->name('delete_skill');
+    Route::post('/admin/soft_skills/', [App\Http\Controllers\Admin\AdminController::class, 'storeSoftSkill'])->name('create_soft_skill');
+    Route::delete('/admin/soft_skills/{id}', [App\Http\Controllers\Admin\AdminController::class, 'destroySoftSkill'])->name('delete_soft_skill');
     Route::post('/admin/awards/', [App\Http\Controllers\Admin\AdminController::class, 'storeAward'])->name('create_award');
     Route::delete('/admin/awards/{id}', [App\Http\Controllers\Admin\AdminController::class, 'destroyAward'])->name('delete_award');
     Route::post('/admin/interests/', [App\Http\Controllers\Admin\AdminController::class, 'storeInterest'])->name('create_interest');

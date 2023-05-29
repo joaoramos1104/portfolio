@@ -11,6 +11,7 @@ use App\Models\Interest;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Skill;
+use App\Models\Soft_skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -27,11 +28,12 @@ class AdminController extends Controller
         $education = Education::all();
         $experiences = Experience::all();
         $skills = Skill::all();
+        $soft_skills = Soft_skill::all();
         $awards = Award::all();
         $interests = Interest::all();
         $projects = Project::with('imgProject')->get();
 
-        return view('/admin.admin', compact('profiles','education', 'experiences', 'skills', 'awards','interests','projects'));
+        return view('/admin.admin', compact('profiles','education', 'experiences', 'skills', 'soft_skills', 'awards','interests','projects'));
     }
 
 
@@ -187,6 +189,28 @@ class AdminController extends Controller
         $skill = Skill::find($id);
         if (isset($skill)){
             $skill->delete();
+            return redirect()->route('admin');
+        }
+        return redirect()->route('admin');
+    }
+
+    public function storeSoftSkill(Request $request)
+    {
+        $soft_skills = new Soft_skill();
+        if ($request->name){
+            $soft_skills->name = $request->input('name');
+            $soft_skills->save();
+            return redirect()->route('admin');
+        }
+        return redirect()->route('admin');
+
+    }
+
+    public function destroySoftSkill($id)
+    {
+        $soft_skill = Soft_skill::find($id);
+        if (isset($soft_skill)){
+            $soft_skill->delete();
             return redirect()->route('admin');
         }
         return redirect()->route('admin');

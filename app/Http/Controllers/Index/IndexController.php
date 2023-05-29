@@ -10,6 +10,7 @@ use App\Models\Interest;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Skill;
+use App\Models\Soft_skill;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -20,11 +21,12 @@ class IndexController extends Controller
         $education = Education::all();
         $experiences = Experience::all();
         $skills = Skill::all();
+        $soft_skills = Soft_skill::all();
         $awards = Award::all();
         $interests = Interest::all();
         $projects = Project::with('imgProject')->get();
 
-        return view('/app.index', compact('profiles','education', 'experiences', 'skills', 'awards','interests','projects'));
+        return view('/app.index', compact('profiles','education', 'experiences', 'skills','soft_skills', 'awards','interests','projects'));
     }
 
     public function email(Request $request)
@@ -45,7 +47,7 @@ class IndexController extends Controller
             $status['message'] = "success, Obrigado pelo Contato.";
             echo json_encode($status);
 
-        }catch (Exception $status){
+        }catch (\Exception $status){
             //$status['success'] = false;
             $status['message'] = "Algo deu errado, tente novamente mais tarde!";
             echo json_encode($status);

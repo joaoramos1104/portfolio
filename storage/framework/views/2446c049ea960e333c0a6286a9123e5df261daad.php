@@ -45,7 +45,7 @@
                     </ul>
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
-                            <a class="nav-link" href="<?php echo e(route('admin')); ?>" target="_blank"><i class="fas fa-user"></i> Login</a>
+                            <!--<a class="nav-link" href="<?php echo e(route('admin')); ?>" target="_blank"><i class="fas fa-user"></i> Login</a>-->
                         </li>
                     </ul>
                 </div>
@@ -54,7 +54,7 @@
         <div class="container">
             <?php $__currentLoopData = $profiles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $profile): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="row mt-2">
-                    <div class="col-md-6 col-sm-12 m-auto text-center text-color">
+                    <div class="col-md-7 col-sm-12 m-auto text-center text-color">
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_profile); ?>" alt="..." /></span>
                         <h2 class="element"><?php echo e($profile->name); ?> |
                             <strong class="animated text-success"></strong>
@@ -75,9 +75,9 @@
                         </h2>
                         <p><?php echo $profile->description; ?></p>
                         <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
-                        <a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>
+                        <!--<a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>-->
                     </div>
-                    <div class="col-md-6 m-auto p-3 img-header js-tilt" data-tilt>
+                    <div class="col-md-5 m-auto p-3 img-header js-tilt" data-tilt>
                         <img id="img_header" src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_header); ?>" class="img-fluid rounded-custom" alt="header2.png">
                     </div>
                 </div>
@@ -126,18 +126,33 @@
         <div id="skills">
             <div class="container mt-3 text-color">
                 <h3 class="text-center mb-2">Skills</h3>
-                <div class="text-center d-flex skills p-3 shadow">
-                    <div class="row col justify-content-center">
+                <div class="row p-3">
+
+                    <div class="row col p-3">
+                        <h4 class="text-center mb-2">Soft Skills</h4>
+                        <ul class="list-group list-group-flush text-center">
+                            <?php $__currentLoopData = $soft_skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $soft_skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li class="list-group-item skill bg-transparent text-white">
+                                <?php echo e($soft_skill->name); ?>
+
+                                <span class="badge text-success"><i class="far fa fa-check"></i></span>
+                            </li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </ul>
+                    </div>
+
+                    <div class="row col p-3">
+                        <h4 class="text-center mb-2">Hard Skills</h4>
                         <?php $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="col-3 col-md-2 mt-2 skill">
-                                <p style="color:<?php echo e($skill->color_skill); ?>;"><?php echo $skill->icon_skill; ?></p>
-                                <p><?php echo e($skill->name); ?></p>
+                            <div class="col m-auto text-center p-3">
+                                <p class="rounded-2 p-2" style="color:<?php echo e($skill->color_skill); ?>;"><?php echo $skill->icon_skill; ?></p>
+                                <p class="text-white"><?php echo e($skill->name); ?></p>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
                 <div class="container mt-3">
-                    <hr class="border-bottom border-white">
+                    <hr class="border-bottom border-dark">
                 </div>
             </div>
             <div class="container mt-3 mb-3">
@@ -160,7 +175,7 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
                 <div class="container mt-3">
-                    <hr class="border-bottom border-white">
+                    <hr class="border-bottom border-dark">
                 </div>
             </div>
 
@@ -215,7 +230,7 @@
                                     </div>
                                 </div>
                                 <div class="container mt-3">
-                                    <hr class="border-bottom border-white">
+                                    <hr class="border-bottom border-dark">
                                 </div>
                             </section>
                         <?php else: ?>
@@ -253,7 +268,7 @@
                                     </div>
                                 </div>
                                 <div class="container mt-3">
-                                    <hr class="border-bottom border-white">
+                                    <hr class="border-bottom border-dark">
                                 </div>
                             </section>
                         <?php endif; ?>
@@ -262,7 +277,7 @@
             </div>
 
             <div class="container mt-3">
-                <hr class="border-bottom border-white">
+                <hr class="border-bottom border-dark">
             </div>
         </div>
 
@@ -279,7 +294,7 @@
                 </div>
             </div>
             <div class="container mt-3">
-                <hr class="border-bottom border-white">
+                <hr class="border-bottom border-dark">
             </div>
         </div>
 
@@ -294,22 +309,22 @@
                             <?php echo csrf_field(); ?>
                             <div class="col-md-6 p-1">
                                 <label class="form-label">Seu Nome</label>
-                                <input type="text" class="form-control rounded-pill" id="name" name="name" data-name='input-messager' placeholder="Seu Nome" required>
+                                <input type="text" class="form-control rounded-pill shadow" id="name" name="name" data-name='input-messager' placeholder="Seu Nome" required>
                             </div>
                             <div class="col-md-6 p-1">
                                 <label class="form-label">Seu Telefone</label>
-                                <input type="text" class="form-control rounded-pill" id="tel" name="tel" data-name='input-messager' placeholder="(21) 99999-9999" required>
+                                <input type="text" class="form-control rounded-pill shadow" id="tel" name="tel" data-name='input-messager' placeholder="(21) 99999-9999" required>
                             </div>
                             <div class="col-12 p-1">
                                 <label class="form-label">E-mail</label>
-                                <input type="email" class="form-control rounded-pill" id="email" name="email" data-name='input-messager' placeholder="Seu e-mail" required>
+                                <input type="email" class="form-control rounded-pill shadow" id="email" name="email" data-name='input-messager' placeholder="Seu e-mail" required>
                             </div>
                             <div class="form-check mb-3 p-1 text-center">
                                 <label class="form-label">Mensagem</label>
-                                <textarea name="message" rows="5" class="form-control rounded" id="message" data-name='input-messager' placeholder="Coloque aqui sua mensagem..." required></textarea>
+                                <textarea name="message" rows="5" class="form-control rounded shadow" id="message" data-name='input-messager' placeholder="Coloque aqui sua mensagem..." required></textarea>
                             </div>
                             <div class="col-12 p-1 text-center">
-                                <button type="submit" class="btn btn-light">Enviar</button>
+                                <button type="submit" class="btn btn-light shadow">Enviar</button>
                             </div>
                         </form>
                     </div>

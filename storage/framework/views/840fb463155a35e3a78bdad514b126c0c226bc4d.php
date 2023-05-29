@@ -98,7 +98,7 @@
                                             });
                                         </script>
                                     </h2>
-                                    <strong><p><?php echo e($profile->description); ?></p></strong>
+                                    <strong><p><?php echo $profile->description; ?></p></strong>
                                 </div>
                                 <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
                                     <img src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_header); ?>" class="img-fluid rounded-custom" alt="header2.png">
@@ -411,46 +411,93 @@
                         <h3 class="text-center p-2 mb-2">Skills</h3>
                         <hr class="border-bottom border-dark">
                         <div class="text-center d-flex p-1">
-                            <div class="row col justify-content-center">
-                                <?php $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <div class=" col-3 col-md-2 mt-2">
-                                        <p style="color:<?php echo e($skill->color_skill); ?>;"><?php echo $skill->icon_skill; ?></p>
-                                        <strong><p><?php echo e($skill->name); ?></p></strong>
-                                        <form>
-                                            <?php echo csrf_field(); ?>
-                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="<?php echo e(route('delete_skill', $skill->id)); ?>" formmethod="post" value="Remover">
-                                            <?php echo method_field("DELETE"); ?>
-                                        </form>
-                                    </div>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            
+                            <div class="row p-3">
+
+                                <div class="row col-4 p-3">
+                                    <h4 class="text-center mb-2">Soft Skills</h4>
+                                    <ul class="list-group list-group-flush text-center">
+                                        <?php $__currentLoopData = $soft_skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $soft_skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li class="list-group-item bg-transparent text-white">
+                                            <?php echo e($soft_skill->name); ?>
+
+                                            <span class="badge text-success">
+                                                <form>
+                                                <?php echo csrf_field(); ?>
+                                                <input type="submit" class="btn btn-sm btn-outline-danger border-0" formaction="<?php echo e(route('delete_soft_skill', $soft_skill->id)); ?>" formmethod="post" value="Remover">
+                                                <?php echo method_field("DELETE"); ?>
+                                            </form>
+                                        </span>
+                                        </li>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </ul>
+                                </div>
+
+                                <div class="row col-8 p-3">
+                                    <h4 class="text-center mb-2">Hard Skills</h4>
+                                    <?php $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <div class="col m-auto text-center p-3">
+                                            <p class="rounded-2 p-2" style="color:<?php echo e($skill->color_skill); ?>;"><?php echo $skill->icon_skill; ?></p>
+                                            <p class="text-white"><?php echo e($skill->name); ?></p>
+                                            <form>
+                                                <?php echo csrf_field(); ?>
+                                                <input type="submit" class="btn btn-sm btn-outline-danger border-0" formaction="<?php echo e(route('delete_skill', $skill->id)); ?>" formmethod="post" value="Remover">
+                                                <?php echo method_field("DELETE"); ?>
+                                            </form>
+                                        </div>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="container-fluid m-auto">
-                            <h3 class="text-center p-3">Nova Skill</h3>
-                            <form action="<?php echo e(route('create_skill')); ?>" method="post">
-                                <?php echo csrf_field(); ?>
-                                <div class="row p-3 bg-light rounded shadow text-black">
-                                    <div class="mb-3 col-12">
-                                        <label class="form-label">Skill</label>
-                                        <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: HTML5">
-                                    </div>
 
-                                    <div class="col-sm-12 col-md-10">
-                                        <label class="form-label text-dark">Icone</label>
-                                        <input type="text" class="form-control shadow" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 rounded mt-3">
-                                        <label class="form-label text-info">Color</label>
-                                        <input type="color" class="form-control-xl shadow" name="color_skill" value="">
-                                    </div>
+                            <div class="row text-center">
+                                <div class="col-md-6 col-sm-12 p-2">
+                                    <h3 class="text-center p-3">Nova Soft Skill</h3>
+                                    <form action="<?php echo e(route('create_soft_skill')); ?>" method="post">
+                                        <?php echo csrf_field(); ?>
+                                        <div class="row p-3 bg-light rounded shadow text-black">
+                                            <div class="mb-3 col-12">
+                                                <label class="form-label">Soft Skill</label>
+                                                <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: Força de vontade ">
+                                            </div>
+                                            <div class="mb-3 col-1 m-auto">
+                                                <button type="submit" class="btn btn-sm btn-success shadow">Salvar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
                                 </div>
-                                <div class="col-10 m-auto text-center">
-                                    <p class="p-3 bg-dark rounded-pill mt-2">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
+                                <div class="col-md-6 col-sm-12 p-2">
+                                    <h3 class="text-center p-3">Nova Skill</h3>
+                                    <form action="<?php echo e(route('create_skill')); ?>" method="post">
+                                        <?php echo csrf_field(); ?>
+                                        <div class="row p-3 text-white">
+                                            <div class="mb-3 col-12">
+                                                <label class="form-label">Skill</label>
+                                                <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: HTML5">
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-10">
+                                                <label class="form-label text-dark">Icone</label>
+                                                <input type="text" class="form-control shadow" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
+                                            </div>
+                                            <div class="col-sm-12 col-md-2 rounded mt-3">
+                                                <label class="form-label">Color</label>
+                                                <input type="color" class="form-control-xl shadow" name="color_skill" value="#25AF23">
+                                            </div>
+                                        </div>
+                                        <div class="col-10 m-auto text-center">
+                                            <p class="p-3 bg-dark rounded-pill mt-2">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
+                                        </div>
+                                        <div class="mb-3 col-1 m-auto">
+                                            <button type="submit" class="btn btn-sm btn-success shadow">Salvar</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="mb-3 col-1 m-auto">
-                                    <button type="submit" class="btn btn-sm btn-primary shadow">Salvar</button>
-                                </div>
-                            </form>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
