@@ -127,8 +127,7 @@
             <div class="container mt-3 text-color">
                 <h3 class="text-center mb-2">Skills</h3>
                 <div class="row p-3">
-
-                    <div class="row col p-3">
+                    <div class="row col-md-4 col-sm-12 p-2 p-3">
                         <h4 class="text-center mb-2">Soft Skills</h4>
                         <ul class="list-group list-group-flush text-center">
                             <?php $__currentLoopData = $soft_skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $soft_skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -140,11 +139,10 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
-
-                    <div class="row col p-3">
+                    <div class="row col-md-8 col-sm-12 p-2 p-3">
                         <h4 class="text-center mb-2">Hard Skills</h4>
                         <?php $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="col m-auto text-center p-3">
+                            <div class="col m-auto text-center p-3 skill">
                                 <p class="rounded-2 p-2" style="color:<?php echo e($skill->color_skill); ?>;"><?php echo $skill->icon_skill; ?></p>
                                 <p class="text-white"><?php echo e($skill->name); ?></p>
                             </div>

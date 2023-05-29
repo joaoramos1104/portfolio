@@ -128,8 +128,7 @@
             <div class="container mt-3 text-color">
                 <h3 class="text-center mb-2">Skills</h3>
                 <div class="row p-3">
-
-                    <div class="row col p-3">
+                    <div class="row col-md-4 col-sm-12 p-2 p-3">
                         <h4 class="text-center mb-2">Soft Skills</h4>
                         <ul class="list-group list-group-flush text-center">
                             @foreach($soft_skills as $soft_skill)
@@ -140,11 +139,10 @@
                             @endforeach
                         </ul>
                     </div>
-
-                    <div class="row col p-3">
+                    <div class="row col-md-8 col-sm-12 p-2 p-3">
                         <h4 class="text-center mb-2">Hard Skills</h4>
                         @foreach($skills as $skill)
-                            <div class="col m-auto text-center p-3">
+                            <div class="col m-auto text-center p-3 skill">
                                 <p class="rounded-2 p-2" style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
                                 <p class="text-white">{{ $skill->name }}</p>
                             </div>
