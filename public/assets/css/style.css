@@ -18,6 +18,12 @@ body::after{
     z-index: -1;
 }
 
+header{
+    /* background: linear-gradient(to bottom, rgba(175, 173, 173, 0.844) 0%, rgba(14, 5, 23, 0) 100%), url(/assets/img/body1.jpg); */
+    height: 100vh;
+    padding-bottom: 0;
+}
+
 body.dark {
     background: #111111;
   }
@@ -29,7 +35,9 @@ body.dark {
   body.dark .awards  {
     background: #222222;
     box-shadow: 10px 10px 20px rgba(236, 232, 232, 0.486);
+    transition: 1s ease all;
   }
+
 
 /* ----------------------- */
 
@@ -97,12 +105,6 @@ p {
 
 a{
     text-decoration: none;
-}
-
-header{
-    /* background: linear-gradient(to bottom, rgb(0 0 0 / 67%) 0%, rgb(14 5 23) 100%), url(/assets/img/body1.jpg); */
-    height: 100vh;
-    padding-bottom: 0;
 }
 
 #img_header {
@@ -267,7 +269,7 @@ header{
 }
 
 .awards > a:hover{
-    color: #ffffff !important;
+    color: #198754 !important;
 }
 .awards:hover{
     box-shadow: 0 5px 10px rgb(66, 152, 19) !important;
