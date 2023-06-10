@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="<?php echo e(url(mix('assets/bootstrap/bootstrap.css'))); ?>">
     <script src="<?php echo e(url(mix('assets/bootstrap/bootstrap.bundle.js'))); ?>"></script>
 
-    <link href="<?php echo e(asset('css/login.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('/assets/css/login.css')); ?>" rel="stylesheet">
 
     <link href="<?php echo e(url(mix('assets/fontawesome/fontawesome.css'))); ?>" rel="stylesheet">
     <script defer src="<?php echo e(url(mix('assets/fontawesome/fontawesome.js'))); ?>"></script>

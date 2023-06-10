@@ -1,42 +1,48 @@
 @extends('layout.app')
 
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
-        <div class="row">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav text-center">
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle text-color" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::user()->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark col-2 m-auto text-center" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                    Sair
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                            <li>
-                                <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#password">
-                                    Trocar senha
-                                </a>
-                            </li><li>
-                                <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createUser">
-                                    Cadastrar Usuário
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+<div class="container">
+    <nav class="navbar">
+        <div class="container d-block">
+            <ul class="nav float-end">
+                <div class="row d-flex dropdown">
+                    {{-- <div class="col me-2">
+                        <button class="switch float-end" id="switch">
+                            <span><i class="fas fa-sun"></i></span>
+                            <span><i class="fas fa-moon"></i></span>
+                        </button>
+                    </div> --}}
+                    <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                Sair
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                        <li>
+                            <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#password">
+                                Trocar senha
+                            </a>
+                        </li><li>
+                            <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createUser">
+                                Cadastrar Usuário
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="col">
+                        <button class="switch float-end" id="switch">
+                            <span><i class="fas fa-sun"></i></span>
+                            <span><i class="fas fa-moon"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </ul>
         </div>
     </nav>
 
@@ -79,7 +85,7 @@
                         <h3 class=" text-center text-color mt-3">Profile</h3>
                         @foreach($profiles as $profile)
                             <div class="row text-color">
-                                <div class="col-md-5 col-sm-12 m-auto text-center">
+                                <div class="col-md-7 col-sm-12 m-auto text-center">
                                     <span class=""><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ env('APP_URL') }}/storage/{{ $profile->img_profile }}" alt="..." style="width: 150px; height: 150px;" /></span>
                                     <h2 class="element">{{ $profile->name }} |
                                         <strong class="animated text-success"></strong>
@@ -100,7 +106,7 @@
                                     </h2>
                                     <strong><p>{!! $profile->description !!}</p></strong>
                                 </div>
-                                <div class="col-md-7 d-sm-none d-md-block m-auto p-3">
+                                <div class="col-md-5 d-sm-none d-md-block m-auto p-3">
                                     <img src="{{ env('APP_URL') }}/storage/{{ $profile->img_header }}" class="img-fluid rounded-custom" alt="header2.png">
                                 </div>
                                 <div class="justify-content-center">
@@ -411,31 +417,17 @@
                         <h3 class="text-center p-2 mb-2">Skills</h3>
                         <hr class="border-bottom border-dark">
                         <div class="text-center d-flex p-1">
-                            {{-- <div class="row col justify-content-center">
-                                @foreach($skills as $skill)
-                                    <div class=" col-3 col-md-2 mt-2">
-                                        <p style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
-                                        <strong><p>{{ $skill->name }}</p></strong>
-                                        <form>
-                                            @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
-                                            @method("DELETE")
-                                        </form>
-                                    </div>
-                                @endforeach
-                            </div> --}}
                             <div class="row p-3">
-
                                 <div class="row col-4 p-3">
                                     <h4 class="text-center mb-2">Soft Skills</h4>
                                     <ul class="list-group list-group-flush text-center">
                                         @foreach($soft_skills as $soft_skill)
-                                        <li class="list-group-item bg-transparent text-white">
+                                        <li class="list-group-item bg-transparent text-color">
                                             {{ $soft_skill->name }}
                                             <span class="badge text-success">
                                                 <form>
                                                 @csrf
-                                                <input type="submit" class="btn btn-sm btn-outline-danger border-0" formaction="{{ route('delete_soft_skill', $soft_skill->id) }}" formmethod="post" value="Remover">
+                                                <input type="submit" class="btn btn-sm btn-outline-danger border-0 shadow" formaction="{{ route('delete_soft_skill', $soft_skill->id) }}" formmethod="post" value="Remover">
                                                 @method("DELETE")
                                             </form>
                                         </span>
@@ -449,10 +441,10 @@
                                     @foreach($skills as $skill)
                                         <div class="col m-auto text-center p-3">
                                             <p class="rounded-2 p-2" style="color:{{ $skill->color_skill }};">{!! $skill->icon_skill !!}</p>
-                                            <p class="text-white">{{ $skill->name }}</p>
+                                            <p>{{ $skill->name }}</p>
                                             <form>
                                                 @csrf
-                                                <input type="submit" class="btn btn-sm btn-outline-danger border-0" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
+                                                <input type="submit" class="btn btn-sm btn-outline-danger border-0 shadow" formaction="{{ route('delete_skill', $skill->id) }}" formmethod="post" value="Remover">
                                                 @method("DELETE")
                                             </form>
                                         </div>
@@ -461,15 +453,14 @@
                             </div>
                         </div>
                         <div class="container-fluid m-auto">
-
-                            <div class="row text-center">
+                            <div class="row text-center bg-skills rounded-2 shadow mb-3">
                                 <div class="col-md-6 col-sm-12 p-2">
-                                    <h3 class="text-center p-3">Nova Soft Skill</h3>
+                                    <h3 class="text-center p-3">Soft Skill</h3>
                                     <form action="{{ route('create_soft_skill') }}" method="post">
                                         @csrf
-                                        <div class="row p-3 bg-light rounded shadow text-black">
+                                        <div class="row p-3 ">
                                             <div class="mb-3 col-12">
-                                                <label class="form-label">Soft Skill</label>
+                                                <label class="form-label">Descrição</label>
                                                 <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: Força de vontade ">
                                             </div>
                                             <div class="mb-3 col-1 m-auto">
@@ -480,35 +471,28 @@
 
                                 </div>
                                 <div class="col-md-6 col-sm-12 p-2">
-                                    <h3 class="text-center p-3">Nova Skill</h3>
+                                    <h3 class="text-center p-3">Hard Skill</h3>
                                     <form action="{{ route('create_skill') }}" method="post">
                                         @csrf
-                                        <div class="row p-3 text-white">
-                                            <div class="mb-3 col-12">
-                                                <label class="form-label">Skill</label>
+                                        <div class="row p-3">
+                                            <div class="col-12">
+                                                <label class="form-label">Descrição</label>
                                                 <input type="text" class="form-control shadow" name="name" value="" placeholder="Example: HTML5">
                                             </div>
-
                                             <div class="col-sm-12 col-md-10">
-                                                <label class="form-label text-dark">Icone</label>
+                                                <label class="form-label">Icone</label>
                                                 <input type="text" class="form-control shadow" name="icon_skill" value="" placeholder='Example: <i class="fab fa-html5 fa-3x"></i>'>
+                                                <i class="p-3 mt-2">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></i>
+                                                <button type="submit" class="btn btn-sm btn-success shadow">Salvar</button>
                                             </div>
                                             <div class="col-sm-12 col-md-2 rounded mt-3">
                                                 <label class="form-label">Color</label>
                                                 <input type="color" class="form-control-xl shadow" name="color_skill" value="#25AF23">
                                             </div>
                                         </div>
-                                        <div class="col-10 m-auto text-center">
-                                            <p class="p-3 bg-dark rounded-pill mt-2">OBS: Utilize Font Awesome no campo icone. <a class="btn btn-sm btn-warning" href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&m=free" target="_blank">Consulte aqui</a></p>
-                                        </div>
-                                        <div class="mb-3 col-1 m-auto">
-                                            <button type="submit" class="btn btn-sm btn-success shadow">Salvar</button>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -526,7 +510,7 @@
                                         <a class="m-auto p-3" target="_blank" href="{{ $award->link }}">{{ $award->name }}</a>
                                         <form>
                                             @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger shadow" formaction="{{ route('delete_award', $award->id) }}" formmethod="post" value="Remover">
+                                            <input type="submit" class="btn btn-sm btn-outline-danger border-0 shadow" formaction="{{ route('delete_award', $award->id) }}" formmethod="post" value="Remover">
                                             @method("DELETE")
                                         </form>
                                     </div>

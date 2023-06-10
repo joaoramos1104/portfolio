@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ url(mix('assets/bootstrap/bootstrap.css')) }}">
     <script src="{{ url(mix('assets/bootstrap/bootstrap.bundle.js')) }}"></script>
 
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet">
 
     <link href="{{ url(mix('assets/fontawesome/fontawesome.css')) }}" rel="stylesheet">
     <script defer src="{{ url(mix('assets/fontawesome/fontawesome.js')) }}"></script>
