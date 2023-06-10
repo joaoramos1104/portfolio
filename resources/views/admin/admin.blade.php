@@ -5,12 +5,12 @@
         <div class="container d-block">
             <ul class="nav float-end">
                 <div class="row d-flex dropdown">
-                    {{-- <div class="col me-2">
+                    <div class="col me-2">
                         <button class="switch float-end" id="switch">
                             <span><i class="fas fa-sun"></i></span>
                             <span><i class="fas fa-moon"></i></span>
                         </button>
-                    </div> --}}
+                    </div>
                     <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
@@ -35,12 +35,6 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="col">
-                        <button class="switch float-end" id="switch">
-                            <span><i class="fas fa-sun"></i></span>
-                            <span><i class="fas fa-moon"></i></span>
-                        </button>
-                    </div>
                 </div>
             </ul>
         </div>
