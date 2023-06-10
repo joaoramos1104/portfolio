@@ -50,22 +50,23 @@ body.dark {
     display: flex;
     outline: none;
   }
+
   .switch::after {
     content: "";
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     position: absolute;
-    background: #f1f1f1;
-    top: 0;
+    background: linear-gradient(to bottom, rgb(175, 173, 173) 0%, rgb(14, 5, 23) 100%);
+    top: -1px;
     left: 0;
     right: unset;
     border-radius: 100px;
     transition: 0.3s ease all;
-    box-shadow: 0px 0px 2p 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 2px 2px rgba(102, 102, 101, 0.763);
   }
   .switch.active {
-    background: rgb(255, 166, 0);
+    background: #ffc107;
     color: #000;
   }
   .switch.active::after {

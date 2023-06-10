@@ -47,8 +47,8 @@
                         <li class="nav-item me-2">
                             <!--<a class="nav-link" href="{{ route('admin') }}" target="_blank"><i class="fas fa-user"></i> Login</a>-->
                             <button class="switch" id="switch">
-                                <span><i class="fas fa-sun"></i></span>
-                                <span><i class="fas fa-moon"></i></span>
+                                <span><i class="fas fa-sun me-2"></i></span>
+                                <span><i class="fas fa-moon ms-2"></i></span>
                             </button>
                         </li>
                     </ul>
