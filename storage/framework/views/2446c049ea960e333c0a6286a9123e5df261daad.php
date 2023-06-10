@@ -46,6 +46,10 @@
                     <ul class="nav navbar float-end social-icons">
                         <li class="nav-item me-2">
                             <!--<a class="nav-link" href="<?php echo e(route('admin')); ?>" target="_blank"><i class="fas fa-user"></i> Login</a>-->
+                            <button class="switch" id="switch">
+                                <span><i class="fas fa-sun"></i></span>
+                                <span><i class="fas fa-moon"></i></span>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -74,7 +78,7 @@
                                 </script>
                         </h2>
                         <p><?php echo $profile->description; ?></p>
-                        <a class="btn btn-custom btn-light shadow me-2" href="#">Saiba Mais</a>
+                        <a class="btn btn-custom btn-light shadow me-2" href="https://linkedin.com/in/joao-f-ramos1104" target="_blank">Saiba Mais</a>
                         <!--<a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>-->
                     </div>
                     <div class="col-md-5 col-sm-none m-auto p-3 img-header js-tilt" data-tilt>
@@ -97,13 +101,13 @@
         <div class="container rounded-custom shadow banner mt-5" id="experience">
             <div class="row text-white col p-2">
                 <h3 class=" text-center m-auto">Education | Experiences</h3>
-                <div class="col-md-6 col-sm-12 text-center border-end border--white">
+                <div class="col-md-6 col-sm-12 text-center">
                     <h5 class="fw-bold">Education</h5>
                     <?php $__currentLoopData = $education; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $educ): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <h5><?php echo e($educ->institution); ?></h5>
                         <h5><?php echo e($educ->type_course); ?></h5>
                         <h5><?php echo e($educ->course); ?></h5>
-                        <p><?php echo e($educ->time_course); ?></p>
+                        
                         <hr class="border-bottom border-white">
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
@@ -126,12 +130,12 @@
         <div id="skills">
             <div class="container mt-3 text-color">
                 <h3 class="text-center mb-2">Skills</h3>
-                <div class="row p-3">
-                    <div class="row col-md-4 col-sm-12 p-2 p-3">
+                <div class="row p-3 bg-skills shadow rounded-2">
+                    <div class="row col-md-4 col-sm-12 p-3">
                         <h4 class="text-center mb-2">Soft Skills</h4>
                         <ul class="list-group list-group-flush text-center">
                             <?php $__currentLoopData = $soft_skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $soft_skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li class="list-group-item skill bg-transparent text-white">
+                            <li class="list-group-item bg-transparent text-color">
                                 <?php echo e($soft_skill->name); ?>
 
                                 <span class="badge text-success"><i class="far fa fa-check"></i></span>
@@ -144,7 +148,7 @@
                         <?php $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col m-auto text-center p-3 skill">
                                 <p class="rounded-2 p-2" style="color:<?php echo e($skill->color_skill); ?>;"><?php echo $skill->icon_skill; ?></p>
-                                <p class="text-white"><?php echo e($skill->name); ?></p>
+                                <p class="text-color"><?php echo e($skill->name); ?></p>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
