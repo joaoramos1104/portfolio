@@ -117,12 +117,12 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="collapse text-center" id="collapseEditProfile{{ $profile->id }}">
+                                <div class="collapse text-center text-color" id="collapseEditProfile{{ $profile->id }}">
                                     <div class="container">
                                         <form action="{{ route('update_profile', $profile->id) }}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
-                                            <div class="row p-1 text-white">
+                                            <div class="row p-1">
                                                 <div class="mb-3 col-md-6 col-sm-12">
                                                     <label class="form-label">Nome</label>
                                                     <input type="text" class="form-control" name="name" value="{{ $profile->name }}">
@@ -168,7 +168,7 @@
                             <div class="container">
                                 <form action="{{ route('create_profile') }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="row p-1 text-white">
+                                    <div class="row p-1 text-color">
                                         <h3 class="text-center">Perfil</h3>
                                         <div class="row p-1">
                                             <div class="mb-3 col-md-6 col-sm-12">
