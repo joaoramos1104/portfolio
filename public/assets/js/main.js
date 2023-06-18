@@ -65,7 +65,7 @@ btnSwitch.addEventListener('click', () => {
             event.preventDefault();
 
             $.ajax({
-                url: "{{ route('message') }}",
+                url: "/message",
                 type: "post",
                 data: $(this).serialize(),
                 dataType: 'json',
