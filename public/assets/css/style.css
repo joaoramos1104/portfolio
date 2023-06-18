@@ -19,24 +19,37 @@ body::after{
 }
 
 header{
-    /* background: linear-gradient(to bottom, rgba(175, 173, 173, 0.844) 0%, rgba(14, 5, 23, 0) 100%), url(/assets/img/body1.jpg); */
+    background-image: linear-gradient(to bottom, rgb(239 239 239 / 97%) 0%, #f9fafbcc 100%), url(/assets/img/body9.jpg);
     height: 100vh;
     padding-bottom: 0;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease all;
 }
 
 body.dark {
     background: #111111;
-  }
+}
 
-  body.dark .bg-skills  {
+body.dark .bg-skills  {
     background: #222222;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
-  }
-  body.dark .awards  {
+}
+
+body.dark .awards  {
     background: #222222;
     box-shadow: 10px 10px 20px rgba(236, 232, 232, 0.486);
     transition: 1s ease all;
-  }
+}
+
+body.dark header{
+    background-image: linear-gradient(to bottom, rgb(14 13 13 / 94%) 0%, rgba(15, 8, 22, 0.875) 100%), url(/assets/img/body9.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
 
 
 /* ----------------------- */
@@ -91,6 +104,9 @@ p {
 }
 
 .text-color{
+    color: #73777b;
+}
+body.dark .text-color{
     color: #93989d;
 }
 
@@ -108,13 +124,13 @@ a{
     text-decoration: none;
 }
 
-#img_header {
+/* #img_header {
     justify-content: center;
     opacity: 0.1;
     animation-name: example;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-}
+} */
 
 @keyframes example {
     from {opacity: 0.5; }

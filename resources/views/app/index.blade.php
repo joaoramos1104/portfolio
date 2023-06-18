@@ -349,13 +349,15 @@
     <!-- Modal error_message -->
     <div class="modal fade" id="error_message" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-white text-center bg-warning">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel"><i class="fas fa-exclamation-triangle"></i></h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content text-white text-center bg-dark">
+                <div class="modal-header  border-0">
+                    <h4 class="modal-title" id="staticBackdropLabel"><i class="fas fa-exclamation-triangle text-warning"></i></h4>
                 </div>
                 <div class="modal-body">
                     <h4>Ocorreu um erro, tente novamente mais tarde!</h4>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-sm btn-success " data-bs-dismiss="modal" aria-label="Close">Fechar</button>
                 </div>
             </div>
         </div>
