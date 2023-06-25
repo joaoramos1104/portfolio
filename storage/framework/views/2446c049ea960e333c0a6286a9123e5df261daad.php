@@ -129,7 +129,7 @@
         <div id="skills">
             <div class="container mt-3 text-color">
                 <h3 class="text-center mb-2">Skills</h3>
-                <div class="row p-3 bg-skills shadow rounded-2">
+                <div class="row p-3 bg-skills shadow rounded">
                     <div class="row col-md-4 col-sm-12 p-3">
                         <h4 class="text-center mb-2">Soft Skills</h4>
                         <ul class="list-group list-group-flush text-center">
@@ -152,10 +152,12 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
+            </div>
                 <div class="container mt-3">
                     <hr class="border-bottom border-dark">
                 </div>
-            </div>
+        </div>
+        <div id="awards" class="bg-awards">
             <div class="container mt-3 mb-3">
                 <h3 class="text-center mb-2 text-color">Awards</h3>
                 <div class="row justify-content-center">
@@ -179,7 +181,6 @@
                     <hr class="border-bottom border-dark">
                 </div>
             </div>
-
         </div>
 
         <!-- Projects -->
@@ -300,7 +301,7 @@
         </div>
 
         <!-- Contact -->
-        <div id="contact">
+        <div id="contact" class="bg-contact">
             <div class="container text-color">
                 <div class="row col p-3">
                     <h3 class="mb-5 text-center">Contact</h3>

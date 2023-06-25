@@ -32,6 +32,7 @@
 <?php if (! empty(trim($__env->yieldContent('body')))): ?>
     <?php echo $__env->yieldContent('body'); ?>
     <!-- Footer -->
+    <div class="bg-footer">
     <footer class="container p-3 mt-3">
         <div class="d-flex justify-content-center">
             <ul class="nav float-end social-icons ms-3">
@@ -53,6 +54,7 @@
             </ul>
         </div>
     </footer>
+    </div>
 
 <?php endif; ?>
 <script src="<?php echo e(url(mix('/assets/jquery/jquery.min.js'))); ?>"></script>
