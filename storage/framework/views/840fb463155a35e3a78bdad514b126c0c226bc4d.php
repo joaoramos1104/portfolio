@@ -5,8 +5,8 @@
                 <div class="row d-flex dropdown">
                     <div class="col me-2">
                         <button class="switch float-end" id="switch">
-                            <span><i class="fas fa-sun"></i></span>
-                            <span><i class="fas fa-moon"></i></span>
+                            <span><i class="fas fa-sun mt-1"></i></span>
+                            <span><i class="fas fa-moon mt-1"></i></span>
                         </button>
                     </div>
                     <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -607,7 +607,7 @@
                                 <?php if($chave %2 == 0): ?>
                                     <section class="container text-color rounded-custom">
                                         <div class="row p-3">
-                                            <div class="col-md-6 col-sm-12 float-start m-auto">
+                                            <div class="col-md-7 col-sm-12 float-start m-auto">
                                                 <div id="carousel<?php echo e($chave); ?>" class="carousel slide" data-bs-ride="carousel">
                                                     <div class="carousel-indicators">
                                                         <?php $__currentLoopData = $project->imgProject; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $images): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -631,7 +631,7 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12 float-end m-auto text-center">
+                                            <div class="col-md-5 col-sm-12 float-end m-auto text-center">
                                                 <h5 class="fw-bold text-success"><?php echo e($project->title); ?></h5>
                                                 <strong><p style="white-space: pre-wrap;"><?php echo e($project->description); ?></p></strong>
                                                 <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project_web); ?>" >Confira</a>
@@ -652,7 +652,7 @@
                                 <?php else: ?>
                                     <section class="container text-color rounded-custom">
                                         <div class="row p-3">
-                                            <div class="col-md-6 col-sm-12 float-end m-auto text-center">
+                                            <div class="col-md-5 col-sm-12 float-end m-auto text-center">
                                                 <h5 class="fw-bold text-success"><?php echo e($project->title); ?></h5>
                                                 <strong><p style="white-space: pre-wrap;"><?php echo e($project->description); ?></p></strong>
                                                 <a class="btn btn-sm btn-light mb-1 shadow" target="_blank" href="<?php echo e($project->url_project_web); ?>" >Confira</a>
@@ -665,7 +665,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12 float-start m-auto">
+                                            <div class="col-md-7 col-sm-12 float-start m-auto">
                                                 <div id="carousel<?php echo e($chave); ?>" class="carousel slide" data-bs-ride="carousel">
                                                     <div class="carousel-indicators">
                                                         <?php $__currentLoopData = $project->imgProject; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $images): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
