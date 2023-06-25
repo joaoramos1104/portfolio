@@ -314,7 +314,7 @@
                             </div>
                             <div class="col-md-6 p-1">
                                 <label class="form-label">Seu Telefone</label>
-                                <input type="text" class="form-control rounded-pill shadow" id="tel" name="tel" data-name='input-messager' placeholder="(21) 99999-9999" required>
+                                <input type="text" class="form-control rounded-pill shadow" id="tel" name="tel" data-name='input-messager' onkeypress="mask(this, mphone);" placeholder="(21) 99999-9999" required>
                             </div>
                             <div class="col-12 p-1">
                                 <label class="form-label">E-mail</label>
@@ -330,7 +330,7 @@
                         </form>
                     </div>
                     <div class="col-md-6 d-sm-none d-md-block p-3 m-auto">
-                        {{--                             <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--}}
+                                                    {{-- <iframe class="rounded-custom map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.86034076902!2d-43.41874938450831!3d-22.77056363875018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996688796fd8c3%3A0x9c37e0468461879b!2sAv.%20Ant%C3%B4nio%20Borges%2C%20323%20-%20Jacutinga%2C%20Mesquita%20-%20RJ%2C%2026564-030!5e0!3m2!1spt-BR!2sbr!4v1635635568647!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
                         <div class="mb-2 text-center">
                             <i class="fas fa-map-marker-alt"></i> <strong>Mesquita - RJ</strong><br>
                             <i class="fas fa-phone-square-alt text-color"></i><strong> +55 (21) 98298-2487</strong><br>
