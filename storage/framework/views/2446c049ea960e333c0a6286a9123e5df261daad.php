@@ -326,7 +326,7 @@
                                 <textarea name="message" rows="5" class="form-control rounded shadow" id="message" data-name='input-messager' placeholder="Coloque aqui sua mensagem..." required></textarea>
                             </div>
                             <div class="col-12 p-1 text-center">
-                                <button type="submit" class="btn btn-light shadow">Enviar</button>
+                                <button type="submit" class="btn btn-secondary mb-1 shadow">Enviar</button>
                             </div>
                         </form>
                     </div>
