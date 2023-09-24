@@ -29,6 +29,26 @@ header{
     transition: 1s ease all;
 }
 
+.bar{
+    z-index: 9999;
+    position: fixed;
+    margin-top: -10px;
+}
+
+.content{
+    margin-top: 100px !important;
+}
+
+.bg-nav-bar{
+background:white;
+box-shadow: 0 5px 10px rgb(231, 232, 231) !important;
+}
+
+body.dark .bg-nav-bar  {
+    background: #222222;
+    box-shadow: 0 5px 10px rgba(22, 22, 22, 0.844) !important;
+}
+
 body.dark {
     background: #111111;
 }
@@ -404,7 +424,7 @@ a{
     text-decoration: none;
     color: rgb(61, 82, 57);
     display: none;
-    z-index: 100;
+    z-index: 9999;
     animation: go-top 1s infinite alternate;
 }
 .button-top:hover {
