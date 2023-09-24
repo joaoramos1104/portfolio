@@ -2,10 +2,9 @@
 
     <!-- header -->
     <header>
-        <div class="container">
+        <div class="container-fluid bar">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-
+                <div class="container">
                     <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -54,10 +53,13 @@
                 </div>
             </nav>
         </div>
+        <div class="header">
+
+        </div>
         <div class="container">
             <?php $__currentLoopData = $profiles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $profile): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="row mt-2">
-                    <div class="col-md-7 col-sm-12 m-auto text-center text-color">
+                <div class="row">
+                    <div class="col-md-7 content col-sm-12 m-auto text-center text-color">
                         <span class=""><img class="img-fluid img-profile shadow m-auto mb-2" src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_profile); ?>" alt="..." /></span>
                         <h2 class="element"><?php echo e($profile->name); ?> |
                             <strong class="animated text-success"></strong>
@@ -90,7 +92,15 @@
             </div>
         </div>
         <div class="col-1 float-end">
-            <a class="button-top" href="#">Topo <i class="fas fa-3x fa-angle-up"></i></a>
+            <a class="button-top" data-bs-toggle="tooltip" data-bs-placement="top" title="top" href="#"><i class="fas fa-3x fa-angle-up"></i></a>
+
+            <!-- Call this script after bootstrap.bundle.min.js CDN -->
+            <script>
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+                })
+            </script>
         </div>
     </header>
 
