@@ -384,20 +384,13 @@ a{
         padding-top: 0;
         padding-bottom: 0;
     }
+
 }
 @media screen and (max-width: 599.99px) {
     header{
         height: 100%;
         padding-top: 0;
         padding-bottom: 0;
-    }
-    .navbar {
-        background: #f8f9fa !important;
-        border-radius: 10px;
-    }
-    body.dark .navbar  {
-        background: #222222 !important;
-        border-radius: 10px;
     }
 }
 
@@ -421,6 +414,15 @@ a{
     }
     .art-cont, .art-cont2 {
         min-height: 20vh;
+    }
+
+    .navbar {
+        background: #f8f9fa !important;
+        border-radius: 10px;
+    }
+    body.dark .navbar  {
+        background: #222222 !important;
+        border-radius: 10px;
     }
 
 }
