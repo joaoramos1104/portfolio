@@ -58,7 +58,6 @@ btnSwitch.addEventListener('click', () => {
 
     //nav-bar
     jQuery(document).ready(function() {
-        // Exibe ou oculta o botão
         jQuery(window).scroll(function() {
             if (jQuery(this).scrollTop() > 150) {
                 jQuery('.bar').fadeIn(300).addClass('bg-nav-bar');
@@ -67,9 +66,6 @@ btnSwitch.addEventListener('click', () => {
             }
         });
     });
-
-
-
 
     //Enviando mensagem via ajax
     $(function(){
