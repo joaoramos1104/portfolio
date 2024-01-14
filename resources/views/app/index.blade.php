@@ -330,7 +330,7 @@
                 <div class="modal-body">
                     <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
                     <h4>Mensagem enviada com sucesso!</h4>
-                    <button type="button" class="btn btn-outline-secondary shadow" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
                 </div>
             </div>
         </div>
