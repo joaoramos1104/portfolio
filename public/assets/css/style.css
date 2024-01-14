@@ -391,6 +391,14 @@ a{
         padding-top: 0;
         padding-bottom: 0;
     }
+    .navbar {
+        background: #f8f9fa !important;
+        border-radius: 10px;
+    }
+    body.dark .navbar  {
+        background: #222222 !important;
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width: 1366.99px) {

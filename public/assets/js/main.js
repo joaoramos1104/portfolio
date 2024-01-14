@@ -62,17 +62,10 @@ btnSwitch.addEventListener('click', () => {
         jQuery(window).scroll(function() {
             if (jQuery(this).scrollTop() > 150) {
                 jQuery('.bar').fadeIn(300).addClass('bg-nav-bar');
-            }
-            else {
+            } else {
                 jQuery('.bar').fadeIn(300).removeClass('bg-nav-bar');
             }
         });
-
-        // Faz animação para subir
-        jQuery('.button-top').click(function(event) {
-            event.preventDefault();
-            jQuery('html, body').animate({scrollTop: 0}, 300);
-        })
     });
 
 
