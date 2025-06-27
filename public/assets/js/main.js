@@ -6,7 +6,6 @@ btnSwitch.addEventListener('click', () => {
 });
 
 
-
     $("#limparTextarea").click(function(){
         $("#textareaInteresses").val('');
         $("#collapseInterests").removeClass( "show" );

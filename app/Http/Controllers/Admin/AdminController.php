@@ -282,6 +282,7 @@ class AdminController extends Controller
             $project->title = $request->title;
             $project->description = $request->description;
             $project->url_project = $request->url_project;
+            $project->url_project_web = $request->url_project_web;
             $project->save();
 
             if ($request->hasFile('img_project')){

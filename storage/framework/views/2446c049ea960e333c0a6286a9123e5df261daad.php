@@ -40,7 +40,7 @@
                         </h2>
                         <p><?php echo $profile->description; ?></p>
                         <a class="btn btn-custom btn-light shadow me-2" href="https://linkedin.com/in/joao-f-ramos1104" target="_blank">Saiba Mais</a>
-                        <!--<a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>-->
+                        <!--<a class="btn btn-custom btn-light shadow" href="#experience">Start Now</a>
                     </div>
                     <div class="col-md-5 col-sm-none m-auto p-3 img-header js-tilt" data-tilt>
                         <img id="img_header" src="<?php echo e(env('APP_URL')); ?>/storage/<?php echo e($profile->img_header); ?>" class="img-fluid rounded-custom" alt="header2.png">
@@ -341,7 +341,7 @@
                 <div class="modal-body">
                     <h4 class="modal-title" id="success_messageBackdropLabel"><i class="far fa-check-circle"></i></h4>
                     <h4>Mensagem enviada com sucesso!</h4>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Fechar <i class="far fa-close"></i></button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
                 </div>
             </div>
         </div>
